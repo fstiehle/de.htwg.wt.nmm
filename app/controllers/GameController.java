@@ -24,7 +24,9 @@ public class GameController extends Controller {
     public Result game(String command) {
         TextUI tui = Game.getInstance().getTui();
         tui.processInputLine(command);
-        return ok(game.render(tui.printHTML()));
+        return ok(game.render(
+                command +
+                tui.printHTML()));
     }
 
 }
