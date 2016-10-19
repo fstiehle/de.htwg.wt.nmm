@@ -9,7 +9,7 @@ import de.htwg.se.nmm.Game;
  * This controller contains an action to handle HTTP requests
  * to the application's home page.
  */
-public class HomeController extends Controller {
+public class GameController extends Controller {
 
     /**
      * An action that renders an HTML page with a welcome message.
@@ -18,9 +18,13 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
+        return ok(index.render("Hallo!"));
+    }
+
+    public Result game(String command) {
         TextUI tui = Game.getInstance().getTui();
-        tui.processInputLine("    ");
-        return ok(index.render(tui.printHTML()));
+        tui.processInputLine(command);
+        return ok(game.render(tui.printHTML()));
     }
 
 }
