@@ -29,4 +29,8 @@ public class GameController extends Controller {
                 tui.printHTML()));
     }
 
+    public Result x3dom() {
+        return ok(x3dom.render());
+    }
+
 }
