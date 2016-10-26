@@ -6,6 +6,10 @@ GET     /                           controllers.GameController.index
 
 GET     /play/:command              controllers.GameController.game(command: String)
 
+# About and Help Page
+GET     /about                      controllers.AboutController.index
+GET     /help                       controllers.AboutController.help
+
 
 # Test Routes
 GET     /x3dom                      controllers.GameController.x3dom

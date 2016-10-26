@@ -1,0 +1,24 @@
+<nav class="navbar navbar-inverse">
+
+    <div class="container">
+
+            <ul class="nav navbar-nav navbar-left">
+                <li class=@{if (request.path == routes.GameController.index().toString()) "active" else ""}>
+                    <a href="@routes.GameController.index()">Play</a>
+                </li>
+
+                <li class=@{if (request.path == routes.AboutController.index().toString()) "active" else ""}>
+                    <a href="@routes.AboutController.index()">About</a>
+                </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="navbar-brandt" href="@routes.GameController.index()">NMM</a>
+                </li>
+            </ul>
+
+    </div>
+
+</nav>

@@ -1,0 +1,42 @@
+@import "lib/bootstrap/less/bootstrap.less";
+
+@brand-primary: darken(#2196F3, 6.5%);
+@background-color: #000;
+@background-font-color: #fff;
+@transition: 0.5s;
+
+// eliminate rounded borders
+@border-radius-base:             0;
+@border-radius-large:            0;
+@border-radius-small:            0;
+
+// System Fonts
+@font-family-sans-serif:  system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+@font-family-base:        @font-family-sans-serif;
+
+@grid-float-breakpoint: 0;
+
+a {
+    .transition(@transition)
+}
+
+a:active {
+    color: green;
+}
+
+.navbar-inverse {
+    background-color: @background-color;
+    margin-bottom: 0;
+    color: @background-font-color;
+}
+
+.window {
+    color: @background-font-color;
+    background-color: @background-color;
+    padding: 0 40px;
+}
+
+.window a {
+    color: @background-font-color;
+    text-decoration: underline;
+}
