@@ -99,6 +99,12 @@
                 <Viewpoint id="zoom" position="0.21525 19.16045 11.00406" orientation="-0.92752 -0.35843 -0.10596 1.38588" zNear="0.00537" zFar="53.72820" description="camera" set_bind="false"></Viewpoint>
 
 
+                <transform translation='-30 0 0' id="trafo">
+                    <group DEF="MODEL_PUCK" metadata='A1'>
+                        <inline url="@routes.Assets.versioned("x3d/nmm_puck.x3d")"> </inline>
+                    </group>
+                </transform>
+
 
                 <transform translation='-15 0 0' id="trafo">
                     <group DEF="MODEL_BASE" metadata='A1' onmousemove="updateTrafo(event);">
