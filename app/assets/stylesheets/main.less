@@ -1,6 +1,12 @@
 @import "lib/bootstrap/less/bootstrap.less";
 
-@brand-primary: darken(#2196F3, 6.5%);
+@brand-primary: #38cbf8;
+@brand-secondary: @color-info;
+@color-info: #f8c731;
+@color-font-info: darken(#fff, 2.5%);
+
+@gray: #8e8e93;
+
 @background-color: #000;
 @background-font-color: #fff;
 @transition: 0.5s;
@@ -14,7 +20,34 @@
 @font-family-sans-serif:  system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 @font-family-base:        @font-family-sans-serif;
 
+@font-size-base:          18px;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.45)); // ~12px
+
+@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:            @font-size-base;
+@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+
+@line-height-base:        1.428571429; // 20/14
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+
+@headings-font-family:    inherit;
+@headings-font-weight:    800;
+@headings-line-height:    1.1;
+@headings-color:          inherit;
+
 @grid-float-breakpoint: 0;
+
+@import "about.less";
+
+.window  #logo {
+    filter: invert(100%);
+    width: 120px;
+    margin-bottom: 20px;
+}
 
 a {
     .transition(@transition)
@@ -24,6 +57,10 @@ a:active {
     color: green;
 }
 
+cite {
+    font-style: normal;
+}
+
 .navbar-inverse {
     background-color: @background-color;
     margin-bottom: 0;
@@ -31,12 +68,30 @@ a:active {
 }
 
 .window {
+    text-align: center;
+    padding: 60px 0;
     color: @background-font-color;
     background-color: @background-color;
-    padding: 0 40px;
 }
 
 .window a {
-    color: @background-font-color;
     text-decoration: underline;
+}
+
+.content {
+    padding: 60px 0;
+}
+
+.panel {
+    border: none;
+}
+
+.panel blockquote {
+    border: none;
+}
+
+.panel-info {
+    background-color: @color-info;
+    margin: 20px 0;
+    color: @color-font-info;
 }
