@@ -1,9 +1,12 @@
 @import "lib/bootstrap/less/bootstrap.less";
 
 @brand-primary: #38cbf8;
-@brand-secondary: @color-info;
+@brand-info: @color-info;
 @color-info: #f8c731;
 @color-font-info: darken(#fff, 2.5%);
+@color-interaction: #f69124;
+
+@link-color: @color-interaction;
 
 @gray: #8e8e93;
 
@@ -43,10 +46,14 @@
 
 @import "about.less";
 
-.window  #logo {
+.window #logo {
     filter: invert(100%);
     width: 120px;
     margin-bottom: 20px;
+}
+
+img {
+    user-select: none;
 }
 
 a {
@@ -59,6 +66,10 @@ a:active {
 
 cite {
     font-style: normal;
+}
+
+cite > a {
+    color: ;
 }
 
 .navbar-inverse {
@@ -94,4 +105,10 @@ cite {
     background-color: @color-info;
     margin: 20px 0;
     color: @color-font-info;
+}
+
+footer {
+    background-color: @background-color;
+    color: @background-font-color;
+    padding: 60px 0;
 }
