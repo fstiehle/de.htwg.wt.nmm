@@ -1,14 +1,14 @@
 @import "lib/bootstrap/less/bootstrap.less";
 
-@brand-primary: #38cbf8;
+@brand-primary: #0050ef;
 @brand-info: @color-info;
-@color-info: #f8c731;
+@color-info: #f0a30a;
 @color-font-info: darken(#fff, 2.5%);
-@color-interaction: #f69124;
+@color-interaction: #fa6800;
 
 @link-color: @color-interaction;
 
-@gray: #8e8e93;
+@gray: #647687;
 
 @background-color: #000;
 @background-font-color: #fff;
@@ -95,6 +95,11 @@ cite > a {
 
 .panel {
     border: none;
+    margin-bottom: 10px;
+
+    .panel-footer {
+        background-color: @gray;
+    }
 }
 
 .panel blockquote {
