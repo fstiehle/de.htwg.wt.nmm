@@ -1,6 +1,5 @@
-package views.x3dom
+package views.helper.x3dom
 
-import helper.math.Vector;
 
 /**
   * Created by funkemarkus on 28.10.16.
