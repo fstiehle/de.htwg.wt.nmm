@@ -7,10 +7,13 @@
                     <a href="@routes.GameController.index()">Play</a>
                 </li>
 
+                <li class=@{if (request.path == routes.GameController.x3dom().toString()) "active" else ""}>
+                    <a href="@routes.GameController.x3dom()">x3Dom</a>
+                </li>
+
                 <li class=@{if (request.path == routes.AboutController.index().toString()) "active" else ""}>
                     <a href="@routes.AboutController.index()">About</a>
                 </li>
-
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
