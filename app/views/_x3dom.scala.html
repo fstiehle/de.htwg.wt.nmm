@@ -1,3 +1,29 @@
+"         a     b     c   d   e     f     g\n" +
+"\n" +
+"    1    a1--------------d1--------------g1\n" +
+"         |               |               |\n" +
+"    2    |     b2--------d2--------f2    |\n" +
+"         |     |         |         |     |\n" +
+"    3    |     |     c3--d3--e3    |     |\n" +
+"         |     |     |       |     |     |\n" +
+"    4    a4----b4----c4      e4----f4----g4\n" +
+"         |     |     |       |     |     |\n" +
+"    5    |     |     c5--d5--e5    |     |\n" +
+"         |     |         |         |     |\n" +
+"    6    |     b6--------d6--------f6    |\n" +
+"         |               |               |\n" +
+"    7    a7--------------d7--------------g7\n");
+
+
+
+
+
+
+
+
+
+
+
 @()
 <!DOCTYPE html>
 <html>
@@ -106,180 +132,9 @@
                 </transform>
 
 
-                <transform translation='-15 0 0' id="trafo">
-                    <group DEF="MODEL_BASE" metadata='A1' onmousemove="updateTrafo(event);">
-                        <inline url="@routes.Assets.versioned("x3d/nmm_only.x3d")"> </inline>
-                    </group>
-                </transform>
-                <transform translation='15 0 0'>
-                    <group USE='MODEL_BASE' metadata='A3'></group>
-                </transform>
-
-
-                <transform translation='-10 0 0'>
-                    <group USE='MODEL_BASE' metadata='A3'></group>
-                </transform>
-                <transform translation='10 0 0'>
-                    <group USE='MODEL_BASE' metadata='A3'></group>
-                </transform>
-
-
-                <transform translation='-5 0 0'>
-                    <group USE='MODEL_BASE' metadata='A3'></group>
-                </transform>
-                <transform translation='5 0 0'>
-                    <group USE='MODEL_BASE' metadata='A3'></group>
-                </transform>
 
 
 
-                <transform translation="0 0 -15">
-                    <group USE='MODEL_BASE' metadata='A2'></group>
-                </transform>
-                <transform translation='-15 0 -15'>
-                    <group USE='MODEL_BASE' metadata='A2'></group>
-                </transform>
-                <transform translation='15 0 -15'>
-                    <group USE='MODEL_BASE' metadata='A3'></group>
-                </transform>
-
-
-
-
-
-
-                <transform translation="0 0 15">
-                    <group USE='MODEL_BASE' metadata='A2'></group>
-                </transform>
-                <transform translation='-15 0 15'>
-                    <group USE='MODEL_BASE' metadata='A2'></group>
-                </transform>
-                <transform translation='15 0 15'>
-                    <group USE='MODEL_BASE' metadata='A3'></group>
-                </transform>
-
-
-
-
-
-
-                <transform translation='-10 0 -10'>
-                    <group USE='MODEL_BASE' metadata='A2'></group>
-                </transform>
-                <transform translation="0 0 -10">
-                    <group USE='MODEL_BASE' metadata='A2'></group>
-                </transform>
-                <transform translation='10 0 -10'>
-                    <group USE='MODEL_BASE' metadata='A3'></group>
-                </transform>
-
-                <transform translation='-5 0 -5'>
-                    <group USE='MODEL_BASE' metadata='A2'></group>
-                </transform>
-                <transform translation="0 0 -5">
-                    <group USE='MODEL_BASE' metadata='A2'></group>
-                </transform>
-                <transform translation='5 0 -5'>
-                    <group USE='MODEL_BASE' metadata='A3'></group>
-                </transform>
-
-
-
-
-
-
-                <transform translation='-10 0 10'>
-                    <group USE='MODEL_BASE' metadata='A2'></group>
-                </transform>
-                <transform translation="0 0 10">
-                    <group USE='MODEL_BASE' metadata='A2'></group>
-                </transform>
-                <transform translation='10 0 10'>
-                    <group USE='MODEL_BASE' metadata='A3'></group>
-                </transform>
-
-                <transform translation='-5 0 5'>
-                    <group USE='MODEL_BASE' metadata='A2'></group>
-                </transform>
-                <transform translation="0 0 5">
-                    <group USE='MODEL_BASE' metadata='A2'></group>
-                </transform>
-                <transform translation='5 0 5'>
-                    <group USE='MODEL_BASE' metadata='A3'></group>
-                </transform>
-
-
-
-
-
-
-                <transform scale="0.6 1 3.6" translation="-3.7 0 -15" rotation="0 1 0 1.57">
-                    <group DEF="MODEL_CONNECTOR">
-                        <inline url="@routes.Assets.versioned("x3d/nmm_steg.x3d")"> </inline>
-                    </group>
-                </transform>
-
-                <transform scale="0.6 1 2.4" translation="-2.6 0 -10" rotation="0 1 0 1.57">
-                    <group USE='MODEL_CONNECTOR'></group>
-                </transform>
-
-                <transform scale="0.6 1 1.1" translation="-1 0 -5" rotation="0 1 0 1.57">
-                    <group USE='MODEL_CONNECTOR'></group>
-                </transform>
-
-
-
-                <transform scale="0.6 1 2.4" translation="-2.6 0 10" rotation="0 1 0 1.57">
-                    <group USE='MODEL_CONNECTOR'></group>
-                </transform>
-
-                <transform scale="0.6 1 1.1" translation="-1 0 5" rotation="0 1 0 1.57">
-                    <group USE='MODEL_CONNECTOR'></group>
-                </transform>
-
-                <transform scale="0.6 1 3.6" translation="-3.7 0 15" rotation="0 1 0 1.57">
-                    <group USE='MODEL_CONNECTOR'></group>
-                </transform>
-
-
-
-
-                <transform scale="0.6 1 2.4" translation="10 0 -2.6" rotation="0 0 0 0">
-                    <group USE='MODEL_CONNECTOR'></group>
-                </transform>
-
-                <transform scale="0.6 1 1.1" translation="5 0 -1" rotation="0 0 0 0">
-                    <group USE='MODEL_CONNECTOR'></group>
-                </transform>
-
-                <transform scale="0.6 1 3.6" translation="15 0 -3.7" rotation="0 0 0 0">
-                    <group USE='MODEL_CONNECTOR'></group>
-                </transform>
-
-
-
-                <transform scale="0.6 1 2.4" translation="-10 0 -2.6" rotation="0 0 0 0">
-                    <group USE='MODEL_CONNECTOR'></group>
-                </transform>
-
-                <transform scale="0.6 1 1.1" translation="-5 0 -1" rotation="0 0 0 0">
-                    <group USE='MODEL_CONNECTOR'></group>
-                </transform>
-
-                <transform scale="0.6 1 3.6" translation="-15 0 -3.7" rotation="0 0 0 0">
-                    <group USE='MODEL_CONNECTOR'></group>
-                </transform>
-
-
-
-
-                <transform scale="0.6 1 1.1" translation="0 0 -11" rotation="0 0 0 0">
-                    <group USE='MODEL_CONNECTOR'></group>
-                </transform>
-
-                <transform scale="0.6 1 1.1" translation="0 0 9" rotation="0 0 0 0">
-                    <group USE='MODEL_CONNECTOR'></group>
-                </transform>
 
             </scene>
         </x3d>
