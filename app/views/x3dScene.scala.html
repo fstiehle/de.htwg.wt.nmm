@@ -11,132 +11,59 @@
 }
 
 @*
-*###### Original CSS from POC
-
-<style>
-    html, body {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        background: black;
-    }
-
-    #x3dScene {
-        height: 100%;
-        width: 100%;
-        border: none;
-    }
-</style>
-
-*@
-
-@*
-*###### Original JavaScript from POC
-
-<script type='text/javascript'>
-    function birdMode() {
-        document.getElementById('birg').setAttribute('set_bind','true');
-        document.getElementById('head').setAttribute('explorationMode', 'all');
-        $("#footerwrap").hide();
-    }
-
-    function frontMode() {
-        document.getElementById('front').setAttribute('set_bind','true');
-        document.getElementById('head').setAttribute('explorationMode', 'none');
-        $("#footerwrap").hide();
-    }
-
-    function zoomMode() {
-        $("#footerwrap").hide();
-
-        document.getElementById('zoom').setAttribute('set_bind','true');
-        document.getElementById('head').setAttribute('explorationMode', 'all');
-
-        $( "#wrap" ).animate({
-            left: '85%',
-            margintop: '25px'
-        }, 600);
-        $( "#logo" ).animate({
-            width: '250px'
-        }, 600);
-    }
-</script>
-
-*@
-
-@*
 * Call Main Template
 * Page Title: x3Dom
 *@
 @main("x3Dom", scripts) {
-    <div class="container-fluid">
-        <div class="row">
+    <div id="scene">
 
-            <!-- ###### Original Button HTML from POC
+        <x3d id="x3d" showStat="false" showLog="false" style="min-width: 100%; min-height: 100%;">
+            <scene>
 
-            <div id="buttons">
-                <div>
-                    <button onclick="birdMode()">Bird</button>
-                    <button onclick="frontMode()">Front</button>
-                    <button onclick="zoomMode()">Zoom</button>
-                </div>
-            </div>
+                <directionalLight ambientIntensity='1' direction='50 -50 50' global='false' intensity='1'></directionalLight>
+                <directionalLight ambientIntensity='1' direction='50 50 50' global='false' intensity='1'></directionalLight>
+                <navigationInfo id="head" explorationMode="all"></navigationInfo>
 
-            -->
-
-            <x3d id="x3dScene" showStat="false" showLog="false" class="col-lg-12 window">
-                <scene>
-
-                    <directionalLight ambientIntensity='1' direction='50 -50 50' global='false' intensity='1'></directionalLight>
-                    <directionalLight ambientIntensity='1' direction='50 50 50' global='false' intensity='1'></directionalLight>
-                    <navigationInfo id="head" explorationMode="all"></navigationInfo>
-
-                    <Viewpoint id="birg" position="0 50 0" orientation="1 0 0 -1.57" description="camera" set_bind="true"></Viewpoint>
-                    <Viewpoint id="front" position="0 0 40" orientation="0 0 0 0" description="camera" set_bind="false"></Viewpoint>
-                    <Viewpoint id="zoom" position="0.21525 19.16045 11.00406" orientation="-0.92752 -0.35843 -0.10596 1.38588" zNear="0.00537" zFar="53.72820" description="camera" set_bind="false"></Viewpoint>
+                <Viewpoint id="birg" position="0 50 0" orientation="1 0 0 -1.57" description="camera" set_bind="true"></Viewpoint>
+                <Viewpoint id="front" position="0 0 40" orientation="0 0 0 0" description="camera" set_bind="false"></Viewpoint>
+                <Viewpoint id="zoom" position="0.21525 19.16045 11.00406" orientation="-0.92752 -0.35843 -0.10596 1.38588" zNear="0.00537" zFar="53.72820" description="camera" set_bind="false"></Viewpoint>
 
 
-                    <transform translation='-30 0 0' id="trafo">
-                        <group DEF="MODEL_PUCK" metadata='A1'>
-                            <inline url="@routes.Assets.versioned("x3d/nmm_puck.x3d")"> </inline>
-                        </group>
+
+
+
+
+                <transform render="false">
+                    <group DEF="MODEL_BASE">
+                        <inline url="@routes.Assets.versioned("x3d/nmm_only.x3d")"> </inline>
+                    </group>
+
+
+                    <group DEF="MODEL_CONNECTOR">
+                        <inline url="@routes.Assets.versioned("x3d/nmm_steg.x3d")"> </inline>
+                    </group>
+                </transform>
+
+
+
+                @for(modelBase <- JsonParser.modelBaseList) {
+                    <transform translation="@modelBase.translation.x @modelBase.translation.y @modelBase.translation.z">
+                        <group render="true" USE="MODEL_BASE" metadata="@modelBase.id"></group>
                     </transform>
+                }
 
-
-
-                    <transform render="false">
-                        <group DEF="MODEL_BASE">
-                            <inline url="@routes.Assets.versioned("x3d/nmm_only.x3d")"> </inline>
-                        </group>
-
-
-                        <group DEF="MODEL_CONNECTOR">
-                            <inline url="@routes.Assets.versioned("x3d/nmm_steg.x3d")"> </inline>
-                        </group>
+                @for(modelConn <- JsonParser.modelConnList) {
+                    <transform
+                    scale="@modelConn.scale.x @modelConn.scale.y @modelConn.scale.z"
+                    translation="@modelConn.translation.x @modelConn.translation.y @modelConn.translation.z"
+                    rotation="@modelConn.rotation.x @modelConn.rotation.y @modelConn.rotation.z @modelConn.rotation.w">
+                        <group USE="MODEL_CONNECTOR"></group>
                     </transform>
+                }
 
 
 
-                    @for(modelBase <- JsonParser.modelBaseList) {
-                        <transform translation="@modelBase.translation.x @modelBase.translation.y @modelBase.translation.z">
-                            <group render="true" USE="MODEL_BASE" metadata="@modelBase.id"></group>
-                        </transform>
-                    }
-
-                    @for(modelConn <- JsonParser.modelConnList) {
-                        <transform
-                        scale="@modelConn.scale.x @modelConn.scale.y @modelConn.scale.z"
-                        translation="@modelConn.translation.x @modelConn.translation.y @modelConn.translation.z"
-                        rotation="@modelConn.rotation.x @modelConn.rotation.y @modelConn.rotation.z @modelConn.rotation.w"
-                        >
-                            <group USE="MODEL_CONNECTOR"></group>
-                        </transform>
-                    }
-
-
-
-                </scene>
-            </x3d>
-        </div>
+            </scene>
+        </x3d>
     </div>
 }

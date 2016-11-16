@@ -14,6 +14,4 @@ libraryDependencies ++= Seq(
 
 libraryDependencies += "org.webjars" % "bootstrap" % "3.3.4"
 
-//fork in run := true
-
 fork in run := false
