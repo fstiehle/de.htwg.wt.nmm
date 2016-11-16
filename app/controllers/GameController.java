@@ -30,7 +30,7 @@ public class GameController extends Controller {
     }
 
     public Result x3dom() {
-        return ok(x3dScene.render());
+        return ok(board.render());
     }
 
 }

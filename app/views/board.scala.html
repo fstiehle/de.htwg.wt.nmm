@@ -7,7 +7,8 @@
 @* Dynamic Scripts *@
 @scripts = {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type='text/javascript' src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+    <script src='http://www.x3dom.org/x3dom/release/x3dom.js'></script>
+    <script src='@routes.Assets.versioned("scripts/BoardActions.js")'></script>
 }
 
 @*
@@ -20,7 +21,7 @@
     <div class="row">
 
         <div id="status" class="col-lg-12">
-            Statusbar
+            Statusbar!
         </div>
 
     </div>
@@ -41,8 +42,8 @@
                         <Viewpoint id="zoom" position="0.21525 19.16045 11.00406" orientation="-0.92752 -0.35843 -0.10596 1.38588" zNear="0.00537" zFar="53.72820" description="camera" set_bind="false"></Viewpoint>
 
                         <transform render="false">
-                            <group DEF="MODEL_BASE">
-                                <inline url="@routes.Assets.versioned("x3d/nmm_only.x3d")"> </inline>
+                            <group onclick="handleClick(event, this)" >
+                                <inline DEF="MODEL_BASE" nameSpaceName="Puck" url="@routes.Assets.versioned("x3d/nmm_only.x3d")"> </inline>
                             </group>
 
 
@@ -51,11 +52,9 @@
                             </group>
                         </transform>
 
-
-
                         @for(modelBase <- JsonParser.modelBaseList) {
                             <transform translation="@modelBase.translation.x @modelBase.translation.y @modelBase.translation.z">
-                                <group render="true" USE="MODEL_BASE" metadata="@modelBase.id"></group>
+                                <shape id="@modelBase.id" USE="MODEL_BASE" metadata="@modelBase.id"> </shape>
                             </transform>
                         }
 
@@ -64,7 +63,7 @@
                             scale="@modelConn.scale.x @modelConn.scale.y @modelConn.scale.z"
                             translation="@modelConn.translation.x @modelConn.translation.y @modelConn.translation.z"
                             rotation="@modelConn.rotation.x @modelConn.rotation.y @modelConn.rotation.z @modelConn.rotation.w">
-                                <group USE="MODEL_CONNECTOR"></group>
+                                <shape USE="MODEL_CONNECTOR"> </shape>
                             </transform>
                         }
 
