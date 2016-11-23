@@ -2,17 +2,16 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-GET     /                           controllers.GameController.index
+# HOME
+GET     /                           controllers.HomeController.index
 
-GET     /play/:command              controllers.GameController.game(command: String)
+# Hidden TUI game
+GET     /tui/:command              controllers._TuiGameController.index(command: String)
 
 # About and Help Page
 GET     /about                      controllers.AboutController.index
 GET     /help                       controllers.AboutController.help
 
-
-# Test Routes
-GET     /x3dom                      controllers.GameController.x3dom
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

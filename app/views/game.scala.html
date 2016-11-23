@@ -1,13 +1,20 @@
 @* Arguments *@
-@(game: String)
+@()
 
+@* Imports
+@import views.helper.x3dom.JsonParser
+*@
+
+@* Dynamic Scripts *@
+@scripts = {
+}
 
 @*
 * Call Main Template
 * Page Title: Play
 *@
-@main("Play") {
+@main("Play", scripts) {
+    <div id="scene">
 
-    <div>@game</div>
-
+    </div>
 }

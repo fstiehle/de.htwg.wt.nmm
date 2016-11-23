@@ -1,9 +1,7 @@
 package controllers;
 
-import de.htwg.se.nmm.aview.tui.TextUI;
 import play.mvc.*;
-import views.html.*;
-import de.htwg.se.nmm.Game;
+import views.html.game;
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -18,19 +16,7 @@ public class GameController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok(index.render("Hallo!"));
-    }
-
-    public Result game(String command) {
-        TextUI tui = Game.getInstance().getTui();
-        tui.processInputLine(command);
-        return ok(game.render(
-                command +
-                tui.printHTML()));
-    }
-
-    public Result x3dom() {
-        return ok(x3dScene.render());
+        return ok(game.render("Hallo!"));
     }
 
 }
