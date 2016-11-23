@@ -5,8 +5,11 @@
 # HOME
 GET     /                           controllers.HomeController.index
 
+# Game
+GET     /play                       controllers.GameController.index
+
 # Hidden TUI game
-GET     /tui/:command              controllers._TuiGameController.index(command: String)
+GET     /tui/:command               controllers._TuiGameController.index(command: String)
 
 # About and Help Page
 GET     /about                      controllers.AboutController.index

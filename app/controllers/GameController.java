@@ -1,7 +1,8 @@
 package controllers;
 
-import play.mvc.*;
-import views.html.game;
+import play.mvc.Controller;
+import play.mvc.Result;
+import views.html.*;
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -16,7 +17,7 @@ public class GameController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok(game.render("Hallo!"));
+        return ok(game.render("Hallo"));
     }
 
 }
