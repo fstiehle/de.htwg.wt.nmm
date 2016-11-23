@@ -1,8 +1,15 @@
 @* Arguments *@
 @(x : String, y : String)
 
-<div class="connector">
-    @x
-    @y
-</div>
+<script>
+    new mojs.Shape({
+        parent: board,
+        shape: 'rect',
+        radius: 50,
+        radiusY: '2',
+        top: '0',
+        left: '0',
+        isShowStart: true
+    });
 
+</script>

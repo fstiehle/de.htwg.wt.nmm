@@ -1,4 +1,10 @@
+@* Imports *@
+@import views.helper.board.JsonParser
+
 <div id="board">
-    @junction("0", "0", "test")
+    @for(modelJunction <- JsonParser.modelJunctionList) {
+        @junction(modelJunction.translation.x, modelJunction.translation.y, modelJunction.id.toString())
+    }
+
     @connector("0", "0")
 </div>

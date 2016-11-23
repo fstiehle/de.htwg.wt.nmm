@@ -10,17 +10,21 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        @* Static Scripts *@
-        @*<script src="@routes.Assets.at("....")" type="text/javascript"></script>*@
 
-        @* Dynamic Scripts *@
-        @scripts
     </head>
     <body>
+        <script src="//cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+
         @navbar.navbar()
 
         @content
 
         @footer.footer()
+
+        @* Global Scripts *@
+
+
+        @* Dynamic Scripts *@
+        @scripts
     </body>
 </html>
