@@ -25,22 +25,157 @@
     {
       "id": "B2",
       "translation": {
-        "x": 1.5,
-        "y": 1.5
+        "x": 1.16,
+        "y": 1.16
       }
     },
     {
       "id": "D2",
       "translation": {
         "x": 3.5,
-        "y": 1.5
+        "y": 1.16
       }
     },
     {
       "id": "F2",
       "translation": {
-        "x": 5.5,
-        "y": 1.5
+        "x": 5.84,
+        "y": 1.16
+      }
+    },
+
+    {
+      "id": "C3",
+      "translation": {
+        "x": 2.33,
+        "y": 2.33
+      }
+    },
+    {
+      "id": "D3",
+      "translation": {
+        "x": 3.5,
+        "y": 2.33
+      }
+    },
+    {
+      "id": "E3",
+      "translation": {
+        "x": 4.66,
+        "y": 2.33
+      }
+    },
+
+
+    {
+      "id": "A4",
+      "translation": {
+        "x": 0,
+        "y": 3.5
+      }
+    },
+    {
+      "id": "B4",
+      "translation": {
+        "x": 1.16,
+        "y": 3.5
+      }
+    },
+    {
+      "id": "C4",
+      "translation": {
+        "x": 2.33,
+        "y": 3.5
+      }
+    },
+    {
+      "id": "E4",
+      "translation": {
+        "x": 4.66,
+        "y": 3.5
+      }
+    },
+    {
+      "id": "F4",
+      "translation": {
+        "x": 5.84,
+        "y": 3.5
+      }
+    },
+    {
+      "id": "G4",
+      "translation": {
+        "x": 7,
+        "y": 3.5
+      }
+    },
+
+
+    {
+      "id": "C5",
+      "translation": {
+        "x": 2.33,
+        "y": 4.66
+      }
+    },
+    {
+      "id": "D5",
+      "translation": {
+        "x": 3.5,
+        "y": 4.66
+      }
+    },
+    {
+      "id": "E5",
+      "translation": {
+        "x": 4.66,
+        "y": 4.66
+      }
+    },
+
+
+    {
+      "id": "B6",
+      "translation": {
+        "x": 1.16,
+        "y": 5.84
+      }
+    },
+    {
+      "id": "D6",
+      "translation": {
+        "x": 3.5,
+        "y": 5.84
+      }
+    },
+    {
+      "id": "F6",
+      "translation": {
+        "x": 5.84,
+        "y": 5.84
+      }
+    },
+
+
+    {
+      "id": "A7",
+      "translation": {
+        "x": 0,
+        "y": 7
+      }
+    },
+    {
+      "id": "D7",
+      "translation": {
+        "x": 3.5,
+        "y": 7
+      }
+    },
+    {
+      "id": "G7",
+      "translation": {
+        "x": 7,
+        "y": 7
       }
     }
   ]
