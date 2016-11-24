@@ -1,0 +1,18 @@
+@* Arguments *@
+@(x : Float, y : Float, id : String)
+
+<script>
+    var x = (100 / 7) * @x;
+    var y = (100 / 7) * @y;
+
+    var junction_@id = new mojs.Shape({
+        parent: board,
+        shape: 'circle',
+        radius: 25,
+        left: x + "%",
+        top: y + "%",
+        isShowStart: true
+    });
+
+    console.log(x + "%");
+</script>
