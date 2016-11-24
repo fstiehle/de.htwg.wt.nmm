@@ -1,6 +1,11 @@
 @* Imports *@
 @import views.helper.board.JsonParser
 
+<script>
+    Shapes = {};
+</script>
+
+
 <div id="board">
     @for(modelJunction <- JsonParser.modelJunctionList) {
         @junction(modelJunction.translation.x, modelJunction.translation.y, modelJunction.id.toString())
@@ -8,3 +13,5 @@
 
     @connector("0", "0")
 </div>
+
+
