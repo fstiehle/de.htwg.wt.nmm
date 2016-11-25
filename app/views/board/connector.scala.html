@@ -1,14 +1,20 @@
 @* Arguments *@
-@(x : String, y : String)
+@(x : Float, y : Float, length : Int, rotation : Int)
 
 <script>
+    var x = (100 / 7) * @x;
+    var y = (100 / 7) * @y;
+
+    var length = @length * 150;
+
     new mojs.Shape({
         parent: board,
         shape: 'rect',
-        radius: 50,
-        radiusY: '2',
-        top: '0',
-        left: '0',
+        radius: length,
+        radiusY: 6,
+        top: y + "%",
+        left: x + "%",
+        angle: @rotation,
         isShowStart: true
     });
 

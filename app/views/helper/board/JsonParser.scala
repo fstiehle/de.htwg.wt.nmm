@@ -7,7 +7,7 @@ import play.api.libs.json._
 object JsonParser {
   private val JSON_PATH = "app/assets/board/boardDefinition.json"
   private val NODE_MODEL_JUNCTION = "MODEL_JUNCTION"
-  private val NODE_MODEL_CONN = "MODEL_CONNECTOR"
+  private val NODE_MODEL_CONNECTOR = "MODEL_CONNECTOR"
 
   implicit private val quaternionFormat = Json.format[Quaternion]
   implicit private val vectorFormat = Json.format[Position]
@@ -23,8 +23,8 @@ object JsonParser {
   }
 
   private val modelJunction = (json \ NODE_MODEL_JUNCTION).get
-  //private val modelConn = (json \ NODE_MODEL_CONN).get
+  private val modelConnector = (json \ NODE_MODEL_CONNECTOR).get
 
   var modelJunctionList = Json.fromJson[List[ModelJunction]](modelJunction).get
-  //var modelConnList = Json.fromJson[List[ModelConnector]](modelConn).get
+  var modelConnectorList = Json.fromJson[List[ModelConnector]](modelConnector).get
 }

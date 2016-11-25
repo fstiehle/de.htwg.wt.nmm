@@ -13,7 +13,9 @@
         @junction(modelJunction.translation.x, modelJunction.translation.y, modelJunction.id.toString())
     }
 
-    @connector("0", "0")
+    @for(modelConnector <- JsonParser.modelConnectorList) {
+        @connector(modelConnector.translation.x, modelConnector.translation.y, modelConnector.length, modelConnector.rotation)
+    }
 </div>
 
 
