@@ -10,3 +10,4 @@ target
 *.log
 bin/RUNNING_PID
 project/.sbtserver
+.sbtserver
