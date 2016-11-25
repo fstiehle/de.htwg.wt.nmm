@@ -7,7 +7,7 @@
 
     var length = @length * 150;
 
-    new mojs.Shape({
+    var connector = new mojs.Shape({
         parent: board,
         shape: 'rect',
         radius: length,
@@ -18,4 +18,6 @@
         isShowStart: true
     });
 
+    connector.defaultLength = length;
+    Shapes.Connector.push(connector);
 </script>
