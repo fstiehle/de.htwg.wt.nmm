@@ -5,19 +5,17 @@
     var x = (100 / 7) * @x;
     var y = (100 / 7) * @y;
 
-    var length = @length * 150;
-
     var connector = new mojs.Shape({
         parent: board,
         shape: 'rect',
-        radius: length,
-        radiusY: 6,
+        radius: @length * document.getElementById("board").offsetWidth / 6,
+        radiusY: document.getElementById("board").offsetWidth / 90,
         top: y + "%",
         left: x + "%",
         angle: @rotation,
         isShowStart: true
     });
 
-    connector.defaultLength = length;
+    connector.defaultLength = @length;
     Shapes.Connector.push(connector);
 </script>
