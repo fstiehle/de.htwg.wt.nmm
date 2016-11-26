@@ -11,7 +11,7 @@
         Shapes.Connector.forEach(function(connector) {
             connector.tune({
                 radius: connector.defaultLength * boardWidth / 6,
-                radiusY: document.getElementById("board").offsetWidth / 90
+                radiusY: document.getElementById("board").offsetWidth / 100
             })
             .replay();
         });

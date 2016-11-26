@@ -9,9 +9,10 @@
 
     var connector = new mojs.Shape({
         parent: board,
+        className: 'connector',
         shape: 'rect',
         radius: @length * document.getElementById("board").offsetWidth / 6, // 6 = mute
-        radiusY: document.getElementById("board").offsetWidth / 90, // 90 = mute
+        radiusY: document.getElementById("board").offsetWidth / 100, // 90 = mute
         top: y + "%",
         left: x + "%",
         angle: @rotation,

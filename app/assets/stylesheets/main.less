@@ -1,8 +1,8 @@
 @import "lib/bootstrap/less/bootstrap.less";
 
-@brand-primary: #0050ef;
+@brand-primary: #06AED5;
+@color-info: #B3001B;
 @brand-info: @color-info;
-@color-info: #f0a30a;
 @color-font-info: darken(#fff, 2.5%);
 @color-interaction: #fa6800;
 
@@ -10,7 +10,10 @@
 
 @gray: #f5f5f5;
 
-@background-color: #000;
+@background-color: #222;
+@board-color: #273043;
+@junction-color: @brand-primary;
+@connector-color: lighten(@board-color, 10%);;
 @background-font-color: #fff;
 @transition: 0.5s;
 
@@ -116,6 +119,11 @@ footer {
     padding: 60px 0;
 }
 
+#scene {
+    background-color: @board-color;
+    padding: 60px 40px;
+}
+
 #board {
     position: relative;
     width: 100%;
@@ -125,5 +133,20 @@ footer {
 
     @media only screen and (orientation : landscape) {
         height: 90vh; // subtract for additional space
+    }
+}
+
+.junction {
+    z-index: 1;
+
+    ellipse {
+        fill: @junction-color;
+        stroke: @connector-color;
+    }
+}
+
+.connector {
+    rect {
+        fill: @connector-color;
     }
 }
