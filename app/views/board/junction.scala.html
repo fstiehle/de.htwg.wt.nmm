@@ -2,6 +2,8 @@
 @(x : Float, y : Float, id : String)
 
 <script>
+    // Depiction to a 0 - 7 coordinate system
+    // 100 / 7 (Seven board parts)
     var x = (100 / 7) * @x;
     var y = (100 / 7) * @y;
 
@@ -9,7 +11,7 @@
         parent: board,
         className: 'junction',
         shape: 'circle',
-        radius:  document.getElementById("board").offsetWidth / 30,
+        radius:  document.getElementById("board").offsetWidth / 30, // 30 = mute
         left: x + "%",
         top: y + "%",
         isShowStart: true
