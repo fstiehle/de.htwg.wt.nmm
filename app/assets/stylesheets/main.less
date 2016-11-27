@@ -1,16 +1,23 @@
 @import "lib/bootstrap/less/bootstrap.less";
 
-@brand-primary: #06AED5;
-@color-info: #B3001B;
+@brand-primary: #EEC643;
+@color-info: @brand-primary;
 @brand-info: @color-info;
+
+@player-one-color: #861388;
+@player-two-color: #B3001B;
+
 @color-font-info: darken(#fff, 2.5%);
-@color-interaction: #fa6800;
+@color-interaction: @color-info;
+
+@gradient-primary: linear-gradient(to right, @brand-primary 0%, @player-two-color 50%, @player-one-color 100%);
+@gradient-player: linear-gradient(to right, @player-one-color 0%, @player-two-color 100%);
 
 @link-color: @color-interaction;
 
 @gray: #f5f5f5;
 
-@background-color: #222;
+@background-color: #273043;
 @board-color: #273043;
 @junction-color: @brand-primary;
 @connector-color: lighten(@board-color, 10%);;
@@ -27,9 +34,9 @@
 @font-family-sans-serif:  system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          18px;
+@font-size-base:          16px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
-@font-size-small:         ceil((@font-size-base * 0.45)); // ~12px
+@font-size-small:         ceil((@font-size-base * 0.85));
 
 @font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
 @font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
@@ -53,7 +60,7 @@
 
 .window #logo {
     filter: invert(100%);
-    width: 120px;
+    width: 180px;
     margin-bottom: 20px;
 }
 
@@ -69,21 +76,34 @@ a:active {
     color: green;
 }
 
+button {
+    outline: 0 !important;
+}
+
 cite {
     font-style: normal;
 }
 
+h1, h2, h3, h4, h5 {
+    margin-top: 1.0em;
+}
+
 .navbar-inverse {
+    border: none;
     background-color: @background-color;
     margin-bottom: 0;
     color: @background-font-color;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    background: none;
 }
 
 .window {
     text-align: center;
     padding: 60px 0;
     color: @background-font-color;
-    background-color: @background-color;
+    background-image: @gradient-player;
 }
 
 .window a {
@@ -113,26 +133,42 @@ cite {
     color: @color-font-info;
 }
 
-footer {
-    background-color: @background-color;
+#instructions {
+    padding: 50px;
+}
+
+footer,
+#instructions {
+    opacity: 0.95;
     color: @background-font-color;
+}
+
+#footer {
+    display: none;
     padding: 60px 0;
+    background-color: black;
+    opacity: 1;
+}
+
+#show-footer {
+    width: auto;
+    font-size: @font-size-small;
 }
 
 #scene {
     background-color: @board-color;
-    padding: 60px 40px;
+    padding: 40px 20px;
 }
 
 #board {
     position: relative;
     width: 100%;
     height: 100vw;
-    max-width: 90vh;
+    max-width: 80vh;
     margin: auto;
 
     @media only screen and (orientation : landscape) {
-        height: 90vh; // subtract for additional space
+        height: 80vh; // subtract for additional space
     }
 }
 
@@ -149,4 +185,10 @@ footer {
     rect {
         fill: @connector-color;
     }
+}
+
+#status {
+    background-image: @gradient-player;
+    color: @background-font-color;
+    padding: 20px;
 }

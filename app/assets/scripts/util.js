@@ -1,5 +1,7 @@
-
 (function() {
+    /**
+     * Resize Events
+     */
     $(window).resize(function() {
         var boardWidth = document.getElementById("board").offsetWidth;
 
@@ -17,5 +19,19 @@
         });
     });
 
+
+    /**
+     * Event Handler
+     */
+    $("#show-footer").click(function() {
+        var $footer = $("#footer");
+
+        if ($footer.is( ":hidden" ) ) {
+            this.innerHTML = 'Hide';
+        } else {
+            this.innerHTML = "Show Footer";
+        }
+        $footer.slideToggle();
+    });
 
 })();
