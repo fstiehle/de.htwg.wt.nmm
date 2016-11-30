@@ -9,10 +9,14 @@ GET     /                           controllers.HomeController.index
 GET     /play                       controllers.GameController.index
 
 # Json
-POST    /json/:command              controllers.JsonController.index(command: String)
+POST    /json                       controllers.JsonController.set(set)
+POST    /json                       controllers.JsonController.pick(pick)
+POST    /json                       controllers.JsonController.move(move)
 
 # Hidden TUI game
-GET     /tui/:command               controllers._TuiGameController.index(command: String)
+GET     /tui                       controllers._TuiGameController.set(set)
+GET     /tui                       controllers._TuiGameController.pick(pick)
+GET     /tui                       controllers._TuiGameController.move(move)
 
 # About and Help Page
 GET     /about                      controllers.AboutController.index

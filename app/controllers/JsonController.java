@@ -14,13 +14,24 @@ import views.html.tuiGame;
  */
 public class JsonController extends Controller {
 
-    public Result index(String command) {
+    public Result set(String command) {
+        return process("set", command);
+    }
+
+    public Result pick(String command) {
+        return process("pick", command);
+    }
+
+    public Result move(String command) {
+        return process("move", command);
+    }
+
+    private Result process(String command, String query) {
         IGameController gameController = Game.getInstance().getController();
 
         TextUI tui = Game.getInstance().getTui();
-        tui.processInputLine(command);
+        tui.processInputLine(String.format("%s(%s)", command, query).toLowerCase());
 
         return ok(gameController.getJson());
     }
-
 }
