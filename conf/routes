@@ -8,6 +8,9 @@ GET     /                           controllers.HomeController.index
 # Game
 GET     /play                       controllers.GameController.index
 
+# Json
+POST    /json/:command              controllers.JsonController.index(command: String)
+
 # Hidden TUI game
 GET     /tui/:command               controllers._TuiGameController.index(command: String)
 
