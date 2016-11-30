@@ -1,4 +1,13 @@
+state = {};
+
 (function() {
+    /**
+      * State
+      */
+    $(document).ready(function() {
+        requestInitialState();
+    });
+
     /**
      * Resize Events
      */
@@ -19,7 +28,6 @@
         });
     });
 
-
     /**
      * Event Handler
      */
@@ -33,5 +41,30 @@
         }
         $footer.slideToggle();
     });
+
+    /**
+     * Helper
+     */
+     function requestInitialState() {
+          $.ajax({
+              url: "json",
+              success: updateState
+          });
+      }
+
+    function requestState(command, query) {
+         $.ajax({
+             url: "json?" + command + "=" + query,
+             success: updateState
+         });
+    }
+
+    function updateState(result) {
+        state = result;
+    }
+
+    function updateBoard() {
+        
+    }
 
 })();

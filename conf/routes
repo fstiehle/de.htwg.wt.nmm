@@ -13,6 +13,8 @@ POST    /json                       controllers.JsonController.set(set)
 POST    /json                       controllers.JsonController.pick(pick)
 POST    /json                       controllers.JsonController.move(move)
 
+GET    /json                       controllers.JsonController.get
+
 # Hidden TUI game
 GET     /tui                       controllers._TuiGameController.set(set)
 GET     /tui                       controllers._TuiGameController.pick(pick)
