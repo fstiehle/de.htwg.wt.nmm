@@ -61,9 +61,20 @@ state = {};
 
     function updateState(result) {
         state = result;
+        updateBoard();
     }
 
     function updateBoard() {
+
+        for (var key in state.board) {
+            if ($.isEmptyObject(state.board[key])) {
+                continue;
+            }
+            placePuck(Shapes.Junction[key])
+        }
+    }
+
+    function placePuck(junction) {
         
     }
 

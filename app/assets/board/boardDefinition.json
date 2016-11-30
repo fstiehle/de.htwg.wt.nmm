@@ -1,21 +1,21 @@
 {
   "MODEL_JUNCTION": [
     {
-      "id": "A1",
+      "id": "a1",
       "translation": {
         "x": 0,
         "y": 0
       }
     },
     {
-      "id": "D1",
+      "id": "d1",
       "translation": {
         "x": 3.5,
         "y": 0
       }
     },
     {
-      "id": "G1",
+      "id": "g1",
       "translation": {
         "x": 7,
         "y": 0
@@ -23,21 +23,21 @@
     },
 
     {
-      "id": "B2",
+      "id": "b2",
       "translation": {
         "x": 1.16,
         "y": 1.16
       }
     },
     {
-      "id": "D2",
+      "id": "d2",
       "translation": {
         "x": 3.5,
         "y": 1.16
       }
     },
     {
-      "id": "F2",
+      "id": "f2",
       "translation": {
         "x": 5.84,
         "y": 1.16
@@ -45,21 +45,21 @@
     },
 
     {
-      "id": "C3",
+      "id": "c3",
       "translation": {
         "x": 2.33,
         "y": 2.33
       }
     },
     {
-      "id": "D3",
+      "id": "d3",
       "translation": {
         "x": 3.5,
         "y": 2.33
       }
     },
     {
-      "id": "E3",
+      "id": "e3",
       "translation": {
         "x": 4.66,
         "y": 2.33
@@ -68,42 +68,42 @@
 
 
     {
-      "id": "A4",
+      "id": "a4",
       "translation": {
         "x": 0,
         "y": 3.5
       }
     },
     {
-      "id": "B4",
+      "id": "b4",
       "translation": {
         "x": 1.16,
         "y": 3.5
       }
     },
     {
-      "id": "C4",
+      "id": "c4",
       "translation": {
         "x": 2.33,
         "y": 3.5
       }
     },
     {
-      "id": "E4",
+      "id": "e4",
       "translation": {
         "x": 4.66,
         "y": 3.5
       }
     },
     {
-      "id": "F4",
+      "id": "f4",
       "translation": {
         "x": 5.84,
         "y": 3.5
       }
     },
     {
-      "id": "G4",
+      "id": "g4",
       "translation": {
         "x": 7,
         "y": 3.5
@@ -112,21 +112,21 @@
 
 
     {
-      "id": "C5",
+      "id": "c5",
       "translation": {
         "x": 2.33,
         "y": 4.66
       }
     },
     {
-      "id": "D5",
+      "id": "d5",
       "translation": {
         "x": 3.5,
         "y": 4.66
       }
     },
     {
-      "id": "E5",
+      "id": "e5",
       "translation": {
         "x": 4.66,
         "y": 4.66
@@ -135,21 +135,21 @@
 
 
     {
-      "id": "B6",
+      "id": "b6",
       "translation": {
         "x": 1.16,
         "y": 5.84
       }
     },
     {
-      "id": "D6",
+      "id": "d6",
       "translation": {
         "x": 3.5,
         "y": 5.84
       }
     },
     {
-      "id": "F6",
+      "id": "f6",
       "translation": {
         "x": 5.84,
         "y": 5.84
@@ -158,21 +158,21 @@
 
 
     {
-      "id": "A7",
+      "id": "a7",
       "translation": {
         "x": 0,
         "y": 7
       }
     },
     {
-      "id": "D7",
+      "id": "d7",
       "translation": {
         "x": 3.5,
         "y": 7
       }
     },
     {
-      "id": "G7",
+      "id": "g7",
       "translation": {
         "x": 7,
         "y": 7
