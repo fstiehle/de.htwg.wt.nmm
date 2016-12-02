@@ -21,8 +21,8 @@ public class _TuiGameController extends Controller {
         return process("pick", command);
     }
 
-    public Result move(String command) {
-        return process("move", command);
+    public Result move(String command1, String command2) {
+        return process("move", String.format("%s,%s", command1, command2));
     }
 
     public Result get() {
