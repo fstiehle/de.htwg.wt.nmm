@@ -232,25 +232,24 @@ footer,
     background-image: @gradient-player;
 }
 
-#player-white-state {
+#player-white-state,
+#player-black-state {
     position: absolute;
+    overflow: hidden;
     height: 100%;
     top: 0;
-    left: 0;
     width: 50%;
-    background-color: @player-white-color;
     transition: width 2s;
     z-index: 1;
 }
 
+#player-white-state {
+    left: 0;
+    background-color: @player-white-color;
+}
+
 #player-black-state {
-    position: absolute;
-    height: 100%;
-    top: 0;
     right: 0;
     text-align: right;
-    width: 50%;
     background-color: @player-black-color;
-    transition: width 2s;
-    z-index: 1;
 }
