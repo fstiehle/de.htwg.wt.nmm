@@ -102,14 +102,19 @@ mouseQueue = [];
 
 
     function updateStatusBar() {
-        $("player-one-status").innerHTML = state.white.name;
-        $("player-one-status").innerHTML = state.black.name;
+        var $white = $("#player-white-state");
+        var $black = $("#player-black-state");
+        $white.find("i").html(state.white.name);
+        $black.find("i").html(state.black.name);
 
         var whiteProgress = ((state.black.numPucksTakenAway - state.white.numPucksTakenAway) * 10) / 2 + 50;
         var blackProgress = 100 - whiteProgress;
 
-        $("#player-white-state").css("width", whiteProgress + "%");
-        $("#player-black-state").css("width", blackProgress + "%");
+        $white.css("width", whiteProgress + "%");
+        $black.css("width", blackProgress + "%");
+
+        console.log($white);
+
     }
 
     function updateBoard() {
