@@ -172,15 +172,18 @@ footer,
     }
 }
 
-.junction,
-.junction-white,
-.junction-black {
+.junction {
     z-index: 1;
 
     ellipse {
         fill: @junction-color;
         stroke: @connector-color;
     }
+}
+
+.junction-white,
+.junction-black {
+    z-index: 2;
 }
 
 .junction-white {

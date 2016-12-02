@@ -27,9 +27,7 @@ public class _TuiGameController extends Controller {
     private Result process(String command, String query) {
         TextUI tui = Game.getInstance().getTui();
         tui.processInputLine(String.format("%s(%s)", command, query).toLowerCase());
-        return ok(tuiGame.render(
-                command +
-                        tui.printHTML()));
+        return ok(tuiGame.render(tui.printHTML()));
     }
 
 }

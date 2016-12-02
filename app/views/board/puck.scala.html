@@ -7,21 +7,14 @@
     var x = (100 / 7) * @x;
     var y = (100 / 7) * @y;
 
-    Shapes.Junction.@id = new mojs.Shape({
+    Shapes.Puck.@id = new mojs.Shape({
         parent: board,
-        className: 'junction',
         shape: 'circle',
         strokeWidth:  4,
         radius:  document.getElementById("board").offsetWidth / 30, // 30 = mute
         left: x + "%",
         top: y + "%",
-        isShowStart: true
+        isShowStart: false
     });
 
-    Shapes.Junction.@{id}.el.id = "@id";
-    Shapes.Junction.@{id}.left = x + "%";
-    Shapes.Junction.@{id}.top = y + "%";
-
 </script>
-
-@puck(x, y , id)

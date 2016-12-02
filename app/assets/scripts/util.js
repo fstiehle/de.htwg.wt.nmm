@@ -14,8 +14,13 @@ state = {};
     $(window).resize(function() {
         var boardWidth = document.getElementById("board").offsetWidth;
 
-        for (var key in Shapes.Junction) {
-            Shapes.Junction[key].tune({ radius: boardWidth / 30 })
+        for (var keyJ in Shapes.Junction) {
+            Shapes.Junction[keyJ].tune({ radius: boardWidth / 30 })
+            .replay();
+        }
+
+        for (var keyP in Shapes.Puck) {
+            Shapes.Puck[keyP].tune({ radius: boardWidth / 30 })
             .replay();
         }
 
@@ -42,6 +47,10 @@ state = {};
         $footer.slideToggle();
     });
 
+    $(".junction").click(function() {
+        requestCommand("set", this.id);
+    });
+
     /**
      * View
      */
@@ -53,10 +62,19 @@ state = {};
      }
 
     function requestCommand(command, query) {
-         $.ajax({
-             url: "json?" + command + "=" + query,
-             success: updateState
-         });
+        var data = { command: command, query: query};
+
+        $.ajax({
+            url: 'json',
+            type: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            async: true,
+            success: function(data) {
+                updateState(data);
+            }
+        });
     }
 
     function updateState(result) {
@@ -74,17 +92,7 @@ state = {};
     }
 
     function placePuck(junction, man) {
-        var el = $(junction.el).clone();
-        el.attr('class', 'junction-' + man.toLowerCase());
-        $(el).appendTo("#board");
 
-        var html = new mojs.Html({
-          // selector for HTMLElement
-          el: el[0],
-          className: "junction-" + man,
-        });
-
-        // TODO: Click event for MOVE and PICK
     }
 
     /**
