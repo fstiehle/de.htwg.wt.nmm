@@ -172,13 +172,29 @@ footer,
     }
 }
 
-.junction {
+.junction,
+.junction-white,
+.junction-black {
     z-index: 1;
 
     ellipse {
         fill: @junction-color;
         stroke: @connector-color;
     }
+}
+
+.junction-white {
+     ellipse {
+        fill: @player-one-color;
+        stroke: @connector-color;
+     }
+}
+
+.junction-black {
+     ellipse {
+        fill: @player-two-color;
+        stroke: @connector-color;
+     }
 }
 
 .connector {

@@ -5,7 +5,7 @@ state = {};
       * State
       */
     $(document).ready(function() {
-        requestInitialState();
+        requestState();
     });
 
     /**
@@ -43,16 +43,16 @@ state = {};
     });
 
     /**
-     * Helper
+     * View
      */
-     function requestInitialState() {
+     function requestState() {
           $.ajax({
               url: "json",
               success: updateState
           });
-      }
+     }
 
-    function requestState(command, query) {
+    function requestCommand(command, query) {
          $.ajax({
              url: "json?" + command + "=" + query,
              success: updateState
@@ -65,17 +65,30 @@ state = {};
     }
 
     function updateBoard() {
-
         for (var key in state.board) {
             if ($.isEmptyObject(state.board[key])) {
                 continue;
             }
-            placePuck(Shapes.Junction[key])
+            placePuck(Shapes.Junction[key], state.board[key].man);
         }
     }
 
-    function placePuck(junction) {
-        
+    function placePuck(junction, man) {
+        var el = $(junction.el).clone();
+        el.attr('class', 'junction-' + man.toLowerCase());
+        $(el).appendTo("#board");
+
+        var html = new mojs.Html({
+          // selector for HTMLElement
+          el: el[0],
+          className: "junction-" + man,
+        });
+
+        // TODO: Click event for MOVE and PICK
     }
+
+    /**
+     * Helper
+     */
 
 })();
