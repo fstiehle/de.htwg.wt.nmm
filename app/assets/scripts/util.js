@@ -42,7 +42,7 @@ state = {};
     $("#show-footer").click(function() {
         var $footer = $("#footer");
 
-        if ($footer.is( ":hidden" ) ) {
+        if ($footer.is(":hidden")) {
             this.innerHTML = 'Hide';
         } else {
             this.innerHTML = "Show Footer";
@@ -51,7 +51,11 @@ state = {};
     });
 
     $(".junction").click(function() {
-        requestCommand("set", this.id);
+        requestCommand(state.currentPlayer.currentState.toLowerCase(), this.dataset.id);
+    });
+
+    $(".puck").click(function() {
+        requestCommand(state.currentPlayer.currentState.toLowerCase(), this.dataset.id);
     });
 
     /**
@@ -88,6 +92,7 @@ state = {};
     function updateBoard() {
         for (var key in state.board) {
             if ($.isEmptyObject(state.board[key])) {
+                deactivatePuck(key);
                 continue;
             }
             activatePuck(key, state.board[key].man);
@@ -95,8 +100,12 @@ state = {};
     }
 
     function activatePuck(key, man) {
-        $(Shapes.Puck[key].el).attr("class", "junction-" + man.toLowerCase());
+        $(Shapes.Puck[key].el).attr("class", "puck " + man.toLowerCase() + "-man");
         Shapes.Puck[key].play();
+    }
+
+    function deactivatePuck(key) {
+        Shapes.Puck[key].el.hidden = true;
     }
 
     /**

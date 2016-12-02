@@ -11,6 +11,7 @@ import views.html.tuiGame;
  * to the application's home page.
  */
 public class _TuiGameController extends Controller {
+    private TextUI tui = Game.getInstance().getTui();
 
     public Result set(String command) {
         return process("set", command);
@@ -24,8 +25,11 @@ public class _TuiGameController extends Controller {
         return process("move", command);
     }
 
+    public Result get() {
+        return ok(tuiGame.render(tui.printHTML()));
+    }
+
     private Result process(String command, String query) {
-        TextUI tui = Game.getInstance().getTui();
         tui.processInputLine(String.format("%s(%s)", command, query).toLowerCase());
         return ok(tuiGame.render(tui.printHTML()));
     }

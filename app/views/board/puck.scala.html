@@ -8,6 +8,7 @@
     var y = (100 / 7) * @y;
 
     Shapes.Puck.@id = new mojs.Shape({
+        className: 'puck',
         parent: board,
         shape: 'circle',
         strokeWidth:  4,
@@ -16,5 +17,7 @@
         top: y + "%",
         isShowStart: false
     });
+
+    Shapes.Puck.@{id}.el.dataset.id = "@id";
 
 </script>

@@ -13,9 +13,11 @@ GET     /json                       controllers.JsonController.get
 POST    /json                       controllers.JsonController.process
 
 # Hidden TUI game
-GET     /tui                       controllers._TuiGameController.set(set)
-GET     /tui                       controllers._TuiGameController.pick(pick)
-GET     /tui                       controllers._TuiGameController.move(move)
+GET     /tui                        controllers._TuiGameController.get
+
+GET     /tui/set/:query             controllers._TuiGameController.pick(query: String)
+GET     /tui/pick/:query            controllers._TuiGameController.set(query: String)
+GET     /tui/move/:query            controllers._TuiGameController.move(query: String)
 
 # About and Help Page
 GET     /about                      controllers.AboutController.index
