@@ -17,6 +17,9 @@ state = {};
         for (var keyJ in Shapes.Junction) {
             Shapes.Junction[keyJ].tune({ radius: boardWidth / 30 })
             .replay();
+
+            Shapes.Puck[keyJ].tune({ radius: boardWidth / 30 })
+            .replay();
         }
 
         for (var keyP in Shapes.Puck) {
@@ -87,12 +90,13 @@ state = {};
             if ($.isEmptyObject(state.board[key])) {
                 continue;
             }
-            placePuck(Shapes.Junction[key], state.board[key].man);
+            activatePuck(key, state.board[key].man);
         }
     }
 
-    function placePuck(junction, man) {
-
+    function activatePuck(key, man) {
+        $(Shapes.Puck[key].el).attr("class", "junction-" + man.toLowerCase());
+        Shapes.Puck[key].play();
     }
 
     /**
