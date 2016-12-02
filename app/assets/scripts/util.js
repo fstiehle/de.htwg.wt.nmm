@@ -112,9 +112,6 @@ mouseQueue = [];
 
         $white.css("width", whiteProgress + "%");
         $black.css("width", blackProgress + "%");
-
-        console.log($white);
-
     }
 
     function updateBoard() {
