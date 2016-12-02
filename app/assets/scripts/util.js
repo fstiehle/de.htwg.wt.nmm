@@ -1,4 +1,5 @@
 state = {};
+mouseQueue = [];
 
 (function() {
     /**
@@ -14,18 +15,22 @@ state = {};
     $(window).resize(function() {
         var boardWidth = document.getElementById("board").offsetWidth;
 
-        for (var keyJ in Shapes.Junction) {
-            Shapes.Junction[keyJ].tune({ radius: boardWidth / 30 })
-            .replay();
+        (function() {
+            for (var key in Shapes.Junction) {
+                Shapes.Junction[key].tune({ radius: boardWidth / 30 })
+                .replay();
 
-            Shapes.Puck[keyJ].tune({ radius: boardWidth / 30 })
-            .replay();
-        }
+                Shapes.Puck[key].tune({ radius: boardWidth / 30 })
+                .replay();
+            }
+        })();
 
-        for (var keyP in Shapes.Puck) {
-            Shapes.Puck[keyP].tune({ radius: boardWidth / 30 })
-            .replay();
-        }
+        (function() {
+            for (var key in Shapes.Puck) {
+                Shapes.Puck[key].tune({ radius: boardWidth / 30 })
+                .replay();
+            }
+        })();
 
         Shapes.Connector.forEach(function(connector) {
             connector.tune({
@@ -51,10 +56,22 @@ state = {};
     });
 
     $(".junction").click(function() {
+        if (state.currentPlayer.currentState == "MOVE") {
+            if (mouseQueue.length > 0) {
+                movePuck(mouseQueue.pop(), this);
+            }
+            return;
+        }
         requestCommand(state.currentPlayer.currentState.toLowerCase(), this.dataset.id);
     });
 
     $(".puck").click(function() {
+        if (state.currentPlayer.currentState == "MOVE") {
+            if (mouseQueue.length === 0) {
+                mouseQueue.push(this);
+            }
+            return;
+        }
         requestCommand(state.currentPlayer.currentState.toLowerCase(), this.dataset.id);
     });
 
@@ -105,7 +122,11 @@ state = {};
     }
 
     function deactivatePuck(key) {
-        Shapes.Puck[key].el.hidden = true;
+        $(Shapes.Puck[key].el).attr("class", "puck hidden");
+    }
+
+    function movePuck(first, second) {
+        requestCommand(state.currentPlayer.currentState.toLowerCase(), first.dataset.id + second.dataset.id);
     }
 
     /**
