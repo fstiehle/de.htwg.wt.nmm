@@ -20,14 +20,7 @@ mouseQueue = [];
                 Shapes.Junction[key].tune({ radius: boardWidth / 30 })
                 .replay();
 
-                Shapes.Puck[key].tune({ radius: boardWidth / 30 })
-                .replay();
-            }
-        })();
-
-        (function() {
-            for (var key in Shapes.Puck) {
-                Shapes.Puck[key].tune({ radius: boardWidth / 30 })
+                Shapes.Puck[key].tune({ radius: boardWidth / 25 })
                 .replay();
             }
         })();
@@ -104,6 +97,19 @@ mouseQueue = [];
     function updateState(result) {
         state = result;
         updateBoard();
+        updateStatusBar();
+    }
+
+
+    function updateStatusBar() {
+        $("player-one-status").innerHTML = state.white.name;
+        $("player-one-status").innerHTML = state.black.name;
+
+        var whiteProgress = ((state.black.numPucksTakenAway - state.white.numPucksTakenAway) * 10) / 2 + 50;
+        var blackProgress = 100 - whiteProgress;
+
+        $("#player-white-state").css("width", whiteProgress + "%");
+        $("#player-black-state").css("width", blackProgress + "%");
     }
 
     function updateBoard() {

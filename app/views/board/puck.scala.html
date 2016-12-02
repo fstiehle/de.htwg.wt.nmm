@@ -10,9 +10,10 @@
     Shapes.Puck.@id = new mojs.Shape({
         className: 'puck',
         parent: board,
-        shape: 'circle',
-        strokeWidth:  4,
-        radius:  document.getElementById("board").offsetWidth / 30, // 30 = mute
+        shape: 'polygon',
+        points: 6,
+        strokeWidth: 3,
+        radius:  document.getElementById("board").offsetWidth / 25, // 30 = mute
         left: x + "%",
         top: y + "%",
         isShowStart: false
