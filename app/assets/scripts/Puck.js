@@ -26,6 +26,7 @@ Game.Puck = function (x, y, id) {
 
     this.mojs = this.generateMojs();
     this.mojs.el.dataset.id = id;
+    $(this.mojs.el).click(this.clickEvent);
 };
 
 $.extend(Game.Puck.prototype, Game.Junction.prototype);
@@ -44,4 +45,18 @@ Game.Puck.prototype.activate = function (man) {
  */
 Game.Puck.prototype.deactivate = function () {
     $(this.mojs.el).attr("class", this.CLASS_NAME);
+};
+
+/**
+ * Puck Event Handler
+ */
+Game.Puck.prototype.clickEvent = function () {
+    var data = Game.State.data;
+    if (data.currentPlayer.currentState == "MOVE") {
+        if (mouseQueue.length === 0) {
+            mouseQueue.push(this);
+        }
+        return;
+    }
+    Game.State.requestCommand(data.currentPlayer.currentState.toLowerCase(), this.dataset.id);
 };
