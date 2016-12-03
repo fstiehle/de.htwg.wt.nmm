@@ -199,21 +199,22 @@ footer,
     display: none;
 }
 
-.white-man {
+.puck.white {
      path {
         fill: @player-white-color;
         stroke: white;
      }
 }
 
-.black-man {
+.puck.black {
      path{
         fill: @player-black-color;
-        stroke: white;
+        stroke: black;
      }
 }
 
 .connector {
+    overflow: auto;
     rect {
         fill: @connector-color;
     }

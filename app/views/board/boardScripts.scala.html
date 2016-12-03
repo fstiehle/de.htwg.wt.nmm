@@ -1,0 +1,29 @@
+@* Imports *@
+@import views.helper.board.JsonParser
+
+<script>
+  @for(modelJunction <- JsonParser.modelJunctionList) {
+
+      Shapes.Junction.@{modelJunction.id.toString()} = new Game.Junction(
+          @{modelJunction.translation.x},
+          @{modelJunction.translation.y},
+          "@{modelJunction.id.toString()}"
+      );
+
+      Shapes.Puck.@{modelJunction.id.toString()} = new Game.Puck(
+          @{modelJunction.translation.x},
+          @{modelJunction.translation.y},
+          "@{modelJunction.id.toString()}"
+      );
+
+  }
+
+  @for(modelConnector <- JsonParser.modelConnectorList) {
+      Shapes.Connector.push(new Game.Connector(
+          @{modelConnector.translation.x},
+          @{modelConnector.translation.y},
+          @{modelConnector.length},
+          @{modelConnector.rotation}
+      ));
+  }
+</script>
