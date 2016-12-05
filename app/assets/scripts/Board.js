@@ -147,8 +147,8 @@ $(document).ready(function() {
      * msg Event Handler
      */
     $("#show-msg").click(function() {
-        var $footer = $("#msg");
-        $footer.slideToggle();
+        var $msg = $("#msg");
+        $msg.slideToggle();
     });
 
 });

@@ -59,7 +59,7 @@ Game.Puck.prototype.clickEvent = function () {
     if (playerState !== "PICK" && !$(this).hasClass(data.currentPlayer.man.toLowerCase())) {
         return;
     }
-    if ((playerState === "MOVE") && Game.mouseQueue.length === 0) {
+    if (playerState === "MOVE" && Game.mouseQueue.length === 0) {
         Game.mouseQueue.push(this);
         $(this).addClass("selected");
         return;

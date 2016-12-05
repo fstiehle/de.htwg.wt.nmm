@@ -82,7 +82,7 @@ Game.Junction.prototype.clickEvent = function () {
     var data = Game.State.data,
         playerState = data.currentPlayer.currentState === "HOP" ? "MOVE": data.currentPlayer.currentState;
 
-    if ((playerState === "MOVE" || playerState === "HOP") && Game.mouseQueue.length > 0) {
+    if (playerState === "MOVE" && Game.mouseQueue.length > 0) {
         Game.State.requestCommand(playerState.toLowerCase(),
             [Game.mouseQueue.pop().dataset.id, this.dataset.id]);
         return;
