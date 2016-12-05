@@ -82,9 +82,11 @@ Game.Junction.prototype.clickEvent = function () {
     var data = Game.State.data;
     if (data.currentPlayer.currentState == "MOVE") {
         if (Game.mouseQueue.length > 0) {
-            movePuck(Game.mouseQueue.pop(), this);
+            //TODO
+            Game.State.requestCommand(data.currentPlayer.currentState.toLowerCase(), [Game.mouseQueue.pop().dataset.id, this.dataset.id]);
+            //movePuck(Game.mouseQueue.pop(), this);
         }
         return;
     }
-    Game.State.requestCommand(data.currentPlayer.currentState.toLowerCase(), this.dataset.id);
+    Game.State.requestCommand(data.currentPlayer.currentState.toLowerCase(), [this.dataset.id]);
 };

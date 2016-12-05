@@ -58,5 +58,5 @@ Game.Puck.prototype.clickEvent = function () {
         }
         return;
     }
-    Game.State.requestCommand(data.currentPlayer.currentState.toLowerCase(), this.dataset.id);
+    Game.State.requestCommand(data.currentPlayer.currentState.toLowerCase(), [this.dataset.id]);
 };

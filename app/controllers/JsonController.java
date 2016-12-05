@@ -1,8 +1,10 @@
 package controllers;
 
-
+import java.util.*;
 import de.htwg.se.nmm.Game;
 import de.htwg.se.nmm.controller.IGameController;
+import de.htwg.se.nmm.model.IJunction;
+import de.htwg.se.nmm.model.IPuck;
 import de.htwg.se.nmm.aview.tui.TextUI;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -13,6 +15,7 @@ import views.html.tuiGame;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 /**
@@ -32,18 +35,42 @@ public class JsonController extends Controller {
     public Result process() {
         JsonNode json = request().body().asJson();
 
-        String command = json.findPath("command").textValue();
-        String query = json.findPath("query").textValue();
+        String command = null;
+        JsonNode queryNode = null;
+        List<String> queryList = null;
+
+        // convert command to String
+        command = json.findPath("command").textValue();
         if(command == null) {
-            return badRequest("Missing parameter [command]");
-        } else if (query == null) {
-            return badRequest("Missing parameter [query]");
+            return badRequest("Bad parameter [command]");
         }
 
-        // TODO: Parse Json to valid values
+        // convert query to ArrayList
+        try {
+            queryNode = json.findPath("query");
+            queryList = new ObjectMapper().convertValue(queryNode, ArrayList.class);
+        } catch (Exception e) {
+            return badRequest("Bad parameter [query]");
+        }
 
-        TextUI tui = Game.getInstance().getTui();
-        tui.processInputLine(String.format("%s(%s)", command, query).toLowerCase());
+        switch (command) {
+            case "set":
+                IPuck p = gameController.getInjector().getInstance(IPuck.class);
+                p.setPlayer(gameController.getCurrentIPlayer());
+                gameController.setPuck(queryList.get(0), p);
+                break;
+            case "pick":
+                gameController.pickPuck(queryList.get(0));
+                break;
+            case "move":
+                gameController.movePuck(queryList.get(0), queryList.get(1));
+                break;
+            default:
+                return badRequest("Bad parameter [command]");
+        }
+        gameController.update();
+
+
 
         Result jsonResult = ok(gameController.getJson()).as("application/json");
         return jsonResult;
