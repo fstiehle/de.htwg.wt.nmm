@@ -1,22 +1,3 @@
-@* Imports *@
-@import views.helper.board.JsonParser
-
-<script>
-    Shapes = {};
-    Shapes.Junction = {};
-    Shapes.Connector = [];
-    Shapes.Puck = {};
-</script>
-
-
 <div id="board">
-    @for(modelJunction <- JsonParser.modelJunctionList) {
-        @junction(modelJunction.translation.x, modelJunction.translation.y, modelJunction.id.toString())
-    }
 
-    @for(modelConnector <- JsonParser.modelConnectorList) {
-        @connector(modelConnector.translation.x, modelConnector.translation.y, modelConnector.length, modelConnector.rotation)
-    }
 </div>
-
-
