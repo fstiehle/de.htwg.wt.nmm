@@ -79,14 +79,17 @@ Game.Junction.prototype.rescale = function () {
  * Junction Event Handler
  */
 Game.Junction.prototype.clickEvent = function () {
-    var data = Game.State.data;
-    if (data.currentPlayer.currentState == "MOVE") {
-        if (Game.mouseQueue.length > 0) {
-            //TODO
-            Game.State.requestCommand(data.currentPlayer.currentState.toLowerCase(), [Game.mouseQueue.pop().dataset.id, this.dataset.id]);
-            //movePuck(Game.mouseQueue.pop(), this);
-        }
+    var data = Game.State.data,
+        playerState = data.currentPlayer.currentState;
+
+    if (playerState == "MOVE" && Game.mouseQueue.length > 0) {
+        Game.State.requestCommand(playerState.toLowerCase(),
+            [Game.mouseQueue.pop().dataset.id, this.dataset.id]);
+        return;
+
+    } else if (playerState == "PICK") {
         return;
     }
-    Game.State.requestCommand(data.currentPlayer.currentState.toLowerCase(), [this.dataset.id]);
+
+    Game.State.requestCommand(playerState.toLowerCase(), [this.dataset.id]);
 };

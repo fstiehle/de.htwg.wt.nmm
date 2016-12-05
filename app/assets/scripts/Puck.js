@@ -51,12 +51,12 @@ Game.Puck.prototype.deactivate = function () {
  * Puck Event Handler
  */
 Game.Puck.prototype.clickEvent = function () {
-    var data = Game.State.data;
-    if (data.currentPlayer.currentState == "MOVE") {
-        if (mouseQueue.length === 0) {
-            mouseQueue.push(this);
-        }
+    var data = Game.State.data,
+        playerState = data.currentPlayer.currentState;
+
+    if (playerState == "MOVE" && Game.mouseQueue.length === 0) {
+        Game.mouseQueue.push(this);
         return;
     }
-    Game.State.requestCommand(data.currentPlayer.currentState.toLowerCase(), [this.dataset.id]);
+    Game.State.requestCommand(playerState.toLowerCase(), [this.dataset.id]);
 };

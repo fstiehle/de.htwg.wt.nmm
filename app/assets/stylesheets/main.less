@@ -193,6 +193,7 @@ footer,
 
 .puck {
     z-index: 2;
+    overflow: visible;
 }
 
 .hidden {
@@ -234,8 +235,8 @@ footer,
     background-image: @gradient-player;
 }
 
-#player-white-state,
-#player-black-state {
+#player-white,
+#player-black {
     position: absolute;
     overflow: hidden;
     height: 100%;
@@ -245,12 +246,22 @@ footer,
     z-index: 1;
 }
 
-#player-white-state {
+.current-player {
+    border-bottom: solid 2px @color-interaction;
+    color: @color-interaction;
+    ransition : border 500ms ease-out;
+}
+
+.current-puck {
+
+}
+
+#player-white {
     left: 0;
     background-color: @player-white-color;
 }
 
-#player-black-state {
+#player-black {
     right: 0;
     text-align: right;
     background-color: @player-black-color;

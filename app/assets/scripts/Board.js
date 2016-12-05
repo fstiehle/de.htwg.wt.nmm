@@ -55,6 +55,7 @@ Game.State.prototype.update = function (result) {
     this.data = result;
     Game.Board.update();
     Game.Board.updateStatusBar();
+    Game.Board.highlightCurrentPlayer();
 };
 
 /**
@@ -75,8 +76,8 @@ Game.Board  = {
     updateStatusBar: function () {
         var blackState = Game.State.data.black,
             whiteState = Game.State.data.white,
-            $white = $("#player-white-state"),
-            $black = $("#player-black-state");
+            $white = $("#player-white"),
+            $black = $("#player-black");
 
         $white.find("i").html(whiteState.name);
         $black.find("i").html(blackState.name);
@@ -86,7 +87,14 @@ Game.Board  = {
 
         $white.css("width", whiteProgress + "%");
         $black.css("width", blackProgress + "%");
+    },
+
+    highlightCurrentPlayer: function() {
+        $(".current-player").removeClass("current-player", "current-puck");
+        $("#player-" + Game.State.data.currentPlayer.man.toLowerCase()).addClass("current-player");
+        $(".puck." + Game.State.data.currentPlayer.man.toLowerCase()).addClass("current-puck");
     }
+
 };
 
 /**
@@ -94,7 +102,6 @@ Game.Board  = {
  */
 
 $(document).ready(function() {
-
     Game.State = new Game.State();
 
     /**
