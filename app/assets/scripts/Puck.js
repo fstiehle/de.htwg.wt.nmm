@@ -49,13 +49,19 @@ Game.Puck.prototype.deactivate = function () {
 
 /**
  * Puck Event Handler
+ * !!@this is here the clicked element!!
  */
 Game.Puck.prototype.clickEvent = function () {
     var data = Game.State.data,
         playerState = data.currentPlayer.currentState;
 
+    // prevent player from selection opponents puck
+    if (playerState !== "PICK" && !$(this).hasClass(data.currentPlayer.man.toLowerCase())) {
+        return;
+    }
     if (playerState == "MOVE" && Game.mouseQueue.length === 0) {
         Game.mouseQueue.push(this);
+        $(this).addClass("selected");
         return;
     }
     Game.State.requestCommand(playerState.toLowerCase(), [this.dataset.id]);

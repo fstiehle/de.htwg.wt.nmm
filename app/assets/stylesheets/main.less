@@ -175,6 +175,10 @@ footer,
     @media only screen and (orientation : landscape) {
         height: 80vh; // subtract for additional space
     }
+
+    svg {
+        overflow: visible;
+    }
 }
 
 .puck,
@@ -194,6 +198,12 @@ footer,
 .puck {
     z-index: 2;
     overflow: visible;
+}
+
+.puck.selected {
+    path {
+        stroke: @color-interaction !important;
+    }
 }
 
 .hidden {
@@ -235,6 +245,14 @@ footer,
     background-image: @gradient-player;
 }
 
+#show-msg {
+    position: fixed;
+    font-size: @font-size-h3;
+    right: 5px;
+    bottom: 5px;
+    width: auto;
+}
+
 #player-white,
 #player-black {
     position: absolute;
@@ -249,7 +267,6 @@ footer,
 .current-player {
     border-bottom: solid 2px @color-interaction;
     color: @color-interaction;
-    ransition : border 500ms ease-out;
 }
 
 .current-puck {
@@ -265,4 +282,15 @@ footer,
     right: 0;
     text-align: right;
     background-color: @player-black-color;
+}
+
+#overlay-message {
+    width: 100%;
+    opacity: 0.8;
+    background-color: black;
+    z-index: 4;
+    font-size: @font-size-h1;
+    color: white;
+    position: absolute;
+    text-align: center;
 }

@@ -48,7 +48,7 @@ Game.Connector.prototype.generateMojs = function () {
 
         angle: this.rotation,
         radiusY: this.calculateScale(),
-        isShowStart:  true
+        isShowStart: true
     });
 };
 
@@ -66,4 +66,8 @@ Game.Connector.prototype.rescale = function () {
         radiusY: this.calculateScale()
     })
     .replay();
+};
+
+Game.Connector.prototype.clickEvent = function () {
+    return;
 };

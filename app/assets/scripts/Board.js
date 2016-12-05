@@ -119,6 +119,17 @@ $(document).ready(function() {
     });
 
     /**
+     * Reset Selection
+     */
+    $(document).mouseup(function (e) {
+        if ($(e.target).is("path") || $(e.target).is("ellipse")) {
+            return;
+        }
+        Game.mouseQueue = [];
+        $(".selected").removeClass("selected");
+    });
+
+    /**
      * Footer Event Handler
      */
     $("#show-footer").click(function() {
@@ -129,6 +140,14 @@ $(document).ready(function() {
         } else {
             this.innerHTML = "Show Footer";
         }
+        $footer.slideToggle();
+    });
+
+    /**
+     * msg Event Handler
+     */
+    $("#show-msg").click(function() {
+        var $footer = $("#msg");
         $footer.slideToggle();
     });
 
