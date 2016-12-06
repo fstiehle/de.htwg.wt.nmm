@@ -177,6 +177,7 @@ $(document).ready(function() {
     $("#status i").dblclick(function(e) {
         $(e.target).hide();
         $(e.target).next("input")
+                   .on("focusout", function(e) {Game.Board.changePlayerName(e.target);})    // turn focus event ON
                    .val($(e.target).text())
                    .show()
                    .select();
@@ -190,6 +191,7 @@ $(document).ready(function() {
             Game.Board.changePlayerName(e.target);
         }
         if (e.keyCode === 27) {     // esc
+            $(e.target).off("focusout");        // turn focus event OFF
             $(e.target).hide();
             $(e.target).prev().show();
         }
