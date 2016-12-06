@@ -71,6 +71,7 @@ GET         /tui                                        controllers._TuiGameCont
 GET         /tui/set/:location                          controllers._TuiGameController.set(location: String)
 GET         /tui/pick/:location                         controllers._TuiGameController.pick(location: String)
 GET         /tui/move/:fromLocation/:toLocation         controllers._TuiGameController.move(fromLocation: String, toLocation: String)
+GET         /tui/reset                                  controllers._TuiGameController.reset
 
 
 
