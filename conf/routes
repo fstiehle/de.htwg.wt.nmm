@@ -5,12 +5,17 @@
 # HOME
 GET     /                           controllers.HomeController.index
 
+
 # Game
 GET     /play                       controllers.GameController.index
+
 
 # Json
 GET     /json                       controllers.JsonController.get
 POST    /json                       controllers.JsonController.process
+
+POST    /json/setplayername         controllers.JsonController.changePlayerName
+
 
 # Hidden TUI game
 GET     /tui                                        controllers._TuiGameController.get
@@ -18,6 +23,7 @@ GET     /tui                                        controllers._TuiGameControll
 GET     /tui/set/:location                          controllers._TuiGameController.pick(location: String)
 GET     /tui/pick/:location                         controllers._TuiGameController.set(location: String)
 GET     /tui/move/:fromLocation/:toLocation         controllers._TuiGameController.move(fromLocation: String, toLocation: String)
+
 
 # About and Help Page
 GET     /about                      controllers.AboutController.index

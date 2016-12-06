@@ -5,6 +5,7 @@ import de.htwg.se.nmm.Game;
 import de.htwg.se.nmm.controller.IGameController;
 import de.htwg.se.nmm.model.IJunction;
 import de.htwg.se.nmm.model.IPuck;
+import de.htwg.se.nmm.model.IPlayer;
 import de.htwg.se.nmm.aview.tui.TextUI;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -27,6 +28,35 @@ public class JsonController extends Controller {
     IGameController gameController = Game.getInstance().getController();
 
     public Result get() {
+        Result jsonResult = ok(gameController.getJson()).as("application/json");
+        return jsonResult;
+    }
+
+    @BodyParser.Of(BodyParser.Json.class)
+    public Result changePlayerName() {
+        JsonNode json = request().body().asJson();
+
+        // convert params to String
+        String man = json.findPath("man").textValue();
+        String name = json.findPath("name").textValue();
+        if(man == null) {
+            return badRequest("Bad parameter [man]");
+        }
+        if(name == null) {
+            return badRequest("Bad parameter [name]");
+        }
+
+        switch (man) {
+            case "WHITE":
+                gameController.getPlayer(IPlayer.Man.WHITE).setName(name);
+                break;
+            case "BLACK":
+                gameController.getPlayer(IPlayer.Man.BLACK).setName(name);
+                break;
+            default:
+                return badRequest("Bad parameter [man]");
+        }
+
         Result jsonResult = ok(gameController.getJson()).as("application/json");
         return jsonResult;
     }
