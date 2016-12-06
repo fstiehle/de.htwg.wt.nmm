@@ -243,6 +243,21 @@ footer,
     height: 60px;
     color: @background-font-color;
     background-image: @gradient-player;
+
+    input {
+        display: none;
+        background: inherit;
+        border: none;
+        border-bottom: 1px @color-interaction solid;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    #player-black input {
+        text-align: right;
+    }
 }
 
 #show-msg {

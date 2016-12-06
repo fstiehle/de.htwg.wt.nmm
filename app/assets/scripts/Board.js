@@ -89,6 +89,26 @@ Game.Board  = {
         $black.css("width", blackProgress + "%");
     },
 
+    changePlayerName: function (target) {
+        var data = { "man": $(target).data("man"), "name": $(target).val()};
+
+        $.ajax({
+            url: 'json/setplayername',
+            type: 'POST',
+            data: JSON.stringify(data),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            async: true,
+            success: function(result) {
+                $(target).hide();
+                $(target).prev()
+                         .text($(target).val())
+                         .show();
+            }
+        });
+
+    },
+
     highlightCurrentPlayer: function() {
         $(".current-player").removeClass("current-player", "current-puck");
         $("#player-" + Game.State.data.currentPlayer.man.toLowerCase()).addClass("current-player");
@@ -151,4 +171,30 @@ $(document).ready(function() {
         $msg.slideToggle();
     });
 
+    /**
+     * PlayerName Event Handler
+     */
+    $("#status i").dblclick(function(e) {
+        $(e.target).hide();
+        $(e.target).next("input")
+                   .val($(e.target).text())
+                   .show()
+                   .select();
+    });
+
+    /**
+     * PlayerName Input Event Handler
+     */
+    $("#status input").keyup(function(e) {
+        if (e.keyCode === 13) {     // enter
+            Game.Board.changePlayerName(e.target);
+        }
+        if (e.keyCode === 27) {     // esc
+            $(e.target).hide();
+            $(e.target).prev().show();
+        }
+    });
+    $("#status input").focusout(function(e) {
+        Game.Board.changePlayerName(e.target);
+    });
 });
