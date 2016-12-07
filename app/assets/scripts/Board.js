@@ -15,6 +15,7 @@ Game = {
         BOARD_ID: "board"
     },
     State: {},
+    Socket: {},
     mouseQueue: []
 };
 
@@ -46,6 +47,32 @@ Game.State.prototype.requestCommand = function (command, query) {
         async: true,
         success: this.update.bind(this)
     });
+};
+
+/**
+ * WebSockets
+ */
+Game.Socket = function () {
+    this.socket = new WebSocket("ws://localhost:9000/socket");
+
+    console.log('Socket Status: '+ this.socket.readyState + ' (ready)');
+
+    this.socket.onopen = function () {
+        console.log('Socket Status: '+ this.socket.readyState + ' (open)');
+    }.bind(this);
+
+    this.socket.onmessage = function (msg) {
+        console.log('Socket Status: '+ msg + ' (onmessage)');
+    }.bind(this);
+
+    this.socket.onclose = function () {
+        console.log('Socket Status: '+ this.socket.readyState + ' (closed)');
+    }.bind(this);
+};
+
+Game.Socket.prototype.send = function (data) {
+    this.socket.send(data);
+    console.log('Socket Status: Send data');
 };
 
 /**
@@ -123,6 +150,8 @@ Game.Board  = {
 
 $(document).ready(function() {
     Game.State = new Game.State();
+
+    Game.Socket = new Game.Socket();
 
     /**
      * Resize Events
