@@ -52,13 +52,13 @@ public class JsonWorker {
         IGameController gameController = Game.getInstance().getController();
 
         // convert params to String
-        String man = json.findPath("man").textValue();
-        String name = json.findPath("name").textValue();
+        String man = json.findPath("command").textValue();
+        String name = json.findPath("query").textValue();
         if(man == null) {
-            throw new IllegalArgumentException("Bad parameter [man]");
+            throw new IllegalArgumentException("Bad parameter [command]");
         }
         if(name == null) {
-            throw new IllegalArgumentException("Bad parameter [name]");
+            throw new IllegalArgumentException("Bad parameter [query]");
         }
 
         switch (man) {
@@ -71,6 +71,7 @@ public class JsonWorker {
             default:
                 throw new IllegalArgumentException("Bad parameter [man]");
         }
+        gameController.update();
     }
 
 

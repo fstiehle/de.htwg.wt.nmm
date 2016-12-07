@@ -121,7 +121,13 @@ Game.Board  = {
     },
 
     changePlayerName: function (target) {
-        var data = { "type": "setPlayerName", "man": $(target).data("man"), "name": $(target).val()};
+        Game.Socket.send("setPlayerName", $(target).data("man"), $(target).val());
+        $(target).hide();
+        $(target).prev()
+            .text($(target).val())
+            .show();
+        /*
+        var data = { "type": "setPlayerName", "command": $(target).data("man"), "name": $(target).val()};
 
         $.ajax({
             url: 'json/setplayername',
@@ -137,6 +143,7 @@ Game.Board  = {
                          .show();
             }
         });
+        */
 
     },
 
