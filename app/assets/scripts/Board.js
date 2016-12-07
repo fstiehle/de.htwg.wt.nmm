@@ -36,7 +36,7 @@ Game.State.prototype.request = function () {
 };
 
 Game.State.prototype.requestCommand = function (command, query) {
-    var data = { command: command, query: query};
+    var data = { type: "processCommand", command: command, query: query};
 
     $.ajax({
         url: 'json',
@@ -117,7 +117,7 @@ Game.Board  = {
     },
 
     changePlayerName: function (target) {
-        var data = { "man": $(target).data("man"), "name": $(target).val()};
+        var data = { "type": "setPlayerName", "man": $(target).data("man"), "name": $(target).val()};
 
         $.ajax({
             url: 'json/setplayername',
