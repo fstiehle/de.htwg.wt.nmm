@@ -261,6 +261,7 @@ footer,
 }
 
 #show-msg {
+    z-index: 2;
     position: fixed;
     font-size: @font-size-h3;
     right: 5px;
@@ -301,11 +302,26 @@ footer,
 
 #overlay-message {
     width: 100%;
-    opacity: 0.8;
-    background-color: black;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 4;
     font-size: @font-size-h1;
     color: white;
     position: absolute;
     text-align: center;
+}
+
+#msg {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 20px 60px 20px;
+    color: @background-font-color;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    max-height: 20%;
+    overflow-y: scroll;
 }

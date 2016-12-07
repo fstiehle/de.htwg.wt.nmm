@@ -12,7 +12,8 @@ Shapes = {
  */
 Game = {
     defaults: {
-        BOARD_ID: "board"
+        BOARD_ID: "board",
+        MSG_ID: "msg"
     },
     State: {},
     mouseQueue: []
@@ -55,7 +56,8 @@ Game.State.prototype.update = function (result) {
     this.data = result;
     Game.Board.update();
     Game.Board.updateStatusBar();
-    Game.Board.highlightCurrentPlayer();
+    Game.Board.updateCurrentPlayer();
+    Game.Board.updateStatusMessage();
 };
 
 /**
@@ -109,10 +111,20 @@ Game.Board  = {
 
     },
 
-    highlightCurrentPlayer: function() {
+    updateCurrentPlayer: function() {
         $(".current-player").removeClass("current-player", "current-puck");
         $("#player-" + Game.State.data.currentPlayer.man.toLowerCase()).addClass("current-player");
         $(".puck." + Game.State.data.currentPlayer.man.toLowerCase()).addClass("current-puck");
+    },
+
+    updateStatusMessage: function() {
+        var $log = $("#" + Game.defaults.MSG_ID),
+            $overlay = $("#overlay-message");
+        $log.append($("<div></div>").text(Game.State.data.status.message)[0]);
+        $overlay.text(Game.State.data.status.message);
+        $overlay.animate({ opacity: 1}, 800, "linear", function() {
+            $overlay.animate({ opacity: 0}, 600, "linear");
+        });
     }
 
 };
@@ -167,7 +179,7 @@ $(document).ready(function() {
      * msg Event Handler
      */
     $("#show-msg").click(function() {
-        var $msg = $("#msg");
+        var $msg = $("#" + Game.defaults.MSG_ID);
         $msg.slideToggle();
     });
 
