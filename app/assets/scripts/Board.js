@@ -224,7 +224,7 @@ $(document).ready(function() {
     /**
      * PlayerName Event Handler
      */
-    $("#status i").dblclick(function(e) {
+    $("#status i").click(function(e) {
         $(e.target).hide();
         $(e.target).next("input")
                    .on("focusout", function(e) {Game.Board.changePlayerName(e.target);})    // turn focus event ON
