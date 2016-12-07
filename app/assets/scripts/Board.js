@@ -16,6 +16,7 @@ Game = {
         MSG_ID: "msg"
     },
     State: {},
+    Socket: {},
     mouseQueue: []
 };
 
@@ -36,7 +37,7 @@ Game.State.prototype.request = function () {
 };
 
 Game.State.prototype.requestCommand = function (command, query) {
-    var data = { command: command, query: query};
+    var data = { type: "processCommand", command: command, query: query};
 
     $.ajax({
         url: 'json',
@@ -47,6 +48,34 @@ Game.State.prototype.requestCommand = function (command, query) {
         async: true,
         success: this.update.bind(this)
     });
+};
+
+/**
+ * WebSockets
+ */
+Game.Socket = function () {
+    this.socket = new WebSocket("ws://localhost:9000/socket");
+
+    console.log('Socket Status: '+ this.socket.readyState + ' (ready)');
+
+    this.socket.onopen = function () {
+        console.log('Socket Status: '+ this.socket.readyState + ' (open)');
+    }.bind(this);
+
+    this.socket.onmessage = function (msg) {
+        Game.State.update(JSON.parse(msg.data));
+        console.log('Socket Status: '+ msg + ' (onmessage)');
+    }.bind(this);
+
+    this.socket.onclose = function () {
+        console.log('Socket Status: '+ this.socket.readyState + ' (closed)');
+    }.bind(this);
+};
+
+Game.Socket.prototype.send = function (type, command, query) {
+    var data = {type: type, command: command, query: query};
+    this.socket.send(JSON.stringify(data));
+    console.log('Socket Status: data sent');
 };
 
 /**
@@ -92,7 +121,7 @@ Game.Board  = {
     },
 
     changePlayerName: function (target) {
-        var data = { "man": $(target).data("man"), "name": $(target).val()};
+        var data = { "type": "setPlayerName", "man": $(target).data("man"), "name": $(target).val()};
 
         $.ajax({
             url: 'json/setplayername',
@@ -135,6 +164,8 @@ Game.Board  = {
 
 $(document).ready(function() {
     Game.State = new Game.State();
+
+    Game.Socket = new Game.Socket();
 
     /**
      * Resize Events

@@ -17,6 +17,10 @@ POST    /json                       controllers.JsonController.process
 POST    /json/setplayername         controllers.JsonController.changePlayerName
 
 
+# WebSocket
+GET     /socket                     controllers.WebSocketController.socket
+
+
 # Hidden TUI game
 GET     /tui                                        controllers._TuiGameController.get
 

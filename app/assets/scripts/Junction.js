@@ -83,7 +83,9 @@ Game.Junction.prototype.clickEvent = function () {
         playerState = data.currentPlayer.currentState === "HOP" ? "MOVE": data.currentPlayer.currentState;
 
     if (playerState === "MOVE" && Game.mouseQueue.length > 0) {
-        Game.State.requestCommand(playerState.toLowerCase(),
+        //Game.State.requestCommand(playerState.toLowerCase(),
+        //    [Game.mouseQueue.pop().dataset.id, this.dataset.id]);
+        Game.Socket.send("processCommand", playerState.toLowerCase(),
             [Game.mouseQueue.pop().dataset.id, this.dataset.id]);
         return;
 
@@ -91,5 +93,6 @@ Game.Junction.prototype.clickEvent = function () {
         return;
     }
 
-    Game.State.requestCommand(playerState.toLowerCase(), [this.dataset.id]);
+    //Game.State.requestCommand(playerState.toLowerCase(), [this.dataset.id]);
+    Game.Socket.send("processCommand", playerState.toLowerCase(), [this.dataset.id]);
 };
