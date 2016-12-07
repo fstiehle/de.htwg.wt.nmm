@@ -4,11 +4,8 @@ import de.htwg.se.nmm.Game;
 import de.htwg.se.nmm.controller.IGameController;
 
 import akka.actor.*;
-import play.libs.Json;
 import services.JsonWorker;
 import models.GameObserver;
-import play.mvc.WebSocket;
-import play.mvc.LegacyWebSocket;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -44,9 +41,5 @@ public class SocketActor extends UntypedActor {
 
     public void sendMessage(String data) {
         out.tell(data, self());
-    }
-
-    public void onReady(WebSocket.In<String> in, WebSocket.Out<String> out) {
-        System.out.println("Hallo onReady()");
     }
 }

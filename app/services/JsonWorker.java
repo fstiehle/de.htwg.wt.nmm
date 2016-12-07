@@ -3,19 +3,10 @@ package services;
 import java.util.*;
 import de.htwg.se.nmm.Game;
 import de.htwg.se.nmm.controller.IGameController;
-import de.htwg.se.nmm.model.IJunction;
 import de.htwg.se.nmm.model.IPuck;
 import de.htwg.se.nmm.model.IPlayer;
-import de.htwg.se.nmm.aview.tui.TextUI;
-import play.mvc.Controller;
-import play.mvc.Result;
-import play.mvc.BodyParser;
-import play.libs.Json;
-import play.libs.Json.*;
-import views.html.tuiGame;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonWorker {
