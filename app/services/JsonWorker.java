@@ -27,6 +27,7 @@ public class JsonWorker {
      * @throws IllegalArgumentException
      */
     public static void processJson(JsonNode json) throws IllegalArgumentException {
+        System.out.println(json);
         String type = json.findPath("type").textValue();
         if(type == null) {
             throw new IllegalArgumentException("Parameter [type] not found");

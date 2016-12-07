@@ -62,6 +62,7 @@ Game.Socket = function () {
     }.bind(this);
 
     this.socket.onmessage = function (msg) {
+        Game.State.update(JSON.parse(msg.data));
         console.log('Socket Status: '+ msg + ' (onmessage)');
     }.bind(this);
 
@@ -70,9 +71,10 @@ Game.Socket = function () {
     }.bind(this);
 };
 
-Game.Socket.prototype.send = function (data) {
-    this.socket.send(data);
-    console.log('Socket Status: Send data');
+Game.Socket.prototype.send = function (type, command, query) {
+    var data = {type: type, command: command, query: query};
+    this.socket.send(JSON.stringify(data));
+    console.log('Socket Status: data sent');
 };
 
 /**

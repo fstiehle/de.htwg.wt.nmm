@@ -64,5 +64,6 @@ Game.Puck.prototype.clickEvent = function () {
         $(this).addClass("selected");
         return;
     }
-    Game.State.requestCommand(playerState.toLowerCase(), [this.dataset.id]);
+    //Game.State.requestCommand(playerState.toLowerCase(), [this.dataset.id]);
+    Game.Socket.send("processCommand", playerState.toLowerCase(), [this.dataset.id]);
 };
