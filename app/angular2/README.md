@@ -1,31 +1,67 @@
-# Nmm
+Angular2 with TypeScript and Gulp
+=================================
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.22-1.
+A basic Angular2 application with Gulp as build system.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### 1. Prerequisites
 
-## Code scaffolding
+*nodejs* must be installed on your system and the below global node packages must be installed:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+- gulp
 
-## Build
+> npm i -g gulp
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+- gulp-cli
 
-## Running unit tests
+> npm i -g gulp-cli
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- typings
 
-## Running end-to-end tests
+> npm i -g typings@1.3.3
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+- typescript
 
-## Deploying to Github Pages
+> npm i -g typescript@2.0.2
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+- ts-node
 
-## Further help
+> npm i -g ts-node@1.3.0
 
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#### 2. Cloning the repository
+
+Clone the repository:
+
+> git clone https://github.com/kolorobot/angular2-typescript-gulp.git
+
+Navigate to `angular2-typescript-gulp` directory:
+
+> cd angular2-typescript-gulp
+
+#### 3. Installing dependencies
+
+Install dependencies by running the following command:
+
+> npm install
+
+`node_modules` and `typings` directories will be created during the install.
+
+#### 4. Building the project
+
+Build the project by running the following command:
+
+> npm run clean & npm run build
+
+`build` directory will be created during the build
+
+#### 5. Starting the application
+
+Start the application by running the following command:
+
+> npm start
+
+The application will be displayed in the browser.
+
+Resources
+---------
+
+- [A step-by-step tutorial](http://blog.codeleak.pl/2016/03/quickstart-angular2-with-typescript-and.html)
