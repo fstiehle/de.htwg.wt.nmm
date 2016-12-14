@@ -1,4 +1,3 @@
-// Browser Sync Config File
 {
   "port": 8000,
   "files": [
