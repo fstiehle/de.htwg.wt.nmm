@@ -43,9 +43,14 @@ gulp.task("compile", ["tslint", "less"], () => {
  * Compile Less to CSS
  */
  gulp.task('less', function () {
-    return gulp.src('src/**/*.less')
-        .pipe(less())
-        .pipe(gulp.dest("build"));
+     return gulp.src("src/**/*.less")
+            .pipe(sourcemaps.init())
+            .pipe(less({paths: [
+                '.',
+                './node_modules/bootstrap-less'
+             ]}))
+            .pipe(sourcemaps.write(".", {sourceRoot: '/src'}))
+            .pipe(gulp.dest("build"));
 });
 
 
