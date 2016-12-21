@@ -35,9 +35,17 @@ public class JsonWorker {
             case "processCommand":
                 processCommand(json);
                 break;
+            case "refreshGame":
+                refreshGame(json);
+                break;
             default:
                 throw new IllegalArgumentException("Illegal parameter [type] found");
         }
+    }
+
+    private void refreshGame(JsonNode json) throws IllegalArgumentException {
+        IGameController gameController = Game.getInstance().getController();
+        gameController.update();
     }
 
     private void changePlayerName(JsonNode json) throws IllegalArgumentException {
