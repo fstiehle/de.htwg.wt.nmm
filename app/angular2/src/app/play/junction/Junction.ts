@@ -1,32 +1,38 @@
 import mojs from 'mo-js';
 
 /**
+ * Uses as a mute for the rescale process
+ */
+const MUTE = 30;
+
+const CLASS_NAME = "junction";
+const SHAPE = "circle";
+const STROKE = 4;
+const POINTS = 0;
+
+/**
  * Junction
  * Holds the mojs shape 
  */
-export default Junction {
-  
-  /**
-   * Uses as a mute for the rescale process
-   */
-  const MUTE = 30;
-  const CLASS_NAME = "junction";
-  const SHAPE = "circle";
-  const STROKE = 4;
-  const POINTS = 0;
+export default class Junction {
   
   /**
    * Coordinates
    */ 
-  let x = 0;
-  let y = 0;
-  let top: string; // % value
-  let left: string; // % value
+  x = 0;
+  y = 0;
+  top: number; // % value
+  left: number; // % value
   
   /**
    * HTML ID
    */ 
-  let id: string;
+  id: string;
+
+  /**
+   * mojs object
+   */
+  mojs;
   
   /**  
    * @param x coordinate
@@ -52,7 +58,7 @@ export default Junction {
    * @var left distance in percentage from left
    * @var right distance in percentage from top
    */
-  private calculateOffset(coordinate) {
+  protected calculateOffset(coordinate) {
     return (100 / 7) * coordinate;
   }
   
@@ -60,13 +66,13 @@ export default Junction {
    * Creates a new mojs shape
    * @returns {mojs.Shape}
    */
-  private generateMojs() {
+  protected generateMojs() {
     return new mojs.Shape({
         parent: "#" + Game.defaults.BOARD_ID,
-        className: this.CLASS_NAME,
-        shape: this.SHAPE,
-        points: this.POINTS,
-        strokeWidth: this.STROKE,
+        className: CLASS_NAME,
+        shape: SHAPE,
+        points: POINTS,
+        strokeWidth: STROKE,
         radius: this.calculateScale(),
         left: this.left + "%",
         top: this.top + "%",
@@ -77,8 +83,8 @@ export default Junction {
   /**
    * Calculates scale
    */
-  private calculateScale() {
-    return document.getElementById(Game.defaults.BOARD_ID).offsetWidth / this.MUTE;
+  protected calculateScale() {
+    return document.getElementById(Game.defaults.BOARD_ID).offsetWidth / MUTE;
   }
 
   /**

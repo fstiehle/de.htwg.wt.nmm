@@ -1,21 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {PlayService} from "./play.service";
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-play',
   templateUrl: './play.component.html',
-  styleUrls: ['./play.component.less']
+  styleUrls: ['./play.component.less'],
+  providers: [PlayService]
 })
 /**
  * Handles the main game interface
  */
 export class PlayComponent implements OnInit {
 
-  y: number;
-  
-  constructor() { 
-    this.y = 2;
+  constructor(private playService: PlayService) {
   }
-  
+
   ngOnInit() {
   }
 

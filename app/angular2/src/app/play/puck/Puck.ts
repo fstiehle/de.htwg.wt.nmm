@@ -1,4 +1,16 @@
+import Junction from '../junction/Junction';
 import mojs from 'mo-js';
+
+/**
+ * Uses as a mute for the rescale process
+ */
+const MUTE = 25;
+
+const CLASS_NAME = "puck hidden";
+const CLASS_NAME_ACTIVATED = "puck";
+const SHAPE = "polygon";
+const STROKE = 3;
+const POINTS = 6;
 
 /**
  * Puck thats placed on a Junction
@@ -8,39 +20,10 @@ import mojs from 'mo-js';
  * @param id
  * @constructor
  */
-export default class Puck {
+export default class Puck extends Junction {
   
-  /**
-   * Uses as a mute for the rescale process
-   */
-  const MUTE = 25;
-  const CLASS_NAME = "puck hidden";
-  const CLASS_NAME_ACTIVATED = "puck";
-  const SHAPE = "polygon";
-  const STROKE = 3;
-  const POINTS = 6;
-  
-  /**
-   * Coordinates
-   */ 
-  let x = 0;
-  let y = 0;
-  let top: string; // % value
-  let left: string; // % value
-   
-  let length: number;
-  let rotation: number;
-  
-  constructor(x: number, y: number, id: string) {
-    this.x = x;
-    this.y = y;
-    this.id = id;
-    
-    this.left = this.calculateOffset(x);
-    this.top = this.calculateOffset(y);
-    
-    this.mojs = this.generateMojs();
-    this.mojs.el.dataset.id = id;
+ constructor(x: number, y: number, id: string) {
+    super(x, y, id);
   }
 
   /**
@@ -48,7 +31,7 @@ export default class Puck {
    * @param man player of puck
    */
   activate(man) {
-      $(this.mojs.el).attr("class", this.CLASS_NAME_ACTIVATED + " " + man.toLowerCase());
+      $(this.mojs.el).attr("class", CLASS_NAME_ACTIVATED + " " + man.toLowerCase());
       this.mojs.play();
   }
 
@@ -56,7 +39,7 @@ export default class Puck {
    * Deactivates and hide the puck on the board
    */
   deactivate() {
-      $(this.mojs.el).attr("class", this.CLASS_NAME);
+      $(this.mojs.el).attr("class", CLASS_NAME);
   }
 
   /**

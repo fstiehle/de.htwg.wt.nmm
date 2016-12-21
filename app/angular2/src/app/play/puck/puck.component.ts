@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import Puck from './Puck';
 
 @Component({
   selector: 'app-puck',
@@ -7,16 +6,16 @@ import Puck from './Puck';
   styleUrls: ['./puck.component.less']
 })
 export class PuckComponent implements OnInit {
-  
+
   @Input() x: number;
   @Input() y: number;
+  @Input() id: string;
 
   constructor() {
-    
+
   }
 
   ngOnInit() {
-    
   }
 
 }
