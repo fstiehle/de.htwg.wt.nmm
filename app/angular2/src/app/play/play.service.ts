@@ -16,22 +16,31 @@ export class PlayService {
   socket: WebSocket;
 
   constructor() {
-    this.socket = new WebSocket(SOCKET_URL);
-    console.log('Socket Status: '+ this.socket.readyState + ' (ready)');
+  }
 
-    this.socket.onopen = this.onopen.bind(this);
-    this.socket.onmessage = this.onmessage.bind(this);
-    this.socket.onclose = this.onclose.bind(this);
+  connect() {
+    return new Promise((resolve, reject) => {
+        this.socket = new WebSocket(SOCKET_URL);
+
+        this.socket.onopen = this.onopen.bind(this);
+
+        this.socket.onmessage = message => {
+          console.log('Socket Status: '+ message + ' (onmessage)');
+          this.state = (JSON.parse(message.data));
+          resolve(this.state);
+        };
+
+        this.socket.onclose = this.onclose.bind(this);
+    });
+  }
+
+  getState() {
+    return this.state;
   }
 
   onopen() {
     console.log('Socket Status: '+ this.socket.readyState + ' (open)');
     this.send("refreshGame");
-  }
-
-  onmessage(msg) {
-    console.log('Socket Status: '+ msg + ' (onmessage)');
-    this.state = (JSON.parse(msg.data));
   }
 
   onclose() {

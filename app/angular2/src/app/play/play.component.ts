@@ -12,10 +12,17 @@ import {Component, OnInit, Input} from '@angular/core';
  */
 export class PlayComponent implements OnInit {
 
+  state;
+
   constructor(private playService: PlayService) {
+    playService.connect().then(state => {
+      this.state = state;
+      console.log(this.state);
+    });
   }
 
   ngOnInit() {
+    
   }
 
 }
