@@ -19,6 +19,8 @@ export class PlayService {
   }
 
   connect() {
+    // TODO: REJECT ON ERROR
+
     return new Promise((resolve, reject) => {
         this.socket = new WebSocket(SOCKET_URL);
 
