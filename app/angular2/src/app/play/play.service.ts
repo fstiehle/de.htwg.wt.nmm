@@ -2,29 +2,24 @@ import { Injectable } from '@angular/core';
 
 const SOCKET_URL = "ws://localhost:9000/socket";
 
-
 @Injectable()
 export class PlayService {
 
   static BOARD_ID = "board";
 
   /**
-   * Global State
+   * Last received state
    */
   state;
 
   socket: WebSocket;
 
-  constructor() {
-  }
+  constructor() {}
 
   connect() {
     // TODO: REJECT ON ERROR
-
     return new Promise((resolve, reject) => {
-        this.socket = new WebSocket(SOCKET_URL);
-
-        this.socket.onopen = this.onopen.bind(this);
+        this.socket = new WebSocket(SOCKET_URL);        
 
         this.socket.onmessage = message => {
           console.log('Socket Status: '+ message + ' (onmessage)');
@@ -32,7 +27,15 @@ export class PlayService {
           resolve(this.state);
         };
 
-        this.socket.onclose = this.onclose.bind(this);
+        this.socket.onopen = () => {
+          console.log('Socket Status: '+ this.socket.readyState + ' (open)');
+          this.send("refreshGame");
+        };
+
+        this.socket.onclose = () => {
+          console.log('Socket Status: '+ this.socket.readyState + ' (closed)');
+        };
+
     });
   }
 
@@ -40,27 +43,18 @@ export class PlayService {
     return this.state;
   }
 
-  onopen() {
-    console.log('Socket Status: '+ this.socket.readyState + ' (open)');
-    this.send("refreshGame");
-  }
-
-  onclose() {
-    console.log('Socket Status: '+ this.socket.readyState + ' (closed)');
-  }
-
   /**
    * @param type
-   *          "processCommand": Communicate with game logic
-   *          "setPlayerName": Change the player name
-   *          "refreshGame": Refresh and get current state
-   *          "resetGame": NotImplementedYet
+   *   "processCommand": Communicate with game logic
+   *   "setPlayerName": Change the player name
+   *   "refreshGame": Refresh and get current state
+   *   "resetGame": NotImplementedYet
    * @param command
-   *          when "processCommand": "set" | "pick" | "move"
-   *          when "setPlayerName": "white" | "black"
+   *   when "processCommand": "set" | "pick" | "move"
+   *   when "setPlayerName": "white" | "black"
    * @param query
-   *          when "processCommand": Array of PuckIDs ["a1"]
-   *          when "setPlayerName": "theNewPlayerName"
+   *   when "processCommand": Array of PuckIDs ["a1"]
+   *   when "setPlayerName": "theNewPlayerName"
    */
   send(type, command = " ", query = " ") {
     var data = {type: type, command: command, query: query};
