@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import Junction from './Junction';
-import Connector from './Connector';
-import Puck from './Puck';
 
 @Component({
   selector: 'app-play',
@@ -13,8 +10,10 @@ import Puck from './Puck';
  */
 export class PlayComponent implements OnInit {
 
+  y: number;
+  
   constructor() { 
-    
+    this.y = 2;
   }
   
   ngOnInit() {
