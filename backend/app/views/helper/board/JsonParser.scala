@@ -3,7 +3,6 @@ package views.helper.board
 import java.io.FileInputStream
 import play.api.libs.json._
 
-
 object JsonParser {
   private val JSON_PATH = "app/assets/board/boardDefinition.json"
   private val NODE_MODEL_JUNCTION = "MODEL_JUNCTION"

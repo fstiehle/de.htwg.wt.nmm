@@ -1,12 +1,12 @@
 @* Arguments *@
-@(message: String)
+@(user: models.User)(implicit request: RequestHeader, messages: Messages)
 
 @*
 * Call Main Template
 * Page Title: Home
 *@
-@main("Home") {
+@main("Home", Some(user)) {
 
-    @helper.blocks.playButton()
+    @helper.blocks.playButton() { }
 
 }

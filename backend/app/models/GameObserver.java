@@ -2,11 +2,6 @@ package models;
 
 import actors.SocketActor;
 
-import akka.actor.*;
-import play.mvc.WebSocket;
-import play.mvc.WebSocket.Out;
-import play.mvc.LegacyWebSocket;
-
 import de.htwg.se.nmm.controller.IGameController;
 import de.htwg.se.nmm.util.observer.IObserver;
 

@@ -1,5 +1,5 @@
 @* Arguments *@
-@(message: String)
+@(user: models.User)(implicit request: RequestHeader, messages: Messages)
 
 @* Imports
 @import views.helper.x3dom.JsonParser
@@ -9,7 +9,7 @@
 * Call Main Template
 * Page Title: Play
 *@
-@main("Play") {
+@main("Play", Some(user)) {
 
     @board.status()
 

@@ -1,13 +1,20 @@
+@(headline: String = "Time to Play!")(content: Html)(implicit request: RequestHeader, messages: Messages)
+
+
 <div class="container-fluid">
   <div class="row">
 
     <div class="col-lg-12 window">
 
-        <h2>Time to Play!</h2>
+        <h2>@headline</h2>
 
-      <a href="/play" type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
+        @content
+
+        @if(content.body.isEmpty) {
+            <a href="/play" type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
           Play!
-      </a>
+            </a>
+        }
 
     </div>
 

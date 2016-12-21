@@ -8,17 +8,18 @@ import de.htwg.se.nmm.model.IPlayer;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import play.libs.Json;
 
 public class JsonWorker {
 
     /**
      * ProcessJson
      *
-     * @param json
+     * @param jsonStr
      * @throws IllegalArgumentException
      */
-    public static void processJson(JsonNode json) throws IllegalArgumentException {
-        System.out.println(json);
+    public void processJson(String jsonStr) throws IllegalArgumentException {
+        JsonNode json = Json.parse(jsonStr);
         String type = json.findPath("type").textValue();
         if(type == null) {
             throw new IllegalArgumentException("Parameter [type] not found");
@@ -39,7 +40,7 @@ public class JsonWorker {
         }
     }
 
-    private static void changePlayerName(JsonNode json) throws IllegalArgumentException {
+    private void changePlayerName(JsonNode json) throws IllegalArgumentException {
         IGameController gameController = Game.getInstance().getController();
 
         // convert params to String
@@ -66,12 +67,12 @@ public class JsonWorker {
     }
 
 
-    private static void resetGame(JsonNode json) throws IllegalArgumentException {
+    private void resetGame(JsonNode json) throws IllegalArgumentException {
         throw new IllegalArgumentException("Not implemented yet");
     }
 
 
-    private static void processCommand(JsonNode json) throws IllegalArgumentException {
+    private void processCommand(JsonNode json) throws IllegalArgumentException {
         IGameController gameController = Game.getInstance().getController();
 
         String command = null;

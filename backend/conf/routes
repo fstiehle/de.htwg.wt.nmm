@@ -2,37 +2,74 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# HOME
-GET     /                           controllers.HomeController.index
+###
+# Home page
+###
+GET         /                                controllers.ApplicationController.index
 
 
-# Game
-GET     /play                       controllers.GameController.index
 
+###
+# Authentication
+###
+GET         /signOut                         controllers.ApplicationController.signOut
+GET         /authenticate/:provider          controllers.authentication.SocialAuthController.authenticate(provider)
+
+GET         /signUp                          controllers.authentication.SignUpController.view
+POST        /signUp                          controllers.authentication.SignUpController.submit
+
+GET         /signIn                          controllers.authentication.SignInController.view
+POST        /signIn                          controllers.authentication.SignInController.submit
+
+GET         /password/forgot                 controllers.authentication.ForgotPasswordController.view
+POST        /password/forgot                 controllers.authentication.ForgotPasswordController.submit
+GET         /password/reset/:token           controllers.authentication.ResetPasswordController.view(token: java.util.UUID)
+POST        /password/reset/:token           controllers.authentication.ResetPasswordController.submit(token: java.util.UUID)
+GET         /password/change                 controllers.authentication.ChangePasswordController.view
+POST        /password/change                 controllers.authentication.ChangePasswordController.submit
+
+GET         /account/email/:email            controllers.authentication.ActivateAccountController.send(email: String)
+GET         /account/activate/:token         controllers.authentication.ActivateAccountController.activate(token: java.util.UUID)
+
+
+
+###
+# Sites
+###
+GET         /about                           controllers.AboutController.index
+GET         /help                            controllers.AboutController.help
+
+GET         /play                            controllers.GameController.index
+
+
+###
+# API
+###
 
 # Json
-GET     /json                       controllers.JsonController.get
-POST    /json                       controllers.JsonController.process
-
-POST    /json/setplayername         controllers.JsonController.changePlayerName
-
+GET         /json                            controllers.JsonController.get
+POST        /json                            controllers.JsonController.process
+POST        /json/setplayername              controllers.JsonController.changePlayerName
 
 # WebSocket
-GET     /socket                     controllers.WebSocketController.socket
+GET         /socket                          controllers.WebSocketController.socket
 
 
-# Hidden TUI game
-GET     /tui                                        controllers._TuiGameController.get
 
-GET     /tui/set/:location                          controllers._TuiGameController.pick(location: String)
-GET     /tui/pick/:location                         controllers._TuiGameController.set(location: String)
-GET     /tui/move/:fromLocation/:toLocation         controllers._TuiGameController.move(fromLocation: String, toLocation: String)
+###
+# Hidden TUI Game
+###
+GET         /tui                                        controllers._TuiGameController.get
 
-
-# About and Help Page
-GET     /about                      controllers.AboutController.index
-GET     /help                       controllers.AboutController.help
+GET         /tui/set/:location                          controllers._TuiGameController.set(location: String)
+GET         /tui/pick/:location                         controllers._TuiGameController.pick(location: String)
+GET         /tui/move/:fromLocation/:toLocation         controllers._TuiGameController.move(fromLocation: String, toLocation: String)
 
 
+
+###
+# Ressouces
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+###
+GET         /assets/*file                    controllers.Assets.versioned(path="/public", file: Asset)
+GET         /webjars/*file                   controllers.WebJarAssets.at(file)

@@ -1,3 +1,4 @@
+@(user: Option[models.User])(implicit request: RequestHeader, messages: Messages)
 
 @listItem(route: String, label: String) = {
     <li class=@{if (request.path == route) "active" else ""}>
@@ -11,9 +12,13 @@
 
             <ul class="nav navbar-nav navbar-left">
 
-                @listItem(routes.HomeController.index().toString(), "Play")
+                @listItem(routes.ApplicationController.index().toString(), "Play")
 
                 @listItem(routes.AboutController.index().toString(), "About")
+
+                @user.map { u =>
+                    @listItem(routes.ApplicationController.signOut.toString(), Messages("sign.out"))
+                }
 
             </ul>
 

@@ -1,12 +1,12 @@
 @* Arguments *@
-@(game: String)
+@(game: String, user: models.User)(implicit request: RequestHeader, messages: Messages)
 
 
 @*
 * Call Main Template
 * Page Title: TUI
 *@
-@main("TUI") {
+@main("TUI", Some(user)) {
 
     <code id="tui">@Html(game)</code>
 

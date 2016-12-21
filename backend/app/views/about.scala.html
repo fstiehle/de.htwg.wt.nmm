@@ -1,12 +1,12 @@
 @* Arguments *@
-@()
+@(user: Option[models.User] = None)(implicit request: RequestHeader, messages: Messages)
 
 
 @*
 * Call Main Template
 * Page Title: About
 *@
-@main("About") {
+@main("About", user) {
 
 <div class="container-fluid">
     <div class="row">
@@ -75,7 +75,5 @@
     </div>
 
 </div>
-
-@helper.blocks.playButton()
 
 }

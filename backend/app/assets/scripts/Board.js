@@ -63,8 +63,8 @@ Game.Socket = function () {
     }.bind(this);
 
     this.socket.onmessage = function (msg) {
-        Game.State.update(JSON.parse(msg.data));
         console.log('Socket Status: '+ msg + ' (onmessage)');
+        Game.State.update(JSON.parse(msg.data));
     }.bind(this);
 
     this.socket.onclose = function () {
@@ -173,6 +173,11 @@ $(document).ready(function() {
     Game.State = new Game.State();
 
     Game.Socket = new Game.Socket();
+
+    /**
+     * Bootstrap Alert Overlay
+     */
+    $(".alert").delay(200).addClass("in").fadeOut(5000);
 
     /**
      * Resize Events
