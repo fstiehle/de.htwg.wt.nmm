@@ -1,7 +1,24 @@
 <div id="board">
 
   <div id="overlay-message"></div>
+  
+  <app-junction *ngFor="let junction of boardDefinition['MODEL_JUNCTION']"
+    [x]="junction.translation.x"
+    [y]="junction.translation.y"
+    [id]="junction.id">
+  </app-junction>
 
-  <app-puck [x]="2"></app-puck>
+  <app-puck *ngFor="let puck of boardDefinition['MODEL_JUNCTION']"
+    [x]="puck.translation.x"
+    [y]="puck.translation.y"
+    [id]="puck.id">
+  </app-puck>
+
+  <app-connector *ngFor="let connector of boardDefinition['MODEL_CONNECTOR']"
+    [x]="connector.translation.x"
+    [y]="connector.translation.y"
+    [length]="connector.length"
+    [rotation]="connector.rotation">
+  </app-connector>
 
 </div>

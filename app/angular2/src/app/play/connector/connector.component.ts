@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import Connector from './Connector';
 
 @Component({
@@ -7,6 +7,11 @@ import Connector from './Connector';
   styleUrls: ['./connector.component.less']
 })
 export class ConnectorComponent implements OnInit {
+
+  @Input() x: number;
+  @Input() y: number;
+  @Input() length: number;
+  @Input() rotation: number;
 
   constructor() { }
 

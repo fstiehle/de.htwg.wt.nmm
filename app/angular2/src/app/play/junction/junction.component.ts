@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import Junction from './Junction';
 
 @Component({
@@ -7,6 +7,10 @@ import Junction from './Junction';
   styleUrls: ['./junction.component.less']
 })
 export class JunctionComponent implements OnInit {
+
+  @Input() x: number;
+  @Input() y: number;
+  @Input() id: string;
 
   constructor() { }
 
