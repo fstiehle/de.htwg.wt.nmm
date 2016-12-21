@@ -1,3 +1,5 @@
+import mojs from 'mo-js';
+
 /**
  * Junction
  * Holds the mojs shape 
@@ -18,13 +20,13 @@ export default Junction {
    */ 
   let x = 0;
   let y = 0;
-  let top: String; // % value
-  let left: String; // % value
+  let top: string; // % value
+  let left: string; // % value
   
   /**
    * HTML ID
    */ 
-  let id: String;
+  let id: string;
   
   /**  
    * @param x coordinate

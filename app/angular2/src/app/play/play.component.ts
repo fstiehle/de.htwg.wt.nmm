@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Junction from './Junction';
+import Connector from './Connector';
+import Puck from './Puck';
 
 @Component({
   selector: 'app-play',
@@ -11,8 +13,10 @@ import Junction from './Junction';
  */
 export class PlayComponent implements OnInit {
 
-  constructor() { }
-
+  constructor() { 
+    
+  }
+  
   ngOnInit() {
   }
 
