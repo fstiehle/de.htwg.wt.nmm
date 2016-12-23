@@ -175,6 +175,11 @@ $(document).ready(function() {
     Game.Socket = new Game.Socket();
 
     /**
+     * Scroll to Game statusbar
+     */
+    $("html, body").delay(1000).animate({scrollTop: $('#status').offset().top }, 2000);
+
+    /**
      * Bootstrap Alert Overlay
      */
     $(".alert").delay(200).addClass("in").fadeOut(5000);
