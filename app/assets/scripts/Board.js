@@ -55,11 +55,14 @@ Game.State.prototype.requestCommand = function (command, query) {
  */
 Game.Socket = function () {
     var loc = window.location;
+    console.log(loc);
     var ws_uri = "ws:";
     if (loc.protocol === "https:") {
+        console.log("ws -> use https");
         ws_uri = "wss:";
     }
     ws_uri += "//" + loc.host + "/socket";
+    console.log("ws -> " + ws_uri);
     this.socket = new WebSocket(ws_uri);
 
     console.log('Socket Status: '+ this.socket.readyState + ' (ready)');
