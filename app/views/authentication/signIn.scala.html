@@ -1,6 +1,5 @@
 @(signInForm: Form[forms.SignInForm.Data], socialProviders: com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry)(implicit request: RequestHeader, messages: Messages, webJarAssets: WebJarAssets)
 
-@import com.mohiva.play.silhouette.impl.providers.oauth2.ClefProvider
 @import b3.inline.fieldConstructor
 
 @main(Messages("sign.in.title")) {
@@ -26,7 +25,7 @@
                 <div class="social-providers">
                     <p>@Messages("or.use.social")</p>
                     <div>
-                    @for(p <- socialProviders.providers if p.id != "clef") {
+                    @for(p <- socialProviders.providers if p.id != "clef" && p.id != "vk") {
                         <a href="@controllers.authentication.routes.SocialAuthController.authenticate(p.id)" class="provider @p.id" title="@Messages(p.id)"><img src="@routes.Assets.versioned(s"images/providers/${p.id}.png")" width="64px" height="64px" alt="@Messages(p.id)"></a>
                     }
                     </div>
