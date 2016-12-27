@@ -54,7 +54,13 @@ Game.State.prototype.requestCommand = function (command, query) {
  * WebSockets
  */
 Game.Socket = function () {
-    this.socket = new WebSocket("ws://localhost:9000/socket");
+    var loc = window.location;
+    var ws_uri = "ws:";
+    if (loc.protocol === "https:") {
+        ws_uri = "wss:";
+    }
+    ws_uri += "//" + loc.host + "/socket";
+    this.socket = new WebSocket(ws_uri);
 
     console.log('Socket Status: '+ this.socket.readyState + ' (ready)');
 
