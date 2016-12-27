@@ -1,49 +1,33 @@
-This is your new Play application
-=================================
+# HTWG | Web Technologies | Nine Men's Morris
 
-This file will be packaged with your application when using `activator dist`.
+- Play Setup
+- Heroku Deployment
 
-There are several demonstration files available in this template.
+## Heroku Deployment
 
-Controllers
-===========
+### Remote
 
-- HomeController.java:
+1. Install `Heroku CLI`
+    1. Download <https://devcenter.heroku.com/articles/heroku-cli>
+    2. Verifiy `heroku --version`
+    3. LogIn in existing Accoung `heroku login`
+2. Go with your CLI to your cloned repo e.g. `my/repos/de.htwg.wt.nmm`
+3. Add the Heroku remote `heroku git:remote -a de-htwg-wt-nmm`
+4. Work normal with your git(Hub) repo `git add`, `git commit`, `git push origin` etc.
+5. Deploy to Heroku `git push heroku`
+6. Show in Browser with <https://de-htwg-wt-nmm.herokuapp.com> or in CLI with `heroku open`
 
-  Shows how to handle simple HTTP requests.
+### Local
 
-- AsyncController.java:
-
-  Shows how to do asynchronous programming when handling a request.
-
-- CountController.java:
-
-  Shows how to inject a component into a controller and use the component when
-  handling requests.
-
-Components
-==========
-
-- Module.java:
-
-  Shows how to use Guice to bind all the components needed by your application.
-
-- Counter.java:
-
-  An example of a component that contains state, in this case a simple counter.
-
-- ApplicationTimer.java:
-
-  An example of a component that starts when the application starts and stops
-  when the application stops.
-
-Filters
-=======
-
-- Filters.java:
-
-  Creates the list of HTTP filters used by your application.
-
-- ExampleFilter.java
-
-  A simple filter that adds a header to every response.
+1. Install `sbt` CLI
+    * OSX with homebrew `brew sbt`
+2. Setup the necessary Heroku environment variables in a new `.env` file in your local repo
+    * `echo "PLAY_CONF_FILE='application.prod.local.conf'" >> .env`
+    * `heroku config:get PLAY_APP_SECRET -s >> .env`
+    * `heroku config:get BUILDPACK_URL -s >> .env`
+    * (optional) `heroku config:get GOOGLE_CLIENT_SECRET -s >> .env`
+    * (optional) `heroku config:get GOOGLE_CLIENT_ID -s >> .env`
+3. Verify `.env` file with `cat .env`
+4. Compile project with SBT `sbt compile stage`
+5. Run project localy with Heroku `heroku local web`
+6. Open App in Browser `http://localhost:5000`
