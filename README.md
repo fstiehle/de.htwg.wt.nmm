@@ -1,7 +1,7 @@
 # HTWG | Web Technologies | Nine Men's Morris
 
-- Play Setup
-- Heroku Deployment
+- [Play Setup](#play-setup)
+- [Heroku Deployment](#heroku-deployment)
 
 ## Heroku Deployment
 
