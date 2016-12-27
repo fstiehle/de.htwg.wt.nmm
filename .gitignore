@@ -15,6 +15,7 @@ target
 bin/RUNNING_PID
 project/.sbtserver
 .sbtserver
+.env
 
 
 ###
@@ -36,5 +37,4 @@ project/.sbtserver
 #/*.iml
 #/out
 #/bin
-
 
