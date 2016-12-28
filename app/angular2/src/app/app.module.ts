@@ -8,9 +8,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { PlayComponent } from './play/play.component';
-import {JunctionComponent} from "./play/junction/junction.component";
-import {ConnectorComponent} from "./play/connector/connector.component";
-import {PuckComponent} from "./play/puck/puck.component";
+import { JunctionComponent } from "./play/junction/junction.component";
+import { ConnectorComponent } from "./play/connector/connector.component";
+import { PuckComponent } from "./play/puck/puck.component";
 
 @NgModule({
   declarations: [

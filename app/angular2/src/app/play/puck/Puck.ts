@@ -1,5 +1,4 @@
 import Junction from '../junction/Junction';
-import mojs from 'mo-js';
 
 /**
  * Uses as a mute for the rescale process
@@ -18,12 +17,12 @@ const POINTS = 6;
  * @param x coordinate
  * @param y coordinate
  * @param id
- * @constructor
+ * @param parent HTML container
  */
 export default class Puck extends Junction {
   
- constructor(x: number, y: number, id: string) {
-    super(x, y, id);
+ constructor(x: number, y: number, id: string, parent: string) {
+    super(x, y, id, parent);
   }
 
   /**

@@ -3,8 +3,8 @@ import Connector from './Connector';
 
 @Component({
   selector: 'app-connector',
-  templateUrl: './connector.component.html',
-  styleUrls: ['./connector.component.less']
+  template: '<ng-content></ng-content>',
+  styleUrls: ['../play.component.less']
 })
 export class ConnectorComponent implements OnInit {
 
@@ -12,10 +12,15 @@ export class ConnectorComponent implements OnInit {
   @Input() y: number;
   @Input() length: number;
   @Input() rotation: number;
+  @Input() parent: string;
+
+  connector: Connector;
 
   constructor() { }
 
   ngOnInit() {
+    //this.connector = new Connector(this.x, this.y, this.length, this.rotation, this.parent);
+    //this.connector.generateMojs();
   }
 
 }

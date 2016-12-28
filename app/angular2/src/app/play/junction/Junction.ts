@@ -1,7 +1,5 @@
-import mojs from 'mo-js';
-
 /**
- * Uses as a mute for the rescale process
+ * Use a mute for the rescale process
  */
 const MUTE = 30;
 
@@ -15,19 +13,18 @@ const POINTS = 0;
  * Holds the mojs shape 
  */
 export default class Junction {
+
+  Mojs = require('../../../../node_modules/mo-js/build/mo.js');
   
   /**
-   * Coordinates
-   */ 
-  x = 0;
-  y = 0;
-  top: number; // % value
-  left: number; // % value
-  
-  /**
-   * HTML ID
+   * Angular component to which shape will be attached
    */ 
   id: string;
+
+  /**
+   * board element to base positioning on
+   */
+  board: string; 
 
   /**
    * mojs object
@@ -35,20 +32,12 @@ export default class Junction {
   mojs;
   
   /**  
-   * @param x coordinate
-   * @param y coordinate
-   * @param id
+   * @param Angular component to which shape will be attached
+   * @param board element to base positioning on
    */
-  constructor(x: number, y: number, id: string) {
-    this.x = x;
-    this.y = y;
+  constructor(id: string, board: string) {
     this.id = id;
-    
-    this.left = this.calculateOffset(x);
-    this.top = this.calculateOffset(y);
-    
-    this.mojs = this.generateMojs();
-    this.mojs.el.dataset.id = id;
+    this.board = board;
   }
   
   /**
@@ -58,33 +47,31 @@ export default class Junction {
    * @var left distance in percentage from left
    * @var right distance in percentage from top
    */
-  protected calculateOffset(coordinate) {
+  calculateOffset(coordinate) {
     return (100 / 7) * coordinate;
   }
   
   /**
    * Creates a new mojs shape
-   * @returns {mojs.Shape}
    */
-  protected generateMojs() {
-    return new mojs.Shape({
-        parent: "#" + Game.defaults.BOARD_ID,
-        className: CLASS_NAME,
-        shape: SHAPE,
-        points: POINTS,
-        strokeWidth: STROKE,
-        radius: this.calculateScale(),
-        left: this.left + "%",
-        top: this.top + "%",
-        isShowStart:  true
+  generateMojs() {
+    this.mojs = new this.Mojs.Shape({
+      parent: "#" + this.id,
+      className: CLASS_NAME,
+      shape: SHAPE,
+      points: POINTS,
+      strokeWidth: STROKE,
+      radius: this.calculateScale(),
+      isShowStart:  true
     });
+    this.mojs.el.style.position = "relative";  
   }
   
   /**
    * Calculates scale
    */
   protected calculateScale() {
-    return document.getElementById(Game.defaults.BOARD_ID).offsetWidth / MUTE;
+    return document.getElementById(this.board).offsetWidth / MUTE;
   }
 
   /**

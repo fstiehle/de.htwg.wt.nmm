@@ -1,5 +1,4 @@
 import Junction from '../junction/Junction';
-import mojs from 'mo-js';
 
   /**
    * Uses as a mute for the rescale process
@@ -16,6 +15,8 @@ import mojs from 'mo-js';
  * Connector between Junctions
  */
 export default class Connector extends Junction {
+
+  Mojs = require('../../../../node_modules/mo-js/build/mo.js');
      
   length: number;
   rotation: number;
@@ -25,10 +26,10 @@ export default class Connector extends Junction {
    * @param y coordinate
    * @param length
    * @param rotation
+   * @param parent HTML container
    */
-  constructor(x: number, y: number, length: number, rotation: number) {
-    super(x, y, "");
-    
+  constructor(x: number, y: number, length: number, rotation: number, parent : string) {
+    super(x, y, "", parent);
     this.rotation = rotation;
     this.length = length;
   }
@@ -36,27 +37,25 @@ export default class Connector extends Junction {
   /**
    * @Override
    * Creates a new mojs from class variables
-   * @returns {mojs.Shape}
    */
-  protected generateMojs() {
-      return new mojs.Shape({
-          parent: "#" + Game.defaults.BOARD_ID,
-          className: CLASS_NAME,
-          shape: SHAPE,
-          points: POINTS,
-          strokeWidth: STROKE,
-          radius: this.radius(),
-          left: this.left + "%",
-          top: this.top + "%",
-
-          angle: this.rotation,
-          radiusY: this.calculateScale(),
-          isShowStart: true
-      });
+  generateMojs() {
+    this.mojs = new this.Mojs.Shape({
+      parent: "#" + this.parent,
+      className: CLASS_NAME,
+      shape: SHAPE,
+      points: POINTS,
+      strokelength: STROKE,
+      radius: this.radius(),
+      left: this.left + "%",
+      top: this.top + "%",
+      angle: this.rotation,
+      radiusY: this.calculateScale(),
+      isShowStart: true
+    });
   };
 
   private radius() {
-      return this.length * document.getElementById(Game.defaults.BOARD_ID).offsetWidth / MUTE_RADIUS;
+    return this.length * document.getElementById(this.parent).offsetWidth / MUTE_RADIUS;
   }
 
   /**
@@ -65,8 +64,8 @@ export default class Connector extends Junction {
    */
   rescale() {
     this.mojs.tune({
-        radius: this.radius(),
-        radiusY: this.calculateScale()
+      radius: this.radius(),
+      radiusY: this.calculateScale()
     })
     .replay();
   }

@@ -31,6 +31,7 @@ export class PlayComponent implements OnInit {
    * Require Initial Board Components from JSON
    */
   boardDefinition = require("../../assets/boardDefinition.json");
+  BOARD_ID = PlayService.BOARD_ID;
 
   constructor(private playService: PlayService, private httpService: HttpService) {   
     playService.connect().then(state => {
