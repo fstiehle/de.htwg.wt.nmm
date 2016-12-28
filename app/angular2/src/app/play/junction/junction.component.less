@@ -1,4 +1,13 @@
+@import "../../../variables";
+@deep: ~'/deep/';
+
 :host {
   position: absolute;
   cursor: pointer;
+  z-index: 1;
+}
+
+:host @{deep} ellipse {
+  fill: @junction-color;
+  stroke: @connector-color;
 }
