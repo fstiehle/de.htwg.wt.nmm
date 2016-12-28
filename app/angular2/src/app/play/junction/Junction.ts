@@ -3,7 +3,6 @@
  */
 const MUTE = 30;
 
-const CLASS_NAME = "junction";
 const SHAPE = "circle";
 const STROKE = 4;
 const POINTS = 0;
@@ -57,12 +56,12 @@ export default class Junction {
   generateMojs() {
     this.mojs = new this.Mojs.Shape({
       parent: "#" + this.id,
-      className: CLASS_NAME,
       shape: SHAPE,
       points: POINTS,
       strokeWidth: STROKE,
       radius: this.calculateScale(),
-      isShowStart:  true
+      isShowStart:  true,
+      left: 0
     });
     this.mojs.el.style.position = "relative";  
   }

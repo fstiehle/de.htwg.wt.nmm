@@ -11,7 +11,7 @@ export class PuckComponent implements OnInit {
   @Input() x: number;
   @Input() y: number;
   @Input() id: string;
-  @Input() parent: string;
+  @Input() board: string;
 
   puck;
 

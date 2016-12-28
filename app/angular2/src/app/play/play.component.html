@@ -14,16 +14,17 @@
     [x]="puck.translation.x"
     [y]="puck.translation.y"
     [id]="puck.id"
-    [parent]="BOARD_ID"
+    [board]="BOARD_ID"
     (window:resize)="onResize(event)">
   </app-puck>
 
-  <app-connector *ngFor="let connector of boardDefinition['MODEL_CONNECTOR']"
+  <app-connector *ngFor="let connector of boardDefinition['MODEL_CONNECTOR']; let i = index"
     [x]="connector.translation.x"
     [y]="connector.translation.y"
+    [id]="'connector-' + i"
     [length]="connector.length"
     [rotation]="connector.rotation"
-    [parent]="BOARD_ID"
+    [board]="BOARD_ID"
     (window:resize)="onResize(event)">
   </app-connector>
 

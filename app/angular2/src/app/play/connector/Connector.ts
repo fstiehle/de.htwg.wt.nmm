@@ -28,10 +28,10 @@ export default class Connector extends Junction {
    * @param rotation
    * @param parent HTML container
    */
-  constructor(x: number, y: number, length: number, rotation: number, parent : string) {
-    super(x, y, "", parent);
-    this.rotation = rotation;
+  constructor(id: string, board: string, length: number, rotation: number) {
+    super(id, board);
     this.length = length;
+    this.rotation = rotation;
   }
 
   /**
@@ -40,22 +40,22 @@ export default class Connector extends Junction {
    */
   generateMojs() {
     this.mojs = new this.Mojs.Shape({
-      parent: "#" + this.parent,
+      parent: "#" + this.id,
       className: CLASS_NAME,
       shape: SHAPE,
       points: POINTS,
       strokelength: STROKE,
       radius: this.radius(),
-      left: this.left + "%",
-      top: this.top + "%",
       angle: this.rotation,
       radiusY: this.calculateScale(),
-      isShowStart: true
+      isShowStart: true,
+      left: 0
     });
+    this.mojs.el.style.position = "relative"; 
   };
 
   private radius() {
-    return this.length * document.getElementById(this.parent).offsetWidth / MUTE_RADIUS;
+    return this.length * document.getElementById(this.board).offsetWidth / MUTE_RADIUS;
   }
 
   /**
