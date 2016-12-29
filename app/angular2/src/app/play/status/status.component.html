@@ -1,17 +1,19 @@
 <div id="status">
   <div id="player-white">
     <div class="wrapper">
-      <form (ngSubmit)="onSubmit()">
+      <form (ngSubmit)="onSubmit()" [formGroup]="playerForm">
         <input type="text" name="WHITE" id="name" title="Click to edit" value="{{whiteName}}"
-        [(ngModel)]="whiteName">
+        [(ngModel)]="whiteName"
+        [formControl]="playerForm.controls['name']">
       </form>
     </div>
   </div>
   <div id="player-black">
     <div class="wrapper">
-      <form (ngSubmit)="onSubmit()">
+      <form (ngSubmit)="onSubmit()" [formGroup]="playerForm">
         <input type="text" name="BLACK" id="name" title="Click to edit" value="{{blackName}}"
-        [(ngModel)]="blackName">
+        [(ngModel)]="blackName"
+        [formControl]="playerForm.controls['name']">
       </form>
     </div>
   </div>
