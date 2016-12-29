@@ -1,15 +1,10 @@
 import Junction from '../junction/Junction';
 
-  /**
-   * Uses as a mute for the rescale process
-   */
-  const MUTE = 100;
-  const MUTE_RADIUS = 6;
+const MUTE_RADIUS = 6;
 
-  const CLASS_NAME = "connector";
-  const SHAPE = "rect";
-  const STROKE = 0;
-  const POINTS = 0;
+const SHAPE = "rect";
+const STROKE = 0;
+const POINTS = 0;
 
 /**
  * Connector between Junctions
@@ -17,6 +12,11 @@ import Junction from '../junction/Junction';
 export default class Connector extends Junction {
 
   Mojs = require('../../../../node_modules/mo-js/build/mo.js');
+
+  /**
+   * Uses as a mute for the rescale process
+   */
+  MUTE = 100;
      
   length: number;
   rotation: number;
@@ -41,7 +41,6 @@ export default class Connector extends Junction {
   generateMojs() {
     this.mojs = new this.Mojs.Shape({
       parent: "#" + this.id,
-      className: CLASS_NAME,
       shape: SHAPE,
       points: POINTS,
       strokelength: STROKE,

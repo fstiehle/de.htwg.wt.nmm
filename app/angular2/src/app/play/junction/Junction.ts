@@ -1,8 +1,3 @@
-/**
- * Use a mute for the rescale process
- */
-const MUTE = 30;
-
 const SHAPE = "circle";
 const STROKE = 4;
 const POINTS = 0;
@@ -14,6 +9,11 @@ const POINTS = 0;
 export default class Junction {
 
   Mojs = require('../../../../node_modules/mo-js/build/mo.js');
+
+  /**
+   * Use a mute for the rescale process
+   */
+  MUTE = 30;
   
   /**
    * Angular component to which shape will be attached
@@ -70,7 +70,7 @@ export default class Junction {
    * Calculates scale
    */
   protected calculateScale() {
-    return document.getElementById(this.board).offsetWidth / MUTE;
+    return document.getElementById(this.board).offsetWidth / this.MUTE;
   }
 
   /**
