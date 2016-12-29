@@ -1,5 +1,4 @@
 import {PlayService} from "./play.service";
-import {HttpService} from "./http.service";
 import {Component, OnInit, Input} from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
@@ -14,7 +13,7 @@ export let Shapes = {
   selector: 'app-play',
   templateUrl: './play.component.html',
   styleUrls: ['./play.component.less'],
-  providers: [PlayService, HttpService]
+  providers: [PlayService]
 })
 
 /**
@@ -33,16 +32,16 @@ export class PlayComponent implements OnInit {
   boardDefinition = require("../../assets/boardDefinition.json");
   BOARD_ID = PlayService.BOARD_ID;
 
-  constructor(private playService: PlayService, private httpService: HttpService) {   
+  constructor(private playService: PlayService) {   
 
     /**
      * Default values until state arrives from server
      */
-    this.state = { white: { name: "Player 1" },
-      black: { name: "Player 2" }};
+    this.state = { white: { name: "Loading..." },
+      black: { name: "Loading..." }};
 
     /**
-     * Listen to playService Observer
+     * Subscribe to playService observerable
      */
     playService.getObservable().subscribe((message) => {
       this.state = JSON.parse(message.data);
@@ -50,15 +49,6 @@ export class PlayComponent implements OnInit {
     });
   }
 
-  ngOnInit() {    
-
-  }
-
-  /**
-   * updates Board and activates/deactivates pucks
-   */
-  updateBoard() {
-    
-  }
+  ngOnInit() { }
 
 }

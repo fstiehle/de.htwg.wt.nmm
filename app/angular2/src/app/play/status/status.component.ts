@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { PlayService } from "../play.service";
 
 @Component({
   selector: 'app-status',
@@ -11,22 +12,34 @@ export class StatusComponent implements OnInit {
   @Input() whiteName: String;
   @Input() blackName: String;
 
-  playerForm: FormGroup;
+  playerWhiteForm: FormGroup;
+  playerBlackForm: FormGroup;
+  play: PlayService;
 
-  constructor(fb: FormBuilder) {
-    this.playerForm = fb.group({
+  constructor(fb: FormBuilder, play: PlayService) {
+    this.play = play;
+    this.playerWhiteForm = fb.group({
+      'name' : [null, Validators.compose([Validators.required, Validators.minLength(2)])],
+    });
+    this.playerBlackForm = fb.group({
       'name' : [null, Validators.compose([Validators.required, Validators.minLength(2)])]
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
-
-  onSubmit() {
-    if (this.playerForm.valid) {
-      console.log("submit");
+  /**
+   * On form submit
+   * sends setPlayerName request
+   * @param man white or black Player
+   */
+  onSubmit(form, man) {
+    if (!form.valid) {
+      // TODO: Handle illegal input
+      console.log("not vaild");
+      return;
     }
+    this.play.send("setPlayerName", man, form.value.name);
   }
 
 }

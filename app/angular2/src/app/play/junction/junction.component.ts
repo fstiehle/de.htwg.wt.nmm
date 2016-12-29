@@ -47,4 +47,8 @@ export class JunctionComponent implements OnInit {
     this.junction.generateMojs();
   }
 
+  onResize(event) {
+    
+  }
+
 }
