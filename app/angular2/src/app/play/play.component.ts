@@ -41,10 +41,12 @@ export class PlayComponent implements OnInit {
     this.state = { white: { name: "Player 1" },
       black: { name: "Player 2" }};
 
-    playService.connect().then(state => {
-      this.state = state;
-      console.log(this.state);
-      this.updateBoard();
+    /**
+     * Listen to playService Observer
+     */
+    playService.getObservable().subscribe((message) => {
+      this.state = JSON.parse(message.data);
+      console.log("state updated");
     });
   }
 

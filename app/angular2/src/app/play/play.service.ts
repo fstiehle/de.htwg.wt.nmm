@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject, Observable, Observer } from 'rxjs';
 
 const SOCKET_URL = "ws://de-htwg-wt-nmm.herokuapp.com/socket";
 
@@ -6,41 +7,35 @@ const SOCKET_URL = "ws://de-htwg-wt-nmm.herokuapp.com/socket";
 export class PlayService {
 
   static BOARD_ID = "board";
+  
+  /**
+   * Subject with MessageEvent data
+   * A MessageEvent is the interface representing a message received by a target,
+   * being a WebSocket or a WebRTC 
+   * https://developer.mozilla.org/de/docs/Web/API/MessageEvent
+   */
+  private subject: Observable<MessageEvent>;
+  private socket: WebSocket;
 
   /**
-   * Last received state
+   * First to call for service will initialize the Websocket
    */
-  state;
-
-  socket: WebSocket;
-
-  constructor() {}
-
-  connect() {
-    // TODO: REJECT ON ERROR
-    return new Promise((resolve, reject) => {
-        this.socket = new WebSocket(SOCKET_URL);        
-
-        this.socket.onmessage = message => {
-          console.log('Socket Status: '+ message + ' (onmessage)');
-          this.state = (JSON.parse(message.data));
-          resolve(this.state);
-        };
-
-        this.socket.onopen = () => {
-          console.log('Socket Status: '+ this.socket.readyState + ' (open)');
-          this.send("refreshGame");
-        };
-
-        this.socket.onclose = () => {
-          console.log('Socket Status: '+ this.socket.readyState + ' (closed)');
-        };
-
+  constructor() {
+    this.socket = new WebSocket(SOCKET_URL);
+    this.subject = Observable.create((observer: Observer<MessageEvent>) => {
+      // bind socket events to observer events
+      this.socket.onmessage = observer.next.bind(observer);
+      this.socket.onerror = observer.error.bind(observer);
+      this.socket.onclose = observer.complete.bind(observer);
+      this.socket.onopen = () => {
+        console.log('Socket Status: '+ this.socket.readyState + ' (open)');
+        this.send("refreshGame");
+      };
     });
   }
 
-  getState() {
-    return this.state;
+  getObservable() {
+    return this.subject;
   }
 
   /**
@@ -57,6 +52,10 @@ export class PlayService {
    *   when "setPlayerName": "theNewPlayerName"
    */
   send(type, command = " ", query = " ") {
+    if (this.socket.readyState !== WebSocket.OPEN) {
+      console.log("Websocket not open");
+      return;
+    }
     var data = {type: type, command: command, query: query};
     this.socket.send(JSON.stringify(data));
     console.log('Socket Status: data sent');

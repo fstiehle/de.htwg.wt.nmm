@@ -10,6 +10,7 @@ export class ErrorService {
   public error: Observable<string> = this._error.asObservable();
 
   constructor() {
+    
   }
 
 }
