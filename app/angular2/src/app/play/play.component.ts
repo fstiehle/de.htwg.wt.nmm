@@ -34,6 +34,13 @@ export class PlayComponent implements OnInit {
   BOARD_ID = PlayService.BOARD_ID;
 
   constructor(private playService: PlayService, private httpService: HttpService) {   
+
+    /**
+     * Default values until state arrives from server
+     */
+    this.state = { white: { name: "Player 1" },
+      black: { name: "Player 2" }};
+
     playService.connect().then(state => {
       this.state = state;
       console.log(this.state);
@@ -42,7 +49,7 @@ export class PlayComponent implements OnInit {
   }
 
   ngOnInit() {    
-    console.log(this.boardDefinition);
+
   }
 
   /**

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-status',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusComponent implements OnInit {
 
+  @Input() whiteName: String;
+  @Input() blackName: String;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    console.log("Submit!");
   }
 
 }

@@ -1,16 +1,18 @@
 <div id="status">
   <div id="player-white">
     <div class="wrapper">
-      <span data-man="WHITE" title="Click to edit">Player 1
-        <input type="text" data-man="WHITE" />
-      </span>
+      <form (ngSubmit)="onSubmit()">
+        <input type="text" name="WHITE" id="name" title="Click to edit" value="{{whiteName}}"
+        [(ngModel)]="whiteName">
+      </form>
     </div>
   </div>
   <div id="player-black">
     <div class="wrapper">
-      <span data-man="BLACK" title="Click to edit">Player 2
-        <input type="text" data-man="BLACK" />
-      </span>
+      <form (ngSubmit)="onSubmit()">
+        <input type="text" name="BLACK" id="name" title="Click to edit" value="{{blackName}}"
+        [(ngModel)]="blackName">
+      </form>
     </div>
   </div>
 </div>
