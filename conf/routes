@@ -34,6 +34,13 @@ GET         /account/activate/:token         controllers.authentication.Activate
 
 
 ###
+# Localization
+###
+GET         /lang/en                         controllers.LocalizationController.langEN
+GET         /lang/de                         controllers.LocalizationController.langDE
+
+
+###
 # Sites
 ###
 GET         /about                           controllers.AboutController.index

@@ -47,7 +47,6 @@ new.password = Neues Passwort
 
 remember.me = Eingeloggt bleiben
 or.use.social = Oder sie verwenden einen vorhandenen Account der folgenden Services zum anmelden:
-forgot.password.info = Please enter your email address and we will send you an email with further instructions to reset your password.
 forgot.password.info = Geben Sie hier Ihre E-Mail Adresse an um weitere Instruktionen per E-Mail zu erhalten.
 strong.password.info = Strong passwords include numbers, letters and punctuation marks.
 current.password.invalid = The entered password is invalid. Please enter the correct password!
