@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap-less/bootstrap/index";
+@import "variables"; 
+
+.window #logo {
+    filter: invert(100%);
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+img {
+    user-select: none;
+}
+
+a {
+    .transition(@transition)
+}
+
+a:active {
+    color: green;
+}
+
+button {
+    outline: 0 !important;
+}
+
+cite {
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5 {
+    margin-top: 1.0em;
+}
+
+.wrapper {
+    padding: 20px;
+}
+
+#instructions {
+    padding: 50px;
+}
+
+footer,
+#instructions {
+    opacity: 0.95;
+    color: @background-font-color;
+}
+
+.window {
+    text-align: center;
+    padding: 60px 0;
+    color: @background-font-color;
+    background-image: @gradient-player;
+}
+
+.window a {
+    text-decoration: underline;
+}
+
+.content {
+    padding: 60px 0;
+}
+
+.panel {
+    border: none;
+    margin-bottom: 10px;
+
+    .panel-footer {
+        background-color: @gray;
+    }
+}
+
+.panel blockquote {
+    border: none;
+}
+
+.panel-info {
+    background-color: @color-info;
+    margin: 20px 0;
+    color: @color-font-info;
+}

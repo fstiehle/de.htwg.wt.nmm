@@ -1,0 +1,36 @@
+@import "../../variables";
+
+#scene {
+    background-color: @board-color;
+    padding: 40px 20px;
+}
+
+#board {
+    position: relative;
+    width: 100%;
+    height: 100vw;
+    max-width: 80vh;
+    margin: auto;
+
+    @media only screen and (orientation : landscape) {
+        height: 80vh; // subtract for additional space
+    }
+
+    svg {
+        overflow: visible;
+    }
+}
+
+.puck.selected {
+    path {
+        stroke: @color-interaction !important;
+    }
+}
+
+.connector {
+    overflow: auto;
+    rect {
+        fill: @connector-color;
+    }
+}
+
