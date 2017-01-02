@@ -11,14 +11,6 @@
       (window:resize)="onResize(event)">
     </app-junction>
 
-    <app-puck *ngFor="let puck of boardDefinition['MODEL_JUNCTION']"
-      [x]="puck.translation.x"
-      [y]="puck.translation.y"
-      [id]="puck.id"
-      [board]="BOARD_ID"
-      (window:resize)="onResize(event)">
-    </app-puck>
-
     <app-connector *ngFor="let connector of boardDefinition['MODEL_CONNECTOR']; let i = index"
       [x]="connector.translation.x"
       [y]="connector.translation.y"

@@ -1,10 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PlayService } from "../play.service";
 import Junction from './Junction';
+import Puck from '../puck/Puck';
 
 @Component({
   selector: 'app-junction',
-  template: '<ng-content></ng-content>',
+  templateUrl: './junction.component.html',
   styleUrls: ['./junction.component.less'],
   host: {'[id]': 'id', '[style.left]': 'left' , '[style.top]': 'top'}
 })
@@ -35,6 +36,13 @@ export class JunctionComponent implements OnInit {
 
   junction: Junction;
 
+  /**
+   * Junction can be ocupied by a
+   * players puck
+   */ 
+  puck: Puck;
+  hasPuck: boolean;
+
   constructor() { }
 
   ngOnInit() {
@@ -49,6 +57,14 @@ export class JunctionComponent implements OnInit {
 
   onResize(event) {
     
+  }
+
+  clickEvent(event, playerState) {
+    // check if state has arrived
+    // decide if hasPuck
+    // if not set puck
+    // else activate or deactivate depending on player state
+    // else in move state add puck to mouseQueue
   }
 
 }

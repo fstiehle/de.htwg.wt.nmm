@@ -1,7 +1,3 @@
-const SHAPE = "circle";
-const STROKE = 4;
-const POINTS = 0;
-
 /**
  * Junction
  * Holds the mojs shape 
@@ -14,6 +10,10 @@ export default class Junction {
    * Use a mute for the rescale process
    */
   MUTE = 30;
+  
+  SHAPE = "circle";
+  STROKE = 4;
+  POINTS = 0;
   
   /**
    * Angular component to which shape will be attached
@@ -56,14 +56,13 @@ export default class Junction {
   generateMojs() {
     this.mojs = new this.Mojs.Shape({
       parent: "#" + this.id,
-      shape: SHAPE,
-      points: POINTS,
-      strokeWidth: STROKE,
+      shape: this.SHAPE,
+      points: this.POINTS,
+      strokeWidth: this.STROKE,
       radius: this.calculateScale(),
       isShowStart:  true,
       left: 0
     });
-    this.mojs.el.style.position = "relative";  
   }
   
   /**

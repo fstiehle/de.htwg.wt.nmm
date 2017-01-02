@@ -1,11 +1,5 @@
 import Junction from '../junction/Junction';
 
-const MUTE_RADIUS = 6;
-
-const SHAPE = "rect";
-const STROKE = 0;
-const POINTS = 0;
-
 /**
  * Connector between Junctions
  */
@@ -17,6 +11,11 @@ export default class Connector extends Junction {
    * Uses as a mute for the rescale process
    */
   MUTE = 100;
+
+  MUTE_RADIUS = 6;
+  SHAPE = "rect";
+  STROKE = 0;
+  POINTS = 0;
      
   length: number;
   rotation: number;
@@ -41,9 +40,9 @@ export default class Connector extends Junction {
   generateMojs() {
     this.mojs = new this.Mojs.Shape({
       parent: "#" + this.id,
-      shape: SHAPE,
-      points: POINTS,
-      strokelength: STROKE,
+      shape: this.SHAPE,
+      points: this.POINTS,
+      strokelength: this.STROKE,
       radius: this.radius(),
       angle: this.rotation,
       radiusY: this.calculateScale(),
@@ -54,7 +53,7 @@ export default class Connector extends Junction {
   };
 
   private radius() {
-    return this.length * document.getElementById(this.board).offsetWidth / MUTE_RADIUS;
+    return this.length * document.getElementById(this.board).offsetWidth / this.MUTE_RADIUS;
   }
 
   /**
