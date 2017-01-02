@@ -1,0 +1,27 @@
+<app-status [(blackName)]="state.black.name" [(whiteName)]="state.white.name"></app-status>
+
+<div id="scene">
+  <div id="board">
+    
+    <app-junction #j *ngFor="let junction of boardDefinition['MODEL_JUNCTION']"
+      [x]="junction.translation.x"
+      [y]="junction.translation.y"
+      [id]="junction.id"
+      [board]="BOARD_ID"
+      [(state)]="boardState[junction.id]"
+      (window:resize)="j.onResize()"
+      (click)="j.onClick(state.currentPlayer.man, state.currentPlayer.currentState)">
+    </app-junction>
+
+    <app-connector #c *ngFor="let connector of boardDefinition['MODEL_CONNECTOR']; let i = index"
+      [x]="connector.translation.x"
+      [y]="connector.translation.y"
+      [id]="'connector-' + i"
+      [length]="connector.length"
+      [rotation]="connector.rotation"
+      [board]="BOARD_ID"
+      (window:resize)="c.onResize()">
+    </app-connector>
+
+  </div>
+</div>
