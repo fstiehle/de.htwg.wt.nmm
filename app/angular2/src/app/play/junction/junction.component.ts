@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PlayService } from "../play.service";
 import Junction from './Junction';
 import Puck from '../puck/Puck';
@@ -42,7 +42,7 @@ export class JunctionComponent implements OnInit {
    * players puck
    */ 
   puck: Puck;
-  hasPuck: false;
+  hasPuck = false;
 
   playService: PlayService
 
@@ -69,11 +69,17 @@ export class JunctionComponent implements OnInit {
       console.log("Still loading...");
       return;
     }
-    console.log(player);
-    console.log(playerState);
-    // check if state has arrived
-    // decide if hasPuck
-    // if not set puck
+    if (this.hasPuck) {
+      //this.puckClick.emit({player, playerState});
+    } 
+    else if (playerState === "SET") {
+      this.hasPuck = true;
+      this.playService.send("processCommand", "set", this.id);
+    }
+    else if (playerState === "PICK") {
+      this.hasPuck = false;
+      this.playService.send("processCommand", "pick", this.id);
+    }
     // else activate or deactivate depending on player state
     // else in move state add puck to mouseQueue
   }

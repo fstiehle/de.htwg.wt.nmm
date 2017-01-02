@@ -76,10 +76,10 @@ export default class Junction {
    * Rescales the mojs object
    */
   rescale() {
-      this.mojs.tune({
-          radius: this.calculateScale()
-      })
-      .replay();
+    this.mojs.tune({
+        radius: this.calculateScale()
+    })
+    .replay();
   }
 
 }

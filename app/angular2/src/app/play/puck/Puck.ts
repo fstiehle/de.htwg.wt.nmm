@@ -42,7 +42,7 @@ export default class Puck extends Junction {
    * Puck Event Handler
    * !!@this is here the clicked element!!
    */
-  clickEvent() {
+  onClick(player, playerState) {
     /**
     var data = Game.State.data,
         playerState = data.currentPlayer.currentState === "HOP" ? "MOVE": data.currentPlayer.currentState;

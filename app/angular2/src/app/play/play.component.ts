@@ -3,12 +3,6 @@ import {Component, OnInit, Input} from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
 
-export let Shapes = {
-    junction: {},
-    puck: {},
-    connector: []
-}
-
 @Component({
   selector: 'app-play',
   templateUrl: './play.component.html',

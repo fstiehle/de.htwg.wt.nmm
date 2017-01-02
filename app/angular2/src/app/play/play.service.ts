@@ -7,11 +7,6 @@ const SOCKET_URL = "ws://de-htwg-wt-nmm.herokuapp.com/socket";
 export class PlayService {
 
   static BOARD_ID = "board";
-
-  /**
-   * True if initial state has arrived from server
-   */
-  isReady = false;
   
   /**
    * Subject with MessageEvent data
@@ -35,7 +30,6 @@ export class PlayService {
       this.socket.onopen = () => {
         console.log('Socket Status: open');
         this.send("refreshGame");
-        this.isReady = true;
       };
     });
   }
