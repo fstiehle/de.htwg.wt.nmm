@@ -45,6 +45,8 @@
 @font-size-h5:            @font-size-base;
 @font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
 
+@font-size-flags:         ceil((@font-size-base * 1.25)); // ~20px
+
 @line-height-base:        1.428571429; // 20/14
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
@@ -58,6 +60,7 @@
 // ######################## Imports
 @import "about.less";
 @import "tui.less";
+@import "flags/flag-icon.less";
 
 .window #logo {
     filter: invert(100%);
@@ -341,4 +344,11 @@ footer,
 .input-lg {
     background: rgba(0, 0, 0, 0.15);
     border: none;
+}
+
+
+
+.flag-icon.flag-icon-squared {
+    font-size: @font-size-flags;
+    border-radius: 50%;
 }
