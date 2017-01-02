@@ -39,7 +39,7 @@ export class StatusComponent implements OnInit {
       console.log("not vaild");
       return;
     }
-    this.play.send("setPlayerName", man, form.value.name);
+    this.play.send("setPlayerName", man.toUppercase(), form.value.name);
   }
 
 }

@@ -46,7 +46,7 @@ export class PlayService {
    *   "resetGame": NotImplementedYet
    * @param command
    *   when "processCommand": "set" | "pick" | "move"
-   *   when "setPlayerName": "white" | "black"
+   *   when "setPlayerName": "WHITE" | "BLACK"
    * @param query
    *   when "processCommand": Array of PuckIDs ["a1"]
    *   when "setPlayerName": "theNewPlayerName"
