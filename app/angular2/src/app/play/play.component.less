@@ -21,39 +21,10 @@
     }
 }
 
-.puck,
-.junction {
-    cursor: pointer;
-}
-
-.puck {
-    z-index: 2;
-    overflow: visible;
-}
-
 .puck.selected {
     path {
         stroke: @color-interaction !important;
     }
-}
-
-.hidden {
-    z-index: 0;
-    display: none;
-}
-
-.puck.white {
-     path {
-        fill: @player-white-color;
-        stroke: white;
-     }
-}
-
-.puck.black {
-     path{
-        fill: @player-black-color;
-        stroke: black;
-     }
 }
 
 .connector {

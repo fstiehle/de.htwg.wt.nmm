@@ -3,22 +3,23 @@
 <div id="scene">
   <div id="board">
     
-    <app-junction *ngFor="let junction of boardDefinition['MODEL_JUNCTION']"
+    <app-junction #j *ngFor="let junction of boardDefinition['MODEL_JUNCTION']"
       [x]="junction.translation.x"
       [y]="junction.translation.y"
       [id]="junction.id"
       [board]="BOARD_ID"
-      (window:resize)="onResize(event)">
+      (window:resize)="j.onResize()"
+      (click)="j.onClick(state.currentPlayer.man, state.currentPlayer.state)">
     </app-junction>
 
-    <app-connector *ngFor="let connector of boardDefinition['MODEL_CONNECTOR']; let i = index"
+    <app-connector #c *ngFor="let connector of boardDefinition['MODEL_CONNECTOR']; let i = index"
       [x]="connector.translation.x"
       [y]="connector.translation.y"
       [id]="'connector-' + i"
       [length]="connector.length"
       [rotation]="connector.rotation"
       [board]="BOARD_ID"
-      (window:resize)="onResize(event)">
+      (window:resize)="c.onResize()">
     </app-connector>
 
   </div>

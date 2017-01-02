@@ -37,8 +37,11 @@ export class PlayComponent implements OnInit {
     /**
      * Default values until state arrives from server
      */
-    this.state = { white: { name: "Loading..." },
-      black: { name: "Loading..." }};
+    this.state = { 
+      white: { name: "Loading..." },
+      black: { name: "Loading..." },
+      currentPlayer: { man: undefined, state: undefined }
+    };
 
     /**
      * Subscribe to playService observerable

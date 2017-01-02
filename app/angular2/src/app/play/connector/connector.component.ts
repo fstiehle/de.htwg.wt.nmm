@@ -49,7 +49,7 @@ export class ConnectorComponent implements OnInit {
     this.connector.generateMojs();
   }
 
-  onResize(event) {
+  onResize() {
     
   }
 

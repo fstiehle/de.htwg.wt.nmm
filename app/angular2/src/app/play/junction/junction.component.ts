@@ -7,7 +7,8 @@ import Puck from '../puck/Puck';
   selector: 'app-junction',
   templateUrl: './junction.component.html',
   styleUrls: ['./junction.component.less'],
-  host: {'[id]': 'id', '[style.left]': 'left' , '[style.top]': 'top'}
+  host: {'[id]': 'id', '[style.left]': 'left' , '[style.top]': 'top'},
+  providers: [PlayService]
 })
 export class JunctionComponent implements OnInit {
 
@@ -41,9 +42,13 @@ export class JunctionComponent implements OnInit {
    * players puck
    */ 
   puck: Puck;
-  hasPuck: boolean;
+  hasPuck: false;
 
-  constructor() { }
+  playService: PlayService
+
+  constructor(playerService: PlayService) { 
+    this.playService = playerService;
+  }
 
   ngOnInit() {
     this.junction = new Junction(this.id, this.board);
@@ -55,11 +60,17 @@ export class JunctionComponent implements OnInit {
     this.junction.generateMojs();
   }
 
-  onResize(event) {
+  onResize() {
     
   }
 
-  clickEvent(event, playerState) {
+  onClick(player, playerState) {
+    if (!(player && playerState)) {
+      console.log("Still loading...");
+      return;
+    }
+    console.log(player);
+    console.log(playerState);
     // check if state has arrived
     // decide if hasPuck
     // if not set puck
