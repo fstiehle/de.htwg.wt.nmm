@@ -8,6 +8,7 @@
       [y]="junction.translation.y"
       [id]="junction.id"
       [board]="BOARD_ID"
+      [(state)]="boardState[junction.id]"
       (window:resize)="j.onResize()"
       (click)="j.onClick(state.currentPlayer.man, state.currentPlayer.currentState)">
     </app-junction>

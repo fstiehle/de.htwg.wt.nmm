@@ -8,7 +8,6 @@ import Puck from '../puck/Puck';
   templateUrl: './junction.component.html',
   styleUrls: ['./junction.component.less'],
   host: {'[id]': 'id', '[style.left]': 'left' , '[style.top]': 'top'},
-  providers: [PlayService]
 })
 export class JunctionComponent implements OnInit {
 
@@ -21,6 +20,11 @@ export class JunctionComponent implements OnInit {
    * board element to base positioning on
    */
   @Input() board: string;
+
+  /**
+   * board state
+   */
+  @Input() state;
 
   /**
    * Coordinates
@@ -65,6 +69,8 @@ export class JunctionComponent implements OnInit {
   }
 
   onClick(player, playerState) {
+    console.log(this.state)
+
     if (!(player && playerState)) {
       console.log("Still loading...");
       return;

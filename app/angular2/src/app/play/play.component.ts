@@ -18,7 +18,8 @@ export class PlayComponent implements OnInit {
   /**
    * Global State
    */
-  state;
+  state: any;
+  boardState = {};
 
   /**
    * Require Initial Board Components from JSON
@@ -34,7 +35,8 @@ export class PlayComponent implements OnInit {
     this.state = { 
       white: { name: "Loading..." },
       black: { name: "Loading..." },
-      currentPlayer: { man: undefined, currentState: undefined }
+      currentPlayer: { man: undefined, currentState: undefined },
+      board: undefined
     };
 
     /**
@@ -42,6 +44,7 @@ export class PlayComponent implements OnInit {
      */
     playService.getObservable().subscribe((message) => {
       this.state = JSON.parse(message.data);
+      this.boardState = this.state.board;
       console.log("state updated");
     });
   }
