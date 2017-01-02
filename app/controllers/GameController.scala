@@ -29,6 +29,7 @@ class GameController @Inject() (
 
   def reset = silhouette.SecuredAction { implicit request =>
     gameController.initNewGame()
+    gameController.update()
     Redirect(routes.GameController.index())
   }
 }
