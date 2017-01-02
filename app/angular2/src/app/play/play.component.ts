@@ -40,7 +40,7 @@ export class PlayComponent implements OnInit {
     this.state = { 
       white: { name: "Loading..." },
       black: { name: "Loading..." },
-      currentPlayer: { man: undefined, state: undefined }
+      currentPlayer: { man: undefined, currentState: undefined }
     };
 
     /**

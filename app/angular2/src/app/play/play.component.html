@@ -9,7 +9,7 @@
       [id]="junction.id"
       [board]="BOARD_ID"
       (window:resize)="j.onResize()"
-      (click)="j.onClick(state.currentPlayer.man, state.currentPlayer.state)">
+      (click)="j.onClick(state.currentPlayer.man, state.currentPlayer.currentState)">
     </app-junction>
 
     <app-connector #c *ngFor="let connector of boardDefinition['MODEL_CONNECTOR']; let i = index"
