@@ -80,11 +80,11 @@ export class JunctionComponent implements OnInit {
     } 
     else if (playerState === "SET") {
       this.hasPuck = true;
-      this.playService.send("processCommand", "set", this.id);
+      this.playService.send("processCommand", "set", [this.id]);
     }
     else if (playerState === "PICK") {
       this.hasPuck = false;
-      this.playService.send("processCommand", "pick", this.id);
+      this.playService.send("processCommand", "pick", [this.id]);
     }
     // else activate or deactivate depending on player state
     // else in move state add puck to mouseQueue

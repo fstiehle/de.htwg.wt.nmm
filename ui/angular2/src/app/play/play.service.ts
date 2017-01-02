@@ -51,7 +51,7 @@ export class PlayService {
    *   when "processCommand": Array of PuckIDs ["a1"]
    *   when "setPlayerName": "theNewPlayerName"
    */
-  send(type, command = " ", query = " ") {
+  send(type, command = " ", query: Array<string> = []) {
     if (this.socket.readyState !== WebSocket.OPEN) {
       console.log("Websocket not open");
       return;
