@@ -33,14 +33,14 @@ export class StatusComponent implements OnInit {
    * sends setPlayerName request
    * @param man white or black Player
    */
-  onSubmit(form, man) {
+  onSubmit(e, form, man) {
+    e.preventDefault();
     if (!form.valid) {
       // TODO: Handle illegal input
       console.log("not vaild");
       return;
     }
-    console.log("send")
-    this.play.send("setPlayerName", man.toUppercase(), form.value.name);
+    this.play.send("setPlayerName", man.toUpperCase(), form.value.name);
   }
 
 }

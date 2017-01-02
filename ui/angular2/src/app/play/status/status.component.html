@@ -1,7 +1,8 @@
 <div id="status">
   <div id="player-white">
     <div class="wrapper">
-      <form (ngSubmit)="onSubmit(playerWhiteForm, 'white')" [formGroup]="playerWhiteForm">
+      <form (ngSubmit)="onSubmit($event, playerWhiteForm, 'white')"
+      [formGroup]="playerWhiteForm">
         <input type="text" id="name" title="Click to edit" value="{{whiteName}}"
         [(ngModel)]="whiteName"
         [formControl]="playerWhiteForm.controls['name']">
@@ -10,7 +11,8 @@
   </div>
   <div id="player-black">
     <div class="wrapper">
-      <form #b="ngForm" (ngSubmit)="onSubmit(playerBlackForm, 'black')" [formGroup]="playerBlackForm">
+      <form #b="ngForm" (ngSubmit)="onSubmit($event, playerBlackForm, 'black')"
+      [formGroup]="playerBlackForm">
         <input type="text" id="name" title="Click to edit" value="{{blackName}}"
         [(ngModel)]="blackName"
         [formControl]="playerBlackForm.controls['name']">
@@ -19,6 +21,8 @@
   </div>
 </div>
 
-<button type="button" class="btn btn-link" id="show-msg"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span> <i></i></button>
+<button type="button" class="btn btn-link" id="show-msg">
+  <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+</button>
 
 <div id="msg"></div>
