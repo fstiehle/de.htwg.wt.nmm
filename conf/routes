@@ -46,7 +46,12 @@ GET         /lang/de                         controllers.LocalizationController.
 GET         /about                           controllers.AboutController.index
 GET         /help                            controllers.AboutController.help
 
+
+###
+# Game
+###
 GET         /play                            controllers.GameController.index
+GET         /play/reset                      controllers.GameController.reset
 
 
 ###

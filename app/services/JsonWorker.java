@@ -76,7 +76,9 @@ public class JsonWorker {
 
 
     private void resetGame(JsonNode json) throws IllegalArgumentException {
-        throw new IllegalArgumentException("Not implemented yet");
+        IGameController gameController = Game.getInstance().getController();
+        gameController.initNewGame();
+        gameController.update();
     }
 
 

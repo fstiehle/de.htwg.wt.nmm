@@ -38,6 +38,11 @@ class _TuiGameController @Inject() (
     Ok(views.html.tuiGame(tui.printHTML(), request.identity))
   }
 
+  def reset() = silhouette.SecuredAction { implicit request =>
+    tui.processInputLine(String.format("reset"))
+    Ok(views.html.tuiGame(tui.printHTML(), request.identity))
+  }
+
   def get() = silhouette.SecuredAction { implicit request =>
     Ok(views.html.tuiGame(tui.printHTML(), request.identity))
   }

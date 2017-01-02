@@ -16,6 +16,12 @@
 
                 @listItem(routes.AboutController.index().toString(), "About")
 
+                @if(request.path == routes.GameController.index().toString()) {
+                        <li>
+                            <a href="@routes.GameController.reset()" id="new-game">New Game</a>
+                        </li>
+                }
+
                 @user.map { u =>
                     @listItem(routes.ApplicationController.signOut.toString(), Messages("sign.out"))
                 }

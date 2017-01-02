@@ -265,4 +265,11 @@ $(document).ready(function() {
     $("#status input").focusout(function(e) {
         Game.Board.changePlayerName(e.target);
     });
+
+    /**
+     * Reset Game Confirm Dialog
+     */
+    $("#new-game").click(function() {
+        return confirm("Are you sure you want to start a new game?");
+    });
 });
