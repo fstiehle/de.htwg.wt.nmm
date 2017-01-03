@@ -8,10 +8,8 @@ import play.api.i18n.{ I18nSupport, MessagesApi }
 import play.api.mvc.Controller
 import utils.auth.DefaultEnv
 
-import scala.concurrent.Future
-
 /**
- * The `Change Password` controller.
+ * The `Main Game Controller` controller.
  *
  * @param messagesApi            The Play messages API.
  * @param silhouette             The Silhouette stack.
@@ -23,8 +21,15 @@ class GameController @Inject() (
 
   val gameController = Game.getInstance.getController
 
-  def index = silhouette.SecuredAction.async { implicit request =>
-    Future.successful(Ok(views.html.game(request.identity)))
+  def index = silhouette.SecuredAction { implicit request =>
+    val player = gameController.getPlayerWithoutUserID(request.identity.userID)
+    if (player != null) {
+      player.setName(request.identity.fullName.getOrElse(player.getMan.toString()))
+      player.setUserID(request.identity.userID)
+      gameController.update()
+    }
+
+    Ok(views.html.game(request.identity))
   }
 
   def reset = silhouette.SecuredAction { implicit request =>
