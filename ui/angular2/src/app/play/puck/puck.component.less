@@ -17,3 +17,9 @@
     stroke: black;
   }
 }
+
+:host(.selected) {
+    @{deep} path {
+        stroke: @color-interaction !important;
+    }
+}

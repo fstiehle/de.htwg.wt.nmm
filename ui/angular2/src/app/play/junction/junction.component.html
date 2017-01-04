@@ -4,5 +4,6 @@
   [id]="'puck-' + id"
   [board]="board"
   [player]="state?.man?.toLowerCase()"
+  [isSelected]="isSelected"
   (click)="p.onClick(player, playerState)">
 </app-puck>

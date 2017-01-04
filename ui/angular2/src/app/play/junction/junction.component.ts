@@ -43,6 +43,8 @@ export class JunctionComponent implements OnInit {
 
   junction: Junction;
 
+  isSelected = false;
+
   playService: PlayService
   mouseQueue: MouseQueueService
 
@@ -94,6 +96,7 @@ export class JunctionComponent implements OnInit {
     if (this.mouseQueue.getLength() == 0 && this.state.man != player) {
       return; // don't procced if not player's puck or no puck at all
     } 
+    this.isSelected = true;
     mouseQueue = this.mouseQueue.addClick(this.id);
     console.log(mouseQueue);
     if (mouseQueue.length == 2) {
