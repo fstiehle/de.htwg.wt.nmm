@@ -5,5 +5,5 @@
   [board]="board"
   [player]="state?.man?.toLowerCase()"
   [isSelected]="isSelected"
-  (click)="p.onClick(player, playerState)">
+  (window:resize)="p.onResize()">
 </app-puck>

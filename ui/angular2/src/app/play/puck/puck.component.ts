@@ -51,6 +51,7 @@ export class PuckComponent implements OnInit {
     this.puck.generateMojs();
   }
 
-  onClick() {
+  onResize() {
+    this.puck.rescale();
   }
 }

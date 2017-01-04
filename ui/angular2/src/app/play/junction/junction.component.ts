@@ -64,7 +64,7 @@ export class JunctionComponent implements OnInit {
   }
 
   onResize() {
-    
+    this.junction.rescale();
   }
 
   /**
