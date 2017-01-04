@@ -3,5 +3,6 @@
   [y]="y"
   [id]="'puck-' + id"
   [board]="board"
-  [player]="state?.man?.toLowerCase()">
+  [player]="state?.man?.toLowerCase()"
+  (click)="p.onClick(player, playerState)">
 </app-puck>

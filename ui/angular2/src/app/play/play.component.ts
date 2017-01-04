@@ -1,4 +1,5 @@
 import {PlayService} from "./play.service";
+import {MouseQueueService} from "./mouse-queue.service";
 import {Component, OnInit, Input} from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable }     from 'rxjs/Observable';
@@ -7,7 +8,7 @@ import { Observable }     from 'rxjs/Observable';
   selector: 'app-play',
   templateUrl: './play.component.html',
   styleUrls: ['./play.component.less'],
-  providers: [PlayService]
+  providers: [PlayService, MouseQueueService]
 })
 
 /**

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PlayService } from "../play.service";
+import { MouseQueueService } from "../mouse-queue.service";
 import Junction from './Junction';
 import Puck from '../puck/Puck';
 
@@ -22,7 +23,8 @@ export class JunctionComponent implements OnInit {
   @Input() board: string;
 
   /**
-   * board state
+   * Junction state
+   * Empty object if not occupied
    */
   @Input() state;
 
@@ -41,17 +43,12 @@ export class JunctionComponent implements OnInit {
 
   junction: Junction;
 
-  /**
-   * Junction can be ocupied by a
-   * players puck
-   */ 
-  puck: Puck;
-  hasPuck = false;
-
   playService: PlayService
+  mouseQueue: MouseQueueService
 
-  constructor(playerService: PlayService) { 
+  constructor(playerService: PlayService, mouseQueue: MouseQueueService) { 
     this.playService = playerService;
+    this.mouseQueue = mouseQueue;
   }
 
   ngOnInit() {
@@ -68,27 +65,40 @@ export class JunctionComponent implements OnInit {
     
   }
 
+  /**
+   * Handles clickEvent
+   * @param player Player who clicked
+   * @param playerState @player's current state
+   */
   onClick(player, playerState) {
-
-    console.log(this.state);
-
     if (!(player && playerState)) {
       console.log("Still loading...");
       return;
     }
-    if (this.hasPuck) {
-      //this.puckClick.emit({player, playerState});
-    } 
     else if (playerState === "SET") {
-      this.hasPuck = true;
       this.playService.send("processCommand", "set", [this.id]);
     }
-    else if (playerState === "PICK") {
-      this.hasPuck = false;
+    if (playerState === "PICK") {
       this.playService.send("processCommand", "pick", [this.id]);
     }
-    // else activate or deactivate depending on player state
-    // else in move state add puck to mouseQueue
+    else if (playerState === "MOVE") {
+      this.movePuck(player);
+    }
+  }
+
+  /**
+   * @param player Player who clicked
+   */
+  private movePuck(player) {
+    let mouseQueue;
+    if (this.mouseQueue.getLength() == 0 && this.state.man != player) {
+      return; // don't procced if not player's puck or no puck at all
+    } 
+    mouseQueue = this.mouseQueue.addClick(this.id);
+    console.log(mouseQueue);
+    if (mouseQueue.length == 2) {
+      this.playService.send("processCommand", "move", mouseQueue);
+    }
   }
 
 }

@@ -53,19 +53,6 @@ export class PuckComponent implements OnInit {
     this.puck.generateMojs();
   }
 
-  onCLick(event) {
-    console.log("hallo")
-    console.log(event);
+  onClick() {
   }
-
-  /**
-   * 
-   */
-  isActive() {
-    if (this.state && this.state.length > 0) {
-      console.log(this.state);
-    }
-    return false;
-  }
-
 }
