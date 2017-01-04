@@ -3,5 +3,7 @@
   [y]="y"
   [id]="'puck-' + id"
   [board]="board"
-  [state]="state">
+  [player]="state?.man?.toLowerCase()"
+  [isSelected]="isSelected"
+  (window:resize)="p.onResize()">
 </app-puck>

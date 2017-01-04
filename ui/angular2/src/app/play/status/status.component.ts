@@ -11,6 +11,7 @@ export class StatusComponent implements OnInit {
 
   @Input() whiteName: String;
   @Input() blackName: String;
+  @Input() currentPlayer: String;
 
   playerWhiteForm: FormGroup;
   playerBlackForm: FormGroup;
