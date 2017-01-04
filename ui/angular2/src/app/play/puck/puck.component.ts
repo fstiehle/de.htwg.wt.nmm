@@ -5,7 +5,7 @@ import Puck from "./Puck";
   selector: 'app-puck',
   template: '<ng-content></ng-content>',
   styleUrls: ['./puck.component.less'],
-  host: {'[id]': 'id', '[class]': 'player', '[class.hidden]': '!isActive()'}
+  host: {'[id]': 'id', '[class]': 'player || "hidden"'}
 })
 export class PuckComponent implements OnInit {
 
@@ -37,9 +37,10 @@ export class PuckComponent implements OnInit {
    * player sets it
    */
   @Input() state;
+  @Input() active = false;
+  @Input() player: string;
   
   puck: Puck;
-  player: string;
   isSelected = false;
 
   ngOnInit() {

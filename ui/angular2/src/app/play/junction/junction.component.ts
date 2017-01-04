@@ -69,7 +69,8 @@ export class JunctionComponent implements OnInit {
   }
 
   onClick(player, playerState) {
-    console.log(this.state)
+
+    console.log(this.state);
 
     if (!(player && playerState)) {
       console.log("Still loading...");
