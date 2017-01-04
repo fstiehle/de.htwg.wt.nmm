@@ -1,22 +1,28 @@
 <div id="status">
-  <div id="player-white">
+ 
+  <div id="player-white" [class.current]="currentPlayer === 'WHITE'">
     <div class="wrapper">
+      
       <form (ngSubmit)="onSubmit($event, playerWhiteForm, 'white')"
       [formGroup]="playerWhiteForm">
         <input type="text" id="name" title="Click to edit" value="{{whiteName}}"
         [(ngModel)]="whiteName"
         [formControl]="playerWhiteForm.controls['name']">
       </form>
+
     </div>
   </div>
-  <div id="player-black">
+
+  <div id="player-black" [class.current]="currentPlayer === 'BLACK'">
     <div class="wrapper">
+
       <form (ngSubmit)="onSubmit($event, playerBlackForm, 'black')"
       [formGroup]="playerBlackForm">
         <input type="text" id="name" title="Click to edit" value="{{blackName}}"
         [(ngModel)]="blackName"
         [formControl]="playerBlackForm.controls['name']">
       </form>
+
     </div>
   </div>
 </div>
