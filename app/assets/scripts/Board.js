@@ -60,6 +60,7 @@ Game.Socket = function () {
         ws_uri = "wss:";
     }
     ws_uri += "//" + loc.host + "/socket";
+    //ws_uri += "//" + loc.host + "/securesocket";
     this.socket = new WebSocket(ws_uri);
 
     console.log('Socket Status: '+ this.socket.readyState + ' (ready)');
@@ -264,5 +265,12 @@ $(document).ready(function() {
     });
     $("#status input").focusout(function(e) {
         Game.Board.changePlayerName(e.target);
+    });
+
+    /**
+     * Reset Game Confirm Dialog
+     */
+    $("#new-game").click(function() {
+        return confirm("Are you sure you want to start a new game?");
     });
 });
