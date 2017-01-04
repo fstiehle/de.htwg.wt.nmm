@@ -12,6 +12,21 @@ import play.libs.Json;
 
 public class JsonWorker {
 
+    private UUID requestUserID = null;
+
+    /**
+     * SecureProcessJson
+     * Checks the userID from the current request with the userID from the current player from NMM
+     *
+     * @param jsonStr
+     * @param userID
+     * @throws IllegalArgumentException
+     */
+    public void secureProcessJson(String jsonStr, UUID userID) throws IllegalArgumentException {
+        this.requestUserID = userID;
+        processJson(jsonStr);
+    }
+
     /**
      * ProcessJson
      *
@@ -84,6 +99,18 @@ public class JsonWorker {
 
     private void processCommand(JsonNode json) throws IllegalArgumentException {
         IGameController gameController = Game.getInstance().getController();
+
+        // ######## security
+        // ATTENTION: if statement are legacy --> for unsecured requests without silhouette (eg. angular2)
+        if (requestUserID != null) {
+            IPlayer currentUser = gameController.getCurrentIPlayer();
+            if (currentUser.getUserID() != requestUserID) {
+                // TODO: Handle Error and return Error Message
+                //throw new IllegalAccessException("User of current request have no access to process current command");
+                return;
+            }
+        }
+        // ########
 
         String command = null;
         JsonNode queryNode = null;

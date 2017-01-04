@@ -14,7 +14,8 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
 class WebSocketController @Inject() (
-  implicit system: ActorSystem,
+  implicit
+  system: ActorSystem,
   materializer: Materializer,
   silhouette: Silhouette[DefaultEnv]) extends Controller {
 
@@ -23,7 +24,7 @@ class WebSocketController @Inject() (
     silhouette.SecuredRequestHandler { securedRequest =>
       Future.successful(HandlerResult(Ok, Some(securedRequest.identity)))
     }.map {
-      case HandlerResult(r, Some(user)) => Right(ActorFlow.actorRef(out => SocketActor.props(out)))
+      case HandlerResult(r, Some(user)) => Right(ActorFlow.actorRef(out => SocketActor.props(out, user)))
       case HandlerResult(r, None) => Left(Unauthorized)
     }
   }
