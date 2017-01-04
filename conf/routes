@@ -65,6 +65,7 @@ POST        /json/setplayername              controllers.JsonController.changePl
 
 # WebSocket
 GET         /socket                          controllers.WebSocketController.socket
+GET         /securesocket                    controllers.WebSocketController.secureSocket
 
 
 

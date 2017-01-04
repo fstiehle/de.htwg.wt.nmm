@@ -59,7 +59,7 @@ Game.Socket = function () {
     if (loc.protocol === "https:") {
         ws_uri = "wss:";
     }
-    ws_uri += "//" + loc.host + "/socket";
+    ws_uri += "//" + loc.host + "/securesocket";
     this.socket = new WebSocket(ws_uri);
 
     console.log('Socket Status: '+ this.socket.readyState + ' (ready)');
