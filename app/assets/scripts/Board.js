@@ -71,7 +71,12 @@ Game.Socket = function () {
 
     this.socket.onmessage = function (msg) {
         console.log('Socket Status: '+ msg + ' (onmessage)');
-        Game.State.update(JSON.parse(msg.data));
+        var jsonMSG = JSON.parse(msg.data);
+        if (jsonMSG.code === "200") {
+            Game.State.update(jsonMSG);
+        } else {
+            console.error("[WebSocket Error]["+jsonMSG.code+"] " + jsonMSG.message);
+        }
     }.bind(this);
 
     this.socket.onclose = function () {
