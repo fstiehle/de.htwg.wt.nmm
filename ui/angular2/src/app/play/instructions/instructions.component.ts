@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class InstructionsComponent implements OnInit {
 
   @Input() message: string;
+  @Input() currentPlayer: string;
 
   constructor() { }
 

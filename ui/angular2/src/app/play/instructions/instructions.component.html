@@ -1,8 +1,10 @@
 <div id="instructions" class="container-fluid">
 
   <div class="row">
-    <div class="col-lg-12">
-      <div id="message" class="col-lg-6 col-lg-offset-3">{{message}}</div>
+    <div class="col-lg-6 col-lg-offset-3">
+      <div id="message" [class]="currentPlayer?.toLowerCase()">
+        <span>{{message}}</span>
+      </div>
     </div>
   </div>
 
