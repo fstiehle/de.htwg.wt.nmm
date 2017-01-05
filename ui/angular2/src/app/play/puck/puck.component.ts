@@ -56,7 +56,20 @@ export class PuckComponent implements OnInit {
       return;
     }
     if (this.isSelected) {
-      this.puck.mojs.tune({angle: {0 : -180 }})
+      this.puck.mojs.tune({
+        angle: {0 : -180 },
+        scale: {1 : 1}
+      })
+      .replay();
+    }
+    
+    if (!this.isSelected && this.player) {
+      console.log(this.isSelected);
+      this.puck.mojs.tune({
+        scale: {0 : 1},
+        angle: {0 : -180 },
+        duration: 300 
+      })
       .replay();
     }
   }
