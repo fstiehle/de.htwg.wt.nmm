@@ -12,6 +12,7 @@ import { JunctionComponent } from "./play/junction/junction.component";
 import { ConnectorComponent } from "./play/connector/connector.component";
 import { PuckComponent } from "./play/puck/puck.component";
 import { StatusComponent } from './play/status/status.component';
+import { InstructionsComponent } from './play/instructions/instructions.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StatusComponent } from './play/status/status.component';
     PuckComponent,
     ConnectorComponent,
     JunctionComponent,
-    StatusComponent
+    StatusComponent,
+    InstructionsComponent
   ],
   imports: [
     BrowserModule,

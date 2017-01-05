@@ -46,6 +46,7 @@ export class PlayComponent implements OnInit {
     playService.getObservable().subscribe((message) => {
       this.state = JSON.parse(message.data);
       this.boardState = this.state.board;
+      console.log(this.state);
       console.log("state updated");
     });
   }
