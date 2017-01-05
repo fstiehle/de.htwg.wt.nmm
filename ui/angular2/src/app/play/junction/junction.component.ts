@@ -87,7 +87,7 @@ export class JunctionComponent implements OnInit {
     if (playerState === "PICK") {
       this.playService.send("processCommand", "pick", [this.id]);
     }
-    else if (playerState === "MOVE") {
+    else if (playerState === "MOVE" || playerState === "HOP") {
       this.movePuck(player);
     }
   }
