@@ -5,7 +5,8 @@ import Puck from "./Puck";
   selector: 'app-puck',
   template: '<ng-content></ng-content>',
   styleUrls: ['./puck.component.less'],
-  host: {'[id]': 'id', '[class]': 'player', '[class.selected]': "isSelected", '[class.hidden]': "isHidden"}
+  host: {'[id]': 'id', '[class]': 'player', '[class.selected]': "isSelected",
+   '[class.hidden]': "isHidden"}
 })
 export class PuckComponent implements OnInit {
 

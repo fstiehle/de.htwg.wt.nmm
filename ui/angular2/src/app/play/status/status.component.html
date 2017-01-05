@@ -1,6 +1,6 @@
 <div id="status">
  
-  <div id="player-white" [class.current]="currentPlayer === 'WHITE'">
+  <div id="player-white" [class.current]="currentPlayer === 'WHITE'" [style.width.%]="whiteProgress">
     <div class="wrapper">
       
       <form (ngSubmit)="onSubmit($event, playerWhiteForm, 'white')"
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div id="player-black" [class.current]="currentPlayer === 'BLACK'">
+  <div id="player-black" [class.current]="currentPlayer === 'BLACK'" [style.width.%]="blackProgress">
     <div class="wrapper">
 
       <form (ngSubmit)="onSubmit($event, playerBlackForm, 'black')"

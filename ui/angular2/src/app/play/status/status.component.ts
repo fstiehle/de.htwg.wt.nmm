@@ -5,7 +5,7 @@ import { PlayService } from "../play.service";
 @Component({
   selector: 'app-status',
   templateUrl: './status.component.html',
-  styleUrls: ['./status.component.less']
+  styleUrls: ['./status.component.less'],
 })
 export class StatusComponent implements OnInit {
 
@@ -16,6 +16,12 @@ export class StatusComponent implements OnInit {
   playerWhiteForm: FormGroup;
   playerBlackForm: FormGroup;
   play: PlayService;
+
+  /**
+   * Progress calculated based on Pucks left
+   */
+  whiteProgress = 50;
+  blackProgress = 50;
 
   constructor(fb: FormBuilder, play: PlayService) {
     this.play = play;
@@ -28,6 +34,19 @@ export class StatusComponent implements OnInit {
   }
 
   ngOnInit() { }
+
+  ngOnChanges() {
+    this.calculateProgress();
+  }
+
+  private calculateProgress() {
+    if (!this.black || !this.white) {
+      return;
+    }
+    // TODO: adjust formula to nine pucks
+    this.whiteProgress = ((this.black.numPucksTakenAway -this.white.numPucksTakenAway) * 10) / 2 + 50;
+    this.blackProgress = 100 - this.whiteProgress;
+  }
 
   /**
    * On form submit
