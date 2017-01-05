@@ -51,6 +51,16 @@ export class PuckComponent implements OnInit {
     this.puck.generateMojs();
   }
 
+  ngOnChanges() {
+    if (!this.puck) {
+      return;
+    }
+    if (this.isSelected) {
+      this.puck.mojs.tune({angle: {0 : -180 }})
+      .replay();
+    }
+  }
+
   onResize() {
     this.puck.rescale();
   }

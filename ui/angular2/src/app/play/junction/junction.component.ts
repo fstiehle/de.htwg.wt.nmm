@@ -43,7 +43,7 @@ export class JunctionComponent implements OnInit {
 
   junction: Junction;
 
-  @Input() isSelected = false;
+  isSelected = false;
 
   playService: PlayService
   mouseQueue: MouseQueueService
