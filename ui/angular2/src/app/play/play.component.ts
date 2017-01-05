@@ -51,6 +51,9 @@ export class PlayComponent implements OnInit {
     });
   }
 
-  ngOnInit() { }
-
+  ngOnInit() {
+    setTimeout(() => {
+      document.getElementById("status").scrollIntoView({behavior: "smooth"});
+    }, 300);
+   }
 }
