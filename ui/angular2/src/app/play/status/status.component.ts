@@ -44,7 +44,7 @@ export class StatusComponent implements OnInit {
       return;
     }
     // TODO: adjust formula to nine pucks
-    this.whiteProgress = ((this.black.numPucksTakenAway -this.white.numPucksTakenAway) * 10) / 2 + 50;
+    this.whiteProgress = ((this.black.numPucksTakenAway - this.white.numPucksTakenAway) * 10) + 50;
     this.blackProgress = 100 - this.whiteProgress;
   }
 
