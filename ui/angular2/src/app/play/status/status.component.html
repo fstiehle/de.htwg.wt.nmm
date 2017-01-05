@@ -5,10 +5,12 @@
       
       <form (ngSubmit)="onSubmit($event, playerWhiteForm, 'white')"
       [formGroup]="playerWhiteForm">
-        <input type="text" id="name" title="Click to edit" value="{{whiteName}}"
+        <input type="text" id="name" title="Click to edit" value="{{white.name}}"
         [(ngModel)]="whiteName"
         [formControl]="playerWhiteForm.controls['name']">
       </form>
+
+      <span class="state">{{white.currentState}}</span>
 
     </div>
   </div>
@@ -18,10 +20,12 @@
 
       <form (ngSubmit)="onSubmit($event, playerBlackForm, 'black')"
       [formGroup]="playerBlackForm">
-        <input type="text" id="name" title="Click to edit" value="{{blackName}}"
+        <input type="text" id="name" title="Click to edit" value="{{black.name}}"
         [(ngModel)]="blackName"
         [formControl]="playerBlackForm.controls['name']">
       </form>
+
+      <span class="state">{{black.currentState}}</span>
 
     </div>
   </div>

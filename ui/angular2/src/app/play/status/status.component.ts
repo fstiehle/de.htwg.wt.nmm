@@ -9,8 +9,8 @@ import { PlayService } from "../play.service";
 })
 export class StatusComponent implements OnInit {
 
-  @Input() whiteName: String;
-  @Input() blackName: String;
+  @Input() white;
+  @Input() black;
   @Input() currentPlayer: String;
 
   playerWhiteForm: FormGroup;

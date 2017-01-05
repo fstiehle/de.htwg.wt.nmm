@@ -9,9 +9,13 @@
   background-image: @gradient-player;
 
   input {
+    width: 100%;
     background: inherit;
     border: none;
-    max-width: 80%;
+  }
+
+  form {
+    max-width: 60%;
   }
 
   input:focus {
@@ -22,6 +26,7 @@
   #player-black input {
     text-align: right;
   }
+
 }
 
 #show-msg {
@@ -52,9 +57,30 @@
 #player-white {
   left: 0;
   background-color: @player-white-color;
+
+  .state {
+    float: right;
+    max-width: 35%;
+    overflow: hidden;
+  }
+
+  form {
+    float: left;
+  }
 }
 
 #player-black {
+
+  form {
+    float: right;
+  }
+
+  .state {
+    float: left;
+    max-width: 35%;
+    overflow: hidden;
+  }
+
   right: 0;
   text-align: right;
   background-color: @player-black-color;
