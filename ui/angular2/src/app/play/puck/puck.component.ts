@@ -5,7 +5,7 @@ import Puck from "./Puck";
   selector: 'app-puck',
   template: '<ng-content></ng-content>',
   styleUrls: ['./puck.component.less'],
-  host: {'[id]': 'id', '[class]': 'player || "hidden"', '[class.selected]': "isSelected"}
+  host: {'[id]': 'id', '[class]': 'player', '[class.selected]': "isSelected"}
 })
 export class PuckComponent implements OnInit {
 
@@ -49,6 +49,7 @@ export class PuckComponent implements OnInit {
 
   ngAfterViewInit() {
     this.puck.generateMojs();
+    this.puck.mojs.tune({isShowStart: false})
   }
 
   ngOnChanges() {
@@ -64,9 +65,17 @@ export class PuckComponent implements OnInit {
     }
     
     if (!this.isSelected && this.player) {
-      console.log(this.isSelected);
       this.puck.mojs.tune({
         scale: {0 : 1},
+        angle: {0 : -180 },
+        duration: 300 
+      })
+      .replay();
+    }
+
+    if (!this.player) {
+      this.puck.mojs.tune({
+        scale: {1 : 0},
         angle: {0 : -180 },
         duration: 300 
       })
