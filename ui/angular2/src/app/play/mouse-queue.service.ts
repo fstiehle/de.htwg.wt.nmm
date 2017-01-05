@@ -28,7 +28,6 @@ export class MouseQueueService {
   private reset() {
     let oldMouseQueue = this.mouseQueue
     this.mouseQueue = new Array();
-    console.log("New" + this.mouseQueue);
     return oldMouseQueue;
   }
 

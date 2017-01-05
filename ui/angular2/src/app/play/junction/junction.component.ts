@@ -43,7 +43,7 @@ export class JunctionComponent implements OnInit {
 
   junction: Junction;
 
-  isSelected = false;
+  @Input() isSelected = false;
 
   playService: PlayService
   mouseQueue: MouseQueueService
@@ -61,6 +61,10 @@ export class JunctionComponent implements OnInit {
 
   ngAfterViewInit() {
     this.junction.generateMojs();
+  }
+
+  ngOnChanges() {
+    this.isSelected = false;
   }
 
   onResize() {
