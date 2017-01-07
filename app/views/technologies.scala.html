@@ -1,0 +1,54 @@
+@* Arguments *@
+@(user: Option[models.User] = None)(implicit request: RequestHeader, messages: Messages)
+
+@logo(image: String, alt: String, url: String) = {
+    <div class="col-lg-3 col-md-4 col-xs-6 thumb technology">
+        <a class="thumbnail" href="@url">
+            <img class="img-responsive" src="@{routes.Assets.versioned("images/technologies/" + image)}" alt="@alt" title="@alt">
+        </a>
+    </div>
+}
+
+@*
+* Call Main Template
+* Page Title: About
+*@
+@main("Technologies", user) {
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-12 window">
+
+            <div class="container col-lg-6 col-lg-offset-3">
+
+                <h1><img title="Nine Men's Morris" id="logo" alt="Nine Men's Morris" src="@routes.Assets.versioned("images/nmmLogo.png")"></h1>
+
+                <h2>Technologies.</h2>
+
+                @logo("play.png", "Play Framework", "http://www.playframework.com")
+                @logo("silhouette.png", "Silhouette Framework", "http://www.silhouette.rocks")
+                @logo("angular.png", "Angular 2", "http://www.angular.io")
+                @logo("bootstrap.png", "Twitter Bootstrap", "http://www.getbootstrap.com")
+                @logo("heroku.png", "Heroku", "http://www.heroku.com")
+                @logo("less.png", "less", "http://www.lesscss.org")
+                @logo("mojs.png", "mo · js", "http://www.mojs.io")
+                @logo("polymer.png", "Polymer Project", "http://www.polymer-project.org")
+                @logo("git.png", "git scm", "http://git-scm.com")
+                @logo("github.png", "GitHub", "http://github.com/fstiehle/de.htwg.wt.nmm")
+                @logo("scala.png", "Scala", "http://www.scala-lang.org")
+                @logo("java.png", "java", "http://www.java.com")
+                @logo("jquery.gif", "jQuery", "http://www.jquery.com")
+                @logo("ts.png", "TypeScript", "https://www.typescriptlang.org")
+                @logo("html5.png", "HTML 5", "http://")
+                @logo("css3.png", "CSS 3", "http://")
+
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+}

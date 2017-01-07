@@ -16,6 +16,8 @@
 
                 @listItem(routes.AboutController.index().toString(), "About")
 
+                @listItem(routes.AboutController.technologies().toString(), "Techs")
+
                 @if(request.path == routes.GameController.index().toString()) {
                         <li>
                             <a href="@routes.GameController.reset()" id="new-game">New Game</a>

@@ -19,4 +19,8 @@ class AboutController @Inject() (
   def help = silhouette.UserAwareAction { implicit request =>
     Redirect(routes.AboutController.index())
   }
+
+  def technologies = silhouette.UserAwareAction { implicit request =>
+    Ok(views.html.technologies(request.identity))
+  }
 }
