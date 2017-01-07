@@ -31,7 +31,7 @@ class ApplicationController @Inject() (
    * @return The result to display.
    */
   def index = silhouette.SecuredAction { implicit request =>
-    Ok(views.html.home(request.identity))
+    Redirect(routes.GameController.index())
   }
 
   /**
