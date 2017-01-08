@@ -1,0 +1,55 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
+<!--
+`nmm-board`
+
+@demo demo/index.html 
+-->
+
+<dom-module id="nmm-board">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <iron-ajax
+      auto
+      url="/nmm-board/boardDefinition.json"
+      handle-as="json"
+      on-response="handleResponse"></iron-ajax>
+
+    <h2>Hello [[prop1]]</h2>
+
+    <template is="dom-repeat" items="{{boardDefinition}}">
+      {{item}}
+    </template>
+
+  </template>
+
+  <script>
+   
+    Polymer({
+
+      is: 'nmm-board',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'nmm-board',
+        },
+      },
+
+      created: function() {
+        // use iron ajax request to get boardDefinitionf
+      },
+
+      handleResponse: function(e) {
+        console.log(e);
+      }
+
+    });
+  </script>
+</dom-module>
