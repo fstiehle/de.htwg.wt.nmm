@@ -2,7 +2,7 @@
  * Junction
  * Holds the mojs shape 
  */
-export default class Junction {
+class Junction {
 
 
   /**
@@ -14,9 +14,10 @@ export default class Junction {
    * @param Angular component to which shape will be attached
    * @param board element to base positioning on
    */
-  constructor(id, board) {
+  constructor(id, board, parent) {
     this.id = id;
     this.board = board;
+    this.parent = parent;
     this.MUTE = 30;
     this.SHAPE = "circle";
     this.STROKE = 4;
@@ -38,8 +39,8 @@ export default class Junction {
    * Creates a new mojs shape
    */
   generateMojs() {
-    this.mojs = new Mojs.Shape({
-      parent: "#" + this.id,
+    this.mojs = new mojs.Shape({
+      parent: this.parent,
       shape: this.SHAPE,
       points: this.POINTS,
       strokeWidth: this.STROKE,
@@ -53,7 +54,7 @@ export default class Junction {
    * Calculates scale
    */
   calculateScale() {
-    return document.getElementById(this.board).offsetWidth / this.MUTE;
+    return this.board.offsetWidth / this.MUTE;
   }
 
   /**

@@ -1,9 +1,8 @@
-import Junction from './Junction';
 
 /**
  * Connector between Junctions
  */
-export default class Connector extends Junction {
+class Connector extends Junction {
 
   /**
    * @param x coordinate
@@ -12,8 +11,8 @@ export default class Connector extends Junction {
    * @param rotation
    * @param parent HTML container
    */
-  constructor(id, board, length, rotation) {
-    super(id, board);
+  constructor(id, board, length, rotation, parent) {
+    super(id, board, parent);
     this.length = length;
     this.rotation = rotation;
     this.MUTE = 100;
@@ -28,8 +27,8 @@ export default class Connector extends Junction {
    * Creates a new mojs from class variables
    */
   generateMojs() {
-    this.mojs = new Mojs.Shape({
-      parent: "#" + this.id,
+    this.mojs = new mojs.Shape({
+      parent: this.parent,
       shape: this.SHAPE,
       points: this.POINTS,
       strokelength: this.STROKE,
@@ -43,7 +42,7 @@ export default class Connector extends Junction {
   };
 
   radius() {
-    return this.length * document.getElementById(this.board).offsetWidth / this.MUTE_RADIUS;
+    return this.length * this.board.offsetWidth / this.MUTE_RADIUS;
   }
 
   /**

@@ -23,42 +23,48 @@
       handle-as="json"
       on-response="handleResponse"></iron-ajax>
 
-    <h2>Hello [[prop1]]</h2>
+      <div id="scene">
+        <div id="board">
+          <template is="dom-repeat" items="{{boardDefinition.MODEL_JUNCTION}}">
+            <nmm-junction
+              x="{{item.translation.x}}"
+              y="{{item.translation.y}}"
+              _id="{{item.id}}"
+              board="{{board}}">
+            </nmm-junction>
+          </template>
 
-    <template is="dom-repeat" items="{{boardDefinition.MODEL_JUNCTION}}">
-      <nmm-junction
-        x="{{item.translation.x}}"
-        y="{{item.translation.y}}"
-        _id="{{item.id}}">
-      </nmm-junction>
-    </template>
-
-    <template is="dom-repeat" items="{{boardDefinition.MODEL_CONNECTOR}}">
-      <nmm-connector
-        x="{{item.translation.x}}"
-        y="{{item.translation.y}}"
-        length="{{item.length}}"
-        rotation="{{item.rotation}}"
-        _id="connector-{{index}}">
-      </nmm-connector>
-    </template>
+          <template is="dom-repeat" items="{{boardDefinition.MODEL_CONNECTOR}}">
+            <nmm-connector
+              x="{{item.translation.x}}"
+              y="{{item.translation.y}}"
+              length="{{item.length}}"
+              rotation="{{item.rotation}}"
+              _id="connector-{{index}}"
+              board="{{board}}">
+            </nmm-connector>
+          </template>
+        </div>
+      </div>
 
   </template>
 
+  <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+  <script src="./Junction.js"></script>
+  <script src="./Connector.js"></script>
+  <script src="./Puck.js"></script>
+
   <script>
-   
+
     Polymer({
 
       is: 'nmm-board',
 
       properties: {
-        prop1: {
-          type: String,
-          value: 'nmm-board',
-        },
       },
 
-      created: function() {
+      ready: function() {
+        this.board = this.$.board;
         // use iron ajax request to get boardDefinitionf
       },
 

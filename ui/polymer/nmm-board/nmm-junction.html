@@ -11,12 +11,10 @@
         display: block;
       }
     </style>
-
-    <h2>{{x}} {{y}} {{_id}}</h2>
-
   </template>
 
   <script>
+
     Polymer({
 
       is: 'nmm-junction',
@@ -24,11 +22,14 @@
       properties: {
         x: {
           type: String,
-          value: "foo"
+          value: ""
         },
         y: {
           type: String,
           value: ""
+        },
+        board: {
+          value: "" 
         },
         _id: {
           type: String,
@@ -37,7 +38,8 @@
       },
 
       ready: function() {
-        // nothin todo
+        this.junction = new Junction(this._id, this.board, this);
+        this.junction.generateMojs();
       }
     });
   </script>
