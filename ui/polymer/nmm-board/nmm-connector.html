@@ -45,7 +45,7 @@
       },
 
       ready: function() {
-        this.connector = new Connector(this._id, this.board, this.length, this.rotation, this);
+        this.connector = new Connector(this._id, this.board, this.length, this.rotation, this.shadowRoot);
         this.connector.generateMojs();
       }
     });

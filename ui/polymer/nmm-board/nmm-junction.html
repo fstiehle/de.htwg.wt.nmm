@@ -7,10 +7,20 @@
 <dom-module id="nmm-junction">
   <template>
     <style>
+
       :host {
-        display: block;
+        position: relative;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      :host ellipse {
+        fill: #eec643;
+        stroke: #3a4763;
       }
     </style>
+
+
   </template>
 
   <script>
@@ -38,7 +48,9 @@
       },
 
       ready: function() {
-        this.junction = new Junction(this._id, this.board, this);
+        this.junction = new Junction(this._id, this.board, this.shadowRoot);
+        this.style.left = this.junction.calculateOffset(this.x) + "%";
+        this.style.top = this.junction.calculateOffset(this.y) + "%";
         this.junction.generateMojs();
       }
     });

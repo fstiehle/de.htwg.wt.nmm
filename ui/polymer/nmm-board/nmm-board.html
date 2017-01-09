@@ -2,6 +2,7 @@
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="nmm-junction.html">
 <link rel="import" href="nmm-connector.html">
+<link rel="stylesheet" media="screen" href="./nmm-board.css">
 
 <!--
 `nmm-board`
@@ -11,9 +12,27 @@
 
 <dom-module id="nmm-board">
   <template>
+    
     <style>
       :host {
         display: block;
+      }
+
+      #scene {
+        background-color: #273043;
+        padding: 40px 20px;
+      }
+      #board {
+        position: relative;
+        width: 100%;
+        height: 100vw;
+        max-width: 80vh;
+        margin: auto;
+      }
+      @media only screen and (orientation: landscape) {
+        #board {
+          height: 80vh;
+        }
       }
     </style>
 
