@@ -1,5 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="nmm-junction.html">
+<link rel="import" href="nmm-connector.html">
 
 <!--
 `nmm-board`
@@ -23,8 +25,22 @@
 
     <h2>Hello [[prop1]]</h2>
 
-    <template is="dom-repeat" items="{{boardDefinition}}">
-      {{item}}
+    <template is="dom-repeat" items="{{boardDefinition.MODEL_JUNCTION}}">
+      <nmm-junction
+        x="{{item.translation.x}}"
+        y="{{item.translation.y}}"
+        _id="{{item.id}}">
+      </nmm-junction>
+    </template>
+
+    <template is="dom-repeat" items="{{boardDefinition.MODEL_CONNECTOR}}">
+      <nmm-connector
+        x="{{item.translation.x}}"
+        y="{{item.translation.y}}"
+        length="{{item.length}}"
+        rotation="{{item.rotation}}"
+        _id="connector-{{index}}">
+      </nmm-connector>
     </template>
 
   </template>
@@ -46,8 +62,8 @@
         // use iron ajax request to get boardDefinitionf
       },
 
-      handleResponse: function(e) {
-        console.log(e);
+      handleResponse: function(data) {
+        this.boardDefinition = data.detail.response;
       }
 
     });

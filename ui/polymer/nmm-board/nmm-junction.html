@@ -1,0 +1,44 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!--
+`nmm-junction`
+-->
+
+<dom-module id="nmm-junction">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <h2>{{x}} {{y}} {{_id}}</h2>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'nmm-junction',
+
+      properties: {
+        x: {
+          type: String,
+          value: "foo"
+        },
+        y: {
+          type: String,
+          value: ""
+        },
+        _id: {
+          type: String,
+          value: ""
+        }
+      },
+
+      ready: function() {
+        // nothin todo
+      }
+    });
+  </script>
+</dom-module>

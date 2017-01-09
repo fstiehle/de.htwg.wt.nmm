@@ -1,0 +1,52 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!--
+`nmm-connector`
+-->
+
+<dom-module is="nmm-connector">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <h2>{{x}} {{y}} {{rotation}} {{length}} {{_id}}</h2>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'nmm-connector',
+
+      properties: {
+        x: {
+          type: String,
+          value: ""
+        },
+        y: {
+          type: String,
+          value: ""
+        },
+        length: {
+          type: String,
+          value: ""
+        },
+        rotation: {
+          type: String,
+          value: ""
+        },
+        _id: {
+          type: String,
+          value: ""
+        }
+      },
+
+      ready: function() {
+        // nothin todo
+      }
+    });
+  </script>
+</dom-module>
