@@ -3,17 +3,18 @@
 #scene {
     background-color: @board-color;
     padding: 40px 20px;
+    overflow: hidden; // prevent board from overflowing
 }
 
 #board {
     position: relative;
-    width: 100%;
-    height: 100vw;
-    max-width: 80vh;
+    width: 85vw;
+    height: 85vw;
     margin: auto;
 
     @media only screen and (orientation : landscape) {
-        height: 80vh; // subtract for additional space
+        width: 80vh; 
+        height: 80vh; 
     }
 
     svg {
