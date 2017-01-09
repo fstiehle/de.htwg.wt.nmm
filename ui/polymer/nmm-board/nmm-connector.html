@@ -7,9 +7,15 @@
 <dom-module is="nmm-connector">
   <template>
     <style>
+
       :host {
-        display: block;
+        position: absolute;
       }
+
+      :host rect {
+        fill: #3a4763;
+      }
+
     </style>
   </template>
 
@@ -46,6 +52,8 @@
 
       ready: function() {
         this.connector = new Connector(this._id, this.board, this.length, this.rotation, this.shadowRoot);
+        this.style.left = this.connector.calculateOffset(this.x) + "%";
+        this.style.top = this.connector.calculateOffset(this.y) + "%";
         this.connector.generateMojs();
       }
     });
