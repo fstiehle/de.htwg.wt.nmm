@@ -57,6 +57,14 @@
         _id: {
           type: String,
           value: ""
+        },
+        player: {
+          type: String,
+          value: ""
+        },
+        isHidden: {
+          type: Boolean,
+          value: true
         }
       },
 
@@ -64,6 +72,8 @@
         this.puck = new Puck(this._id, this.board, this.shadowRoot);
         this.style.left = this.puck.calculateOffset(this.x) + "%";
         this.style.top = this.puck.calculateOffset(this.y) + "%";
+        this.isHidden = this.player ? false : true;
+        this.toggleClass("hidden", this.isHidden);
         this.puck.generateMojs();
       }
     });
