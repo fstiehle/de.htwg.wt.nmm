@@ -47,16 +47,8 @@ footer,
 #board svg {
   overflow: visible;
 }
-.puck,
-.junction {
+.puck {
   cursor: pointer;
-}
-.junction {
-  z-index: 1;
-}
-.junction ellipse {
-  fill: #eec643;
-  stroke: #3a4763;
 }
 .puck {
   z-index: 2;
@@ -76,12 +68,6 @@ footer,
 .puck.black path {
   fill: #b3001b;
   stroke: black;
-}
-.connector {
-  overflow: auto;
-}
-.connector rect {
-  fill: #3a4763;
 }
 .wrapper {
   padding: 20px;

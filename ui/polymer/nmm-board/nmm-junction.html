@@ -1,4 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="nmm-puck.html">
 
 <!--
 `nmm-junction`
@@ -18,9 +19,15 @@
         fill: #eec643;
         stroke: #3a4763;
       }
-      
+
     </style>
 
+    <nmm-puck
+      x="{{x}}"
+      y="{{y}}"
+      _id="puck-{{_id}}"
+      board="{{board}}">
+    </nmm-puck>
 
   </template>
 

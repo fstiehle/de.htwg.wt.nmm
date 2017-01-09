@@ -1,0 +1,71 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!--
+`nmm-puck`
+-->
+
+<dom-module id="nmm-puck">
+  <template>
+    <style>
+
+      :host div {
+        z-index: 2;
+      }
+
+      :host(.white) {
+        path {
+          fill: #861388;
+          stroke: white;
+        }
+      }
+
+      :host(.black) {
+        path {
+          fill: #b3001b;
+          stroke: black;
+        }
+      }
+
+      :host(.selected) {
+        path {
+          stroke: #eec643 !important;
+        }
+      }
+      
+    </style>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'nmm-puck',
+
+      properties: {
+        x: {
+          type: String,
+          value: ""
+        },
+        y: {
+          type: String,
+          value: ""
+        },
+        board: {
+          value: "" 
+        },
+        _id: {
+          type: String,
+          value: ""
+        }
+      },
+
+      ready: function() {
+        this.puck = new Puck(this._id, this.board, this.shadowRoot);
+        this.style.left = this.puck.calculateOffset(this.x) + "%";
+        this.style.top = this.puck.calculateOffset(this.y) + "%";
+        this.puck.generateMojs();
+      }
+    });
+  </script>
+</dom-module>

@@ -3,12 +3,6 @@
  * Holds the mojs shape 
  */
 class Junction {
-
-
-  /**
-   * mojs object
-   */
-  //mojs;
   
   /**  
    * @param Angular component to which shape will be attached

@@ -6,8 +6,8 @@
  */
 class Puck extends Junction {
   
-  constructor(id, parent) {
-    super(id, parent);
+  constructor(id, board, parent) {
+    super(id, board, parent);
     this.MUTE = 25;
     this.SHAPE = "polygon";
     this.STROKE = 3;
