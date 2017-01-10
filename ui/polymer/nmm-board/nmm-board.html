@@ -1,0 +1,151 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/web-socket/web-socket.html">
+<link rel="import" href="nmm-junction.html">
+<link rel="import" href="nmm-connector.html">
+<link rel="stylesheet" media="screen" href="./nmm-board.css">
+
+<!--
+`nmm-board`
+
+@demo demo/index.html 
+-->
+
+<dom-module id="nmm-board">
+  <template>
+    
+    <style>
+      :host {
+        display: block;
+      }
+
+      #scene {
+        background-color: #273043;
+        padding: 40px 20px;
+      }
+      
+      #board {
+        position: relative;
+        width: 100%;
+        height: 100vw;
+        max-width: 80vh;
+        margin: auto;
+      }
+
+      @media only screen and (orientation: landscape) {
+        #board {
+          height: 80vh;
+        }
+      }
+    </style>
+
+    <iron-ajax
+      auto
+      url="/nmm-board/boardDefinition.json"
+      handle-as="json"
+      on-response="handleResponse">
+    </iron-ajax>
+
+
+    <web-socket url="wss://de-htwg-wt-nmm.herokuapp.com/socket"
+      id="socket"
+      auto json
+      on-open="_onOpen"
+      on-close="_onClose"
+      on-message="_onMessage"
+      on-error="_onError">
+    </web-socket>
+
+
+    <div id="scene">
+      <div id="board">
+        <template id="repeat" is="dom-repeat" items="{{boardDefinition.MODEL_JUNCTION}}">
+          <nmm-junction
+            x="{{item.translation.x}}"
+            y="{{item.translation.y}}"
+            _id="{{item.id}}"
+            board="{{board}}"
+            state="{{boardState}}"
+            >
+          </nmm-junction>
+        </template>
+
+        <template is="dom-repeat" items="{{boardDefinition.MODEL_CONNECTOR}}">
+          <nmm-connector
+            x="{{item.translation.x}}"
+            y="{{item.translation.y}}"
+            length="{{item.length}}"
+            rotation="{{item.rotation}}"
+            _id="connector-{{index}}"
+            board="{{board}}">
+          </nmm-connector>
+        </template>
+      </div>
+    </div>
+
+  </template>
+
+  <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+  <script src="./Junction.js"></script>
+  <script src="./Connector.js"></script>
+  <script src="./Puck.js"></script>
+
+  <script>
+
+    Polymer({
+
+      is: 'nmm-board',
+
+      properties: { },
+
+      ready: function() {
+        this.board = this.$.board;
+        // use iron ajax request to get boardDefinitionf
+      },
+
+      handleResponse: function(data) {
+        this.boardDefinition = data.detail.response;
+      },
+
+      _onOpen: function() {
+        console.log("Socket Status (open)");
+        this.send("refreshGame");
+      },
+
+      _onClose: function() {
+        console.log("Socket Status (close)");
+      },
+
+      _onError: function() {
+        console.error("Socket Status (error)");
+      },
+
+      _onMessage: function(event) {
+        console.log("Socket Status (Message): " + event.detail);
+        this.state = event.detail;
+        this.boardState = this.state.board;
+        this.$.repeat.render();
+      },
+
+      /**
+        * @param type
+        *   "processCommand": Communicate with game logic
+        *   "setPlayerName": Change the player name
+        *   "refreshGame": Refresh and get current state
+        *   "resetGame": NotImplementedYet
+        * @param command
+        *   when "processCommand": "set" | "pick" | "move"
+        *   when "setPlayerName": "WHITE" | "BLACK"
+        * @param query
+        *   when "processCommand": Array of PuckIDs ["a1"]
+        *   when "setPlayerName": "theNewPlayerName"
+        */
+      send: function(type, command = " ", query = []) {
+        var data = {type: type, command: command, query: query};
+        this.$.socket.send(JSON.stringify(data));
+        console.log('Socket Status: data sent');
+      }
+
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,317 @@
+{
+  "MODEL_JUNCTION": [
+    {
+      "id": "a1",
+      "translation": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "d1",
+      "translation": {
+        "x": 3.5,
+        "y": 0
+      }
+    },
+    {
+      "id": "g1",
+      "translation": {
+        "x": 7,
+        "y": 0
+      }
+    },
+
+    {
+      "id": "b2",
+      "translation": {
+        "x": 1.16,
+        "y": 1.16
+      }
+    },
+    {
+      "id": "d2",
+      "translation": {
+        "x": 3.5,
+        "y": 1.16
+      }
+    },
+    {
+      "id": "f2",
+      "translation": {
+        "x": 5.84,
+        "y": 1.16
+      }
+    },
+
+    {
+      "id": "c3",
+      "translation": {
+        "x": 2.33,
+        "y": 2.33
+      }
+    },
+    {
+      "id": "d3",
+      "translation": {
+        "x": 3.5,
+        "y": 2.33
+      }
+    },
+    {
+      "id": "e3",
+      "translation": {
+        "x": 4.66,
+        "y": 2.33
+      }
+    },
+
+
+    {
+      "id": "a4",
+      "translation": {
+        "x": 0,
+        "y": 3.5
+      }
+    },
+    {
+      "id": "b4",
+      "translation": {
+        "x": 1.16,
+        "y": 3.5
+      }
+    },
+    {
+      "id": "c4",
+      "translation": {
+        "x": 2.33,
+        "y": 3.5
+      }
+    },
+    {
+      "id": "e4",
+      "translation": {
+        "x": 4.66,
+        "y": 3.5
+      }
+    },
+    {
+      "id": "f4",
+      "translation": {
+        "x": 5.84,
+        "y": 3.5
+      }
+    },
+    {
+      "id": "g4",
+      "translation": {
+        "x": 7,
+        "y": 3.5
+      }
+    },
+
+
+    {
+      "id": "c5",
+      "translation": {
+        "x": 2.33,
+        "y": 4.66
+      }
+    },
+    {
+      "id": "d5",
+      "translation": {
+        "x": 3.5,
+        "y": 4.66
+      }
+    },
+    {
+      "id": "e5",
+      "translation": {
+        "x": 4.66,
+        "y": 4.66
+      }
+    },
+
+
+    {
+      "id": "b6",
+      "translation": {
+        "x": 1.16,
+        "y": 5.84
+      }
+    },
+    {
+      "id": "d6",
+      "translation": {
+        "x": 3.5,
+        "y": 5.84
+      }
+    },
+    {
+      "id": "f6",
+      "translation": {
+        "x": 5.84,
+        "y": 5.84
+      }
+    },
+
+
+    {
+      "id": "a7",
+      "translation": {
+        "x": 0,
+        "y": 7
+      }
+    },
+    {
+      "id": "d7",
+      "translation": {
+        "x": 3.5,
+        "y": 7
+      }
+    },
+    {
+      "id": "g7",
+      "translation": {
+        "x": 7,
+        "y": 7
+      }
+    }
+  ],
+  "MODEL_CONNECTOR": [
+    {
+      "length": 3,
+      "translation": {
+        "x": 3.5,
+        "y": 0
+      },
+      "rotation": 0
+    },
+    {
+      "length": 2,
+      "translation": {
+        "x": 3.5,
+        "y": 1.16
+      },
+      "rotation": 0
+    },
+    {
+      "length": 1,
+      "translation": {
+        "x": 3.5,
+        "y": 2.33
+      },
+      "rotation": 0
+    },
+
+    {
+      "length": 1,
+      "translation": {
+        "x": 1.16,
+        "y": 3.5
+      },
+      "rotation": 0
+    },
+    {
+      "length": 1,
+      "translation": {
+        "x": 5.84,
+        "y": 3.5
+      },
+      "rotation": 0
+    },
+
+    {
+      "length": 1,
+      "translation": {
+        "x": 3.5,
+        "y": 4.66
+      },
+      "rotation": 0
+    },
+    {
+      "length": 2,
+      "translation": {
+        "x": 3.5,
+        "y": 5.84
+      },
+      "rotation": 0
+    },
+    {
+      "length": 3,
+      "translation": {
+        "x": 3.5,
+        "y": 7
+      },
+      "rotation": 0
+    },
+
+    {
+      "length": 3,
+      "translation": {
+        "x": 0,
+        "y": 3.5
+      },
+      "rotation": 90
+    },
+    {
+      "length": 2,
+      "translation": {
+        "x": 1.16,
+        "y": 3.5
+      },
+      "rotation": 90
+    },
+    {
+      "length": 1,
+      "translation": {
+        "x": 2.33,
+        "y": 3.5
+      },
+      "rotation": 90
+    },
+
+    {
+      "length": 1,
+      "translation": {
+        "x": 3.5,
+        "y": 1.16
+      },
+      "rotation": 90
+    },
+    {
+      "length": 1,
+      "translation": {
+        "x": 3.5,
+        "y": 5.84
+      },
+      "rotation": 90
+    },
+
+    {
+      "length": 1,
+      "translation": {
+        "x": 4.66,
+        "y": 3.5
+      },
+      "rotation": 90
+    },
+    {
+      "length": 2,
+      "translation": {
+        "x": 5.84,
+        "y": 3.5
+      },
+      "rotation": 90
+    },
+    {
+      "length": 3,
+      "translation": {
+        "x": 7,
+        "y": 3.5
+      },
+      "rotation": 90
+    }
+  ]
+}

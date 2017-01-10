@@ -1,0 +1,95 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!--
+`nmm-puck`
+-->
+
+<dom-module id="nmm-puck">
+  <template>
+    <style>
+
+      :host {
+        cursor: pointer;
+      }
+
+      :host div {
+        z-index: 2;
+      }
+
+      :host div.hidden {
+        z-index: 0;
+        display: none;
+      }
+
+      :host div.white path {
+        fill: #861388;
+        stroke: white;
+      }
+
+      :host div.black path {
+        fill: #b3001b;
+        stroke: black;
+      }
+
+      :host div.selected path {
+        stroke: #eec643 !important;
+      }
+      
+    </style>
+
+    <div id="{{_id}}" class$="{{buildCSSClass(isHidden, player)}}"></div>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'nmm-puck',
+
+      properties: {
+        x: {
+          type: String
+        },
+        y: {
+          type: String
+        },
+        board: {
+          type: Object
+        },
+        _id: {
+          type: String
+        },
+        player: {
+          type: String,
+          value: "",  // important that init value is empty
+          observer: "_playerChanged"
+        },
+        isHidden: {
+          type: Boolean,
+          value: true
+        },
+      },
+
+      ready: function() {
+        this.puck = new Puck(this._id, this.board, this.$$("#" + this._id));
+        this.style.left = this.puck.calculateOffset(this.x) + "%";
+        this.style.top = this.puck.calculateOffset(this.y) + "%";
+        this.puck.generateMojs();
+      },
+
+      _playerChanged: function() {
+        this.isHidden = this.player ? false : true;
+      },
+
+      buildCSSClass: function(isHidden, player) {
+        var classes = "";
+        classes += this.isHidden ? " hidden" : "";
+        classes += " " + player.toLowerCase();
+        return classes;
+      }
+    });
+
+
+  </script>
+</dom-module>

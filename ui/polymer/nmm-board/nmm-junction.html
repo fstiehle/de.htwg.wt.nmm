@@ -1,0 +1,72 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="nmm-puck.html">
+
+<!--
+`nmm-junction`
+-->
+
+<dom-module id="nmm-junction">
+  <template>
+    <style>
+
+      :host {
+        position: absolute;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      :host ellipse {
+        fill: #eec643;
+        stroke: #3a4763;
+      }
+
+    </style>
+
+    <nmm-puck
+      x="{{x}}"
+      y="{{y}}"
+      _id="puck-{{_id}}"
+      board="{{board}}"
+      player="{{localState.man}}">
+    </nmm-puck>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'nmm-junction',
+
+      properties: {
+        x: {
+          type: String
+        },
+        y: {
+          type: String
+        },
+        board: {
+          type: Object 
+        },
+        _id: {
+          type: String
+        },
+        state: {
+          type: Object,
+          observer: "_stateChanged"
+        }
+      },
+
+      ready: function() {
+        this.junction = new Junction(this._id, this.board, this.shadowRoot);
+        this.style.left = this.junction.calculateOffset(this.x) + "%";
+        this.style.top = this.junction.calculateOffset(this.y) + "%";
+        this.junction.generateMojs();
+      },
+
+      _stateChanged: function() {
+        this.localState = this.state[this._id];
+      }
+    });
+  </script>
+</dom-module>

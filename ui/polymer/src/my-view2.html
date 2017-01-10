@@ -1,0 +1,50 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-view2">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+
+    <div class="card">
+      <div class="circle">2</div>
+      <h1>An additional view with Polymer.</h1>
+      <p>
+        This view is only a <i>read only</i> view of the <a href="https://de-htwg-wt-nmm.herokuapp.com/" target="_blank">NMM Project</a>.
+      </p>
+      <p>
+        The spirit and purpose of this view is it to understand how does the <a href="http://polymer-project.com" target="_blank">Polymer-Project</a> is working in combination 
+        with 
+        <ul>
+          <li>own Components</li>
+          <li>Event-Binding</li>
+          <li>third party Components like a WebSocket</li>
+          <li>Bower</li>
+          <li>and the Polymer-CLI.</li>
+        </ul>
+      </p>
+      <p>Come to our <a href="https://github.com/fstiehle/de.htwg.wt.nmm" target="_blank">GitHub</a> project to see a lot of more cool stuff.</p>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-view2',
+    });
+  </script>
+</dom-module>
