@@ -23,6 +23,7 @@
         background-color: #273043;
         padding: 40px 20px;
       }
+      
       #board {
         position: relative;
         width: 100%;
@@ -30,6 +31,7 @@
         max-width: 80vh;
         margin: auto;
       }
+
       @media only screen and (orientation: landscape) {
         #board {
           height: 80vh;
@@ -57,12 +59,14 @@
 
     <div id="scene">
       <div id="board">
-        <template is="dom-repeat" items="{{boardDefinition.MODEL_JUNCTION}}">
+        <template id="repeat" is="dom-repeat" items="{{boardDefinition.MODEL_JUNCTION}}">
           <nmm-junction
             x="{{item.translation.x}}"
             y="{{item.translation.y}}"
             _id="{{item.id}}"
-            board="{{board}}">
+            board="{{board}}"
+            state="{{boardState}}"
+            >
           </nmm-junction>
         </template>
 
@@ -92,8 +96,7 @@
 
       is: 'nmm-board',
 
-      properties: {
-      },
+      properties: { },
 
       ready: function() {
         this.board = this.$.board;
@@ -120,6 +123,8 @@
       _onMessage: function(event) {
         console.log("Socket Status (Message): " + event.detail);
         this.state = event.detail;
+        this.boardState = this.state.board;
+        this.$.repeat.render();
       },
 
       /**

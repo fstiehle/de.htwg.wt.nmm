@@ -21,23 +21,23 @@
         display: none;
       }
 
-      :host(.white) path {
+      :host div.white path {
         fill: #861388;
         stroke: white;
       }
 
-      :host(.black) path {
+      :host div.black path {
         fill: #b3001b;
         stroke: black;
       }
 
-      :host(.selected) path {
+      :host div.selected path {
         stroke: #eec643 !important;
       }
       
     </style>
 
-    <div id="{{_id}}" class$="{{buildCSSClass(isHidden)}}"></div>
+    <div id="{{_id}}" class$="{{buildCSSClass(isHidden, player)}}"></div>
 
   </template>
 
@@ -49,41 +49,43 @@
 
       properties: {
         x: {
-          type: String,
-          value: ""
+          type: String
         },
         y: {
-          type: String,
-          value: ""
+          type: String
         },
         board: {
-          value: "" 
+          type: Object
         },
         _id: {
-          type: String,
-          value: ""
+          type: String
         },
         player: {
           type: String,
-          value: ""
+          value: "",  // important that init value is empty
+          observer: "_playerChanged"
         },
         isHidden: {
           type: Boolean,
-          value: false
-        }
+          value: true
+        },
       },
 
       ready: function() {
         this.puck = new Puck(this._id, this.board, this.$$("#" + this._id));
         this.style.left = this.puck.calculateOffset(this.x) + "%";
         this.style.top = this.puck.calculateOffset(this.y) + "%";
-        this.isHidden = this.player ? false : true;
         this.puck.generateMojs();
       },
 
-      buildCSSClass: function(isHidden) {
+      _playerChanged: function() {
+        this.isHidden = this.player ? false : true;
+      },
+
+      buildCSSClass: function(isHidden, player) {
         var classes = "";
         classes += this.isHidden ? " hidden" : "";
+        classes += " " + player.toLowerCase();
         return classes;
       }
     });
