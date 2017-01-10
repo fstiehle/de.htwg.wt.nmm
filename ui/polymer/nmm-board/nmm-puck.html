@@ -8,31 +8,36 @@
   <template>
     <style>
 
+      :host {
+        cursor: pointer;
+      }
+
       :host div {
         z-index: 2;
       }
 
-      :host(.white) {
-        path {
-          fill: #861388;
-          stroke: white;
-        }
+      :host div.hidden {
+        z-index: 0;
+        display: none;
       }
 
-      :host(.black) {
-        path {
-          fill: #b3001b;
-          stroke: black;
-        }
+      :host(.white) path {
+        fill: #861388;
+        stroke: white;
       }
 
-      :host(.selected) {
-        path {
-          stroke: #eec643 !important;
-        }
+      :host(.black) path {
+        fill: #b3001b;
+        stroke: black;
+      }
+
+      :host(.selected) path {
+        stroke: #eec643 !important;
       }
       
     </style>
+
+    <div id="{{_id}}" class$="{{buildCSSClass(isHidden)}}"></div>
 
   </template>
 
@@ -64,18 +69,25 @@
         },
         isHidden: {
           type: Boolean,
-          value: true
+          value: false
         }
       },
 
       ready: function() {
-        this.puck = new Puck(this._id, this.board, this.shadowRoot);
+        this.puck = new Puck(this._id, this.board, this.$$("#" + this._id));
         this.style.left = this.puck.calculateOffset(this.x) + "%";
         this.style.top = this.puck.calculateOffset(this.y) + "%";
         this.isHidden = this.player ? false : true;
-        this.toggleClass("hidden", this.isHidden);
         this.puck.generateMojs();
+      },
+
+      buildCSSClass: function(isHidden) {
+        var classes = "";
+        classes += this.isHidden ? " hidden" : "";
+        return classes;
       }
     });
+
+
   </script>
 </dom-module>

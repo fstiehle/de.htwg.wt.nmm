@@ -54,21 +54,6 @@ footer,
   z-index: 2;
   overflow: visible;
 }
-.puck.selected path {
-  stroke: #eec643 !important;
-}
-.hidden {
-  z-index: 0;
-  display: none;
-}
-.puck.white path {
-  fill: #861388;
-  stroke: white;
-}
-.puck.black path {
-  fill: #b3001b;
-  stroke: black;
-}
 .wrapper {
   padding: 20px;
 }
