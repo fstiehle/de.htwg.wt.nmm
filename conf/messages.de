@@ -1,3 +1,11 @@
+##########
+# Custom
+##########
+navbar.play = Spielen!
+navbar.about = Über
+navbar.tech = Tech
+
+
 error.email = Valid email required
 error.required = This field is required
 invalid.credentials = Invalid credentials!

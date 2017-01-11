@@ -13,14 +13,14 @@
             <ul class="nav navbar-nav navbar-left">
 
                 <li>
-                    <a href="@routes.ApplicationController.index()" title="Play">
+                    <a href="@routes.ApplicationController.index()" title="@Messages("navbar.play")">
                         <i class="glyphicon glyphicon-play"></i>
                     </a>
                 </li>
 
-                @listItem(routes.AboutController.index().toString(), "About")
+                @listItem(routes.AboutController.index().toString(), Messages("navbar.about"))
 
-                @listItem(routes.AboutController.technologies().toString(), "Tech")
+                @listItem(routes.AboutController.technologies().toString(), Messages("navbar.tech"))
 
             </ul>
 
