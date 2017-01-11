@@ -1,0 +1,24 @@
+@* Arguments *@
+@(user: Option[models.User] = None)(implicit request: RequestHeader, messages: Messages)
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Angular2</title>
+        <base href="/">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+        <link href="@routes.Assets.versioned("angular/stylesheets/styles.bundle.css")" rel="stylesheet"></head>
+    <body>
+
+        @navbar.navbar(user)
+
+        <app-root>Loading...</app-root>
+        <script type="text/javascript" src="@routes.Assets.versioned("angular/scripts/inline.bundle.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.versioned("angular/scripts/vendor.bundle.js")"></script>
+        <script type="text/javascript" src="@routes.Assets.versioned("angular/scripts/main.bundle.js")"></script>
+    </body>
+</html>

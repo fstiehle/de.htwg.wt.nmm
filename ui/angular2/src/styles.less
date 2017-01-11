@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap-less/bootstrap/index";
-@import "variables"; 
+@import "variables";
 
 .window #logo {
     filter: invert(100%);
@@ -69,3 +69,15 @@ h1, h2, h3, h4, h5 {
     margin: 20px 0;
     color: @color-font-info;
 }
+
+.navbar-inverse {
+  border: none;
+  background-color: @background-color;
+  margin-bottom: 0;
+  color: @background-font-color;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background: none;
+}
+

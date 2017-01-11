@@ -14,7 +14,8 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
 class WebSocketController @Inject() (
-  implicit system: ActorSystem,
+  implicit
+  system: ActorSystem,
   materializer: Materializer,
   silhouette: Silhouette[DefaultEnv]) extends Controller {
 

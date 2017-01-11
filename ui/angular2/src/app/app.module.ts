@@ -33,7 +33,7 @@ import { InstructionsComponent } from './play/instructions/instructions.componen
     ReactiveFormsModule,
     RouterModule.forRoot([
       {
-        path: 'play',
+        path: '',
         component: PlayComponent
       },
       {
