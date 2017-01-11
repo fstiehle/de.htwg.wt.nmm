@@ -1,7 +1,8 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { PolymerElement } from '@vaadin/angular2-polymer';
 
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -13,10 +14,12 @@ import { ConnectorComponent } from "./play/connector/connector.component";
 import { PuckComponent } from "./play/puck/puck.component";
 import { StatusComponent } from './play/status/status.component';
 import { InstructionsComponent } from './play/instructions/instructions.component';
+import { PolymerComponent } from './polymer/polymer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PolymerElement('nmm-board'),
     HeaderComponent,
     AboutComponent,
     PlayComponent,
@@ -24,7 +27,8 @@ import { InstructionsComponent } from './play/instructions/instructions.componen
     ConnectorComponent,
     JunctionComponent,
     StatusComponent,
-    InstructionsComponent
+    InstructionsComponent,
+    PolymerComponent
   ],
   imports: [
     BrowserModule,
@@ -39,10 +43,15 @@ import { InstructionsComponent } from './play/instructions/instructions.componen
       {
         path: 'about',
         component: AboutComponent
+      },
+      {
+        path: 'polymer',
+        component: PolymerComponent
       }
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }
