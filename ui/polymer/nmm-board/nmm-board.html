@@ -66,7 +66,7 @@
             _id="{{item.id}}"
             board="{{board}}"
             state="{{boardState}}"
-            >
+            on-click="onClick">
           </nmm-junction>
         </template>
 
@@ -144,6 +144,10 @@
         var data = {type: type, command: command, query: query};
         this.$.socket.send(JSON.stringify(data));
         console.log('Socket Status: data sent');
+      },
+
+      onClick(event) {
+        this.send("processCommand", "set", [event.target._id]);
       }
 
     });
