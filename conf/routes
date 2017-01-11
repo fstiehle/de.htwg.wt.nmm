@@ -57,7 +57,7 @@ GET         /technologies                    controllers.AboutController.technol
 ###
 # Game
 ###
-GET         /play                            controllers.GameController.index
+#GET         /play                            controllers.GameController.index
 GET         /play/reset                      controllers.GameController.reset
 
 
