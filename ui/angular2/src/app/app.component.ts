@@ -8,9 +8,5 @@ import './rxjs-operators';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-    public constructor(private titleService: Title) { }
-
-    public setTitle( newTitle: string) {
-        this.titleService.setTitle( newTitle );
-    }
+    public constructor() { }
 }
