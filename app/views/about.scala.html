@@ -1,12 +1,11 @@
 @* Arguments *@
 @(user: Option[models.User] = None)(implicit request: RequestHeader, messages: Messages)
 
-
 @*
 * Call Main Template
 * Page Title: About
 *@
-@main("About", user) {
+@playContentWrapper("About", user) {
 
 <div class="container-fluid">
     <div class="row">

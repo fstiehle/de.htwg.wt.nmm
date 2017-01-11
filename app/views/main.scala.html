@@ -1,11 +1,17 @@
 @* Arguments *@
-@(title: String, user: Option[models.User] = None, scripts: Html = Html(""))(content: Html)(implicit request: RequestHeader, messages: Messages)
+@(title: String, user: Option[models.User] = None, styles: Html = Html(""), scripts: Html = Html(""))(content: Html)(implicit request: RequestHeader, messages: Messages)
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8">
         <title>NMM - @title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <base href="/">
+
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/flags.css")">
+
+        @* Dynamic Styles *@
+        @styles
 
         <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/apple-icon-60x60.png">
@@ -23,9 +29,6 @@
         <meta name="theme-color" content="#273043">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
     </head>
     <body>
         @navbar.navbar(user)
@@ -51,13 +54,14 @@
 
         @content
 
+        @* Dynamic Scripts *@
+        @scripts
+
+
         @* Handled By Angular2 now *@
         @* Global Scripts
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="//cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
-        *@
-        @* Dynamic Scripts
-        @scripts
         *@
         @* only shown on '/play' route
         @if(request.path == controllers.ApplicationController.index().toString()) {

@@ -1,15 +1,11 @@
 @* Arguments *@
 @(user: models.User)(implicit request: RequestHeader, messages: Messages)
 
-@* Imports
-@import views.helper.x3dom.JsonParser
-*@
-
 @*
 * Call Main Template
 * Page Title: Play
 *@
-@main("Play", Some(user)) {
+@playContentWrapper("Play", Some(user)) {
 
     @board.status()
 
