@@ -30,17 +30,7 @@ import { InstructionsComponent } from './play/instructions/instructions.componen
     BrowserModule,
     FormsModule,
     HttpModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        component: PlayComponent
-      },
-      {
-        path: 'about',
-        component: AboutComponent
-      }
-    ])
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

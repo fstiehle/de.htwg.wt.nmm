@@ -12,28 +12,28 @@
 
             <ul class="nav navbar-nav navbar-left">
 
-                @listItem(routes.ApplicationController.index().toString(), "Play")
+                <li>
+                    <a href="@routes.ApplicationController.index()" title="Play">
+                        <i class="glyphicon glyphicon-play"></i>
+                    </a>
+                </li>
 
                 @listItem(routes.AboutController.index().toString(), "About")
 
-                @listItem(routes.AboutController.technologies().toString(), "Techs")
-
-                @if(request.path == routes.GameController.index().toString()) {
-                        <li>
-                            <a href="@routes.GameController.reset()" id="new-game">New Game</a>
-                        </li>
-                }
-
-                @user.map { u =>
-                    @listItem(routes.ApplicationController.signOut.toString(), Messages("sign.out"))
-                }
+                @listItem(routes.AboutController.technologies().toString(), "Tech")
 
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a class="navbar-brandt" href="@routes.GameController.index()">NMM</a>
-                </li>
+
+                @user.map { u =>
+                    <li>
+                        <a href="@routes.ApplicationController.signOut()" title="@Messages("sign.out")">
+                            <i class="glyphicon glyphicon-log-out"></i>
+                        </a>
+                    </li>
+                }
+
                 <li>
                     <a href="@routes.LocalizationController.langDE()" title="German"><span class="flag-icon flag-icon-de flag-icon-squared"></span></a>
                 </li>

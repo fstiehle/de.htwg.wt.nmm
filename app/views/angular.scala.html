@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Angular2</title>
+        <title>NMM - Angular2</title>
         <base href="/">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,11 @@
 
         @navbar.navbar(user)
 
-        <app-root>Loading...</app-root>
+        <app-root>
+            <div id="loading">
+                <img title="Nine Men's Morris" id="logo" alt="Nine Men's Morris" src="/assets/images/nmmLogo.png">
+            </div>
+        </app-root>
         <script type="text/javascript" src="@routes.Assets.versioned("angular/scripts/inline.bundle.js")"></script>
         <script type="text/javascript" src="@routes.Assets.versioned("angular/scripts/vendor.bundle.js")"></script>
         <script type="text/javascript" src="@routes.Assets.versioned("angular/scripts/main.bundle.js")"></script>

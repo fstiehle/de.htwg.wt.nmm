@@ -1,14 +1,6 @@
 webpackJsonp([0,3],{
 
-/***/ 1000:
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(435);
-
-
-/***/ },
-
-/***/ 241:
+/***/ 223:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22,7 +14,7 @@ var Junction = (function () {
      * @param board element to base positioning on
      */
     function Junction(id, board) {
-        this.Mojs = __webpack_require__(399);
+        this.Mojs = __webpack_require__(373);
         /**
          * Use a mute for the rescale process
          */
@@ -79,12 +71,12 @@ var Junction = (function () {
 
 /***/ },
 
-/***/ 242:
+/***/ 224:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs__ = __webpack_require__(739);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs__ = __webpack_require__(706);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return PlayService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -155,13 +147,13 @@ var PlayService = (function () {
 
 /***/ },
 
-/***/ 359:
+/***/ 333:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rxjs_operators__ = __webpack_require__(565);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rxjs_operators__ = __webpack_require__(532);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rxjs_operators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__rxjs_operators__);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -186,8 +178,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-root',
-            template: __webpack_require__(732),
-            styles: [__webpack_require__(723)]
+            template: __webpack_require__(699),
+            styles: [__webpack_require__(690)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Title */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* Title */]) === 'function' && _a) || Object])
     ], AppComponent);
@@ -198,7 +190,7 @@ var AppComponent = (function () {
 
 /***/ },
 
-/***/ 360:
+/***/ 334:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -249,7 +241,7 @@ var MouseQueueService = (function () {
 
 /***/ },
 
-/***/ 434:
+/***/ 411:
 /***/ function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -258,35 +250,35 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 434;
+webpackEmptyContext.id = 411;
 
 
 /***/ },
 
-/***/ 435:
+/***/ 412:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(567);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(534);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__polyfills_ts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(523);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(500);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(566);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app___ = __webpack_require__(556);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(533);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app___ = __webpack_require__(523);
 
 
 
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["_40" /* enableProdMode */])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["_37" /* enableProdMode */])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_4__app___["a" /* AppModule */]);
 //# sourceMappingURL=/Users/funkemarkus/Entwicklung/HTWG/Webtechnologien/de.htwg.wt.nmm/ui/angular2/src/main.js.map
 
 /***/ },
 
-/***/ 553:
+/***/ 520:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -310,8 +302,8 @@ var AboutComponent = (function () {
     AboutComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-about',
-            template: __webpack_require__(731),
-            styles: [__webpack_require__(722)]
+            template: __webpack_require__(698),
+            styles: [__webpack_require__(689)]
         }), 
         __metadata('design:paramtypes', [])
     ], AboutComponent);
@@ -321,24 +313,23 @@ var AboutComponent = (function () {
 
 /***/ },
 
-/***/ 554:
+/***/ 521:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(153);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(330);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(519);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(543);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(359);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__header_header_component__ = __webpack_require__(555);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__about_about_component__ = __webpack_require__(553);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__play_play_component__ = __webpack_require__(561);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__play_junction_junction_component__ = __webpack_require__(560);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__play_connector_connector_component__ = __webpack_require__(558);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__play_puck_puck_component__ = __webpack_require__(563);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__play_status_status_component__ = __webpack_require__(564);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__play_instructions_instructions_component__ = __webpack_require__(559);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(496);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__header_header_component__ = __webpack_require__(522);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__about_about_component__ = __webpack_require__(520);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__play_play_component__ = __webpack_require__(528);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__play_junction_junction_component__ = __webpack_require__(527);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__play_connector_connector_component__ = __webpack_require__(525);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__play_puck_puck_component__ = __webpack_require__(530);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__play_status_status_component__ = __webpack_require__(531);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__play_instructions_instructions_component__ = __webpack_require__(526);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -362,41 +353,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* HeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__about_about_component__["a" /* AboutComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__play_play_component__["a" /* PlayComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__play_puck_puck_component__["a" /* PuckComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__play_connector_connector_component__["a" /* ConnectorComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__play_junction_junction_component__["a" /* JunctionComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__play_status_status_component__["a" /* StatusComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__play_instructions_instructions_component__["a" /* InstructionsComponent */]
+                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__header_header_component__["a" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_6__about_about_component__["a" /* AboutComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__play_play_component__["a" /* PlayComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__play_puck_puck_component__["a" /* PuckComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__play_connector_connector_component__["a" /* ConnectorComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__play_junction_junction_component__["a" /* JunctionComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__play_status_status_component__["a" /* StatusComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__play_instructions_instructions_component__["a" /* InstructionsComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["c" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* ReactiveFormsModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot([
-                    {
-                        path: '',
-                        component: __WEBPACK_IMPORTED_MODULE_8__play_play_component__["a" /* PlayComponent */]
-                    },
-                    {
-                        path: 'about',
-                        component: __WEBPACK_IMPORTED_MODULE_7__about_about_component__["a" /* AboutComponent */]
-                    }
-                ])
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* ReactiveFormsModule */]
             ],
             providers: [],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
@@ -406,7 +386,7 @@ var AppModule = (function () {
 
 /***/ },
 
-/***/ 555:
+/***/ 522:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -430,8 +410,8 @@ var HeaderComponent = (function () {
     HeaderComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-header',
-            template: __webpack_require__(733),
-            styles: [__webpack_require__(724)]
+            template: __webpack_require__(700),
+            styles: [__webpack_require__(691)]
         }), 
         __metadata('design:paramtypes', [])
     ], HeaderComponent);
@@ -441,12 +421,12 @@ var HeaderComponent = (function () {
 
 /***/ },
 
-/***/ 556:
+/***/ 523:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_component__ = __webpack_require__(359);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(554);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_component__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(521);
 /* unused harmony namespace reexport */
 /* harmony namespace reexport (by used) */ __webpack_require__.d(exports, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__app_module__["a"]; });
 
@@ -455,11 +435,11 @@ var HeaderComponent = (function () {
 
 /***/ },
 
-/***/ 557:
+/***/ 524:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__junction_Junction__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__junction_Junction__ = __webpack_require__(223);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -480,7 +460,7 @@ var Connector = (function (_super) {
      */
     function Connector(id, board, length, rotation) {
         _super.call(this, id, board);
-        this.Mojs = __webpack_require__(399);
+        this.Mojs = __webpack_require__(373);
         /**
          * Uses as a mute for the rescale process
          */
@@ -532,12 +512,12 @@ var Connector = (function (_super) {
 
 /***/ },
 
-/***/ 558:
+/***/ 525:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Connector__ = __webpack_require__(557);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Connector__ = __webpack_require__(524);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return ConnectorComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -592,7 +572,7 @@ var ConnectorComponent = (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-connector',
             template: '<ng-content></ng-content>',
-            styles: [__webpack_require__(725)],
+            styles: [__webpack_require__(692)],
             host: { '[id]': 'id', '[style.left]': 'left', '[style.top]': 'top' }
         }), 
         __metadata('design:paramtypes', [])
@@ -603,7 +583,7 @@ var ConnectorComponent = (function () {
 
 /***/ },
 
-/***/ 559:
+/***/ 526:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -634,8 +614,8 @@ var InstructionsComponent = (function () {
     InstructionsComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-instructions',
-            template: __webpack_require__(734),
-            styles: [__webpack_require__(726)]
+            template: __webpack_require__(701),
+            styles: [__webpack_require__(693)]
         }), 
         __metadata('design:paramtypes', [])
     ], InstructionsComponent);
@@ -645,14 +625,14 @@ var InstructionsComponent = (function () {
 
 /***/ },
 
-/***/ 560:
+/***/ 527:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__play_service__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mouse_queue_service__ = __webpack_require__(360);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Junction__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__play_service__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mouse_queue_service__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Junction__ = __webpack_require__(223);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return JunctionComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -745,8 +725,8 @@ var JunctionComponent = (function () {
     JunctionComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-junction',
-            template: __webpack_require__(735),
-            styles: [__webpack_require__(727)],
+            template: __webpack_require__(702),
+            styles: [__webpack_require__(694)],
             host: { '[id]': 'id', '[style.left]': 'left', '[style.top]': 'top' },
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__play_service__["a" /* PlayService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__play_service__["a" /* PlayService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__mouse_queue_service__["a" /* MouseQueueService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__mouse_queue_service__["a" /* MouseQueueService */]) === 'function' && _b) || Object])
@@ -758,12 +738,12 @@ var JunctionComponent = (function () {
 
 /***/ },
 
-/***/ 561:
+/***/ 528:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__play_service__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mouse_queue_service__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__play_service__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__mouse_queue_service__ = __webpack_require__(334);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return PlayComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -786,7 +766,7 @@ var PlayComponent = (function () {
         /**
          * Require Initial Board Components from JSON
          */
-        this.boardDefinition = __webpack_require__(720);
+        this.boardDefinition = __webpack_require__(687);
         this.BOARD_ID = __WEBPACK_IMPORTED_MODULE_0__play_service__["a" /* PlayService */].BOARD_ID;
         /**
          * Default values until state arrives from server
@@ -815,8 +795,8 @@ var PlayComponent = (function () {
     PlayComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_core__["G" /* Component */])({
             selector: 'app-play',
-            template: __webpack_require__(736),
-            styles: [__webpack_require__(728)],
+            template: __webpack_require__(703),
+            styles: [__webpack_require__(695)],
             providers: [__WEBPACK_IMPORTED_MODULE_0__play_service__["a" /* PlayService */], __WEBPACK_IMPORTED_MODULE_1__mouse_queue_service__["a" /* MouseQueueService */]]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__play_service__["a" /* PlayService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_0__play_service__["a" /* PlayService */]) === 'function' && _a) || Object])
@@ -828,11 +808,11 @@ var PlayComponent = (function () {
 
 /***/ },
 
-/***/ 562:
+/***/ 529:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__junction_Junction__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__junction_Junction__ = __webpack_require__(223);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -901,12 +881,12 @@ var Puck = (function (_super) {
 
 /***/ },
 
-/***/ 563:
+/***/ 530:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Puck__ = __webpack_require__(562);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Puck__ = __webpack_require__(529);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return PuckComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -993,7 +973,7 @@ var PuckComponent = (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-puck',
             template: '<ng-content></ng-content>',
-            styles: [__webpack_require__(729)],
+            styles: [__webpack_require__(696)],
             host: { '[id]': 'id', '[class]': 'player', '[class.selected]': "isSelected",
                 '[class.hidden]': "isHidden" }
         }), 
@@ -1005,13 +985,13 @@ var PuckComponent = (function () {
 
 /***/ },
 
-/***/ 564:
+/***/ 531:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(330);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__play_service__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__play_service__ = __webpack_require__(224);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return StatusComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1080,8 +1060,8 @@ var StatusComponent = (function () {
     StatusComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-status',
-            template: __webpack_require__(737),
-            styles: [__webpack_require__(730)],
+            template: __webpack_require__(704),
+            styles: [__webpack_require__(697)],
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__play_service__["a" /* PlayService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__play_service__["a" /* PlayService */]) === 'function' && _b) || Object])
     ], StatusComponent);
@@ -1092,23 +1072,23 @@ var StatusComponent = (function () {
 
 /***/ },
 
-/***/ 565:
+/***/ 532:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_observable_throw__ = __webpack_require__(402);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_observable_throw__ = __webpack_require__(377);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_observable_throw__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_catch__ = __webpack_require__(403);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_catch__ = __webpack_require__(378);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_debounceTime__ = __webpack_require__(404);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_debounceTime__ = __webpack_require__(379);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_debounceTime__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_distinctUntilChanged__ = __webpack_require__(405);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_distinctUntilChanged__ = __webpack_require__(380);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_distinctUntilChanged___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_distinctUntilChanged__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(406);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(381);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__ = __webpack_require__(382);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_toPromise__ = __webpack_require__(408);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_toPromise__ = __webpack_require__(383);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_toPromise__);
 // import 'rxjs/Rx'; // adds ALL RxJS statics & operators to Observable
 
@@ -1122,7 +1102,7 @@ var StatusComponent = (function () {
 
 /***/ },
 
-/***/ 566:
+/***/ 533:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1138,41 +1118,41 @@ var environment = {
 
 /***/ },
 
-/***/ 567:
+/***/ 534:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(581);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(548);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(574);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(541);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(570);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(537);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(576);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(543);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(575);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(542);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(573);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(540);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(572);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(539);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(580);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(547);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(569);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(536);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(568);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(535);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(578);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(545);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(571);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(538);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(579);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(546);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(577);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(544);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(582);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(549);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(999);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(974);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__);
 
 
@@ -1194,7 +1174,7 @@ var environment = {
 
 /***/ },
 
-/***/ 720:
+/***/ 687:
 /***/ function(module, exports) {
 
 module.exports = {
@@ -1502,117 +1482,125 @@ module.exports = {
 
 /***/ },
 
-/***/ 722:
+/***/ 689:
 /***/ function(module, exports) {
 
 module.exports = ""
 
 /***/ },
 
-/***/ 723:
+/***/ 690:
 /***/ function(module, exports) {
 
 module.exports = ""
 
 /***/ },
 
-/***/ 724:
+/***/ 691:
 /***/ function(module, exports) {
 
 module.exports = ".navbar-inverse {\n  border: none;\n  background-color: #273043;\n  margin-bottom: 0;\n  color: #fff;\n}\n.navbar-inverse .navbar-nav > .active > a,\n.navbar-inverse .navbar-nav > .active > a:hover,\n.navbar-inverse .navbar-nav > .active > a:focus {\n  background: none;\n}\n"
 
 /***/ },
 
-/***/ 725:
+/***/ 692:
 /***/ function(module, exports) {
 
 module.exports = ":host {\n  position: absolute;\n}\n:host /deep/ rect {\n  fill: #3a4763;\n}\n"
 
 /***/ },
 
-/***/ 726:
+/***/ 693:
 /***/ function(module, exports) {
 
 module.exports = ":host {\n  padding: 10px;\n  opacity: 0.95;\n  color: #fff;\n}\n#message {\n  text-align: center;\n  padding: 20px 0;\n  font-size: 20px;\n}\n.white span {\n  border-left: 5px solid #861388;\n  padding-left: 10px;\n}\n.black span {\n  border-left: 5px solid #B3001B;\n  padding-left: 10px;\n}\n"
 
 /***/ },
 
-/***/ 727:
+/***/ 694:
 /***/ function(module, exports) {
 
 module.exports = ":host {\n  position: relative;\n  cursor: pointer;\n  z-index: 1;\n}\n:host /deep/ ellipse {\n  fill: #EEC643;\n  stroke: #3a4763;\n}\n"
 
 /***/ },
 
-/***/ 728:
+/***/ 695:
 /***/ function(module, exports) {
 
 module.exports = "#scene {\n  background-color: #273043;\n  padding: 40px 20px;\n  overflow: hidden;\n}\n#board {\n  position: relative;\n  width: 85vw;\n  height: 85vw;\n  margin: auto;\n}\n@media only screen and (orientation: landscape) {\n  #board {\n    width: 75vh;\n    height: 75vh;\n  }\n}\n#board svg {\n  overflow: visible;\n}\n"
 
 /***/ },
 
-/***/ 729:
+/***/ 696:
 /***/ function(module, exports) {
 
 module.exports = ":host /deep/ div {\n  z-index: 2;\n}\n:host(.white) /deep/ path {\n  fill: #861388;\n  stroke: white;\n}\n:host(.black) /deep/ path {\n  fill: #B3001B;\n  stroke: black;\n}\n:host(.selected) /deep/ path {\n  stroke: #EEC643 !important;\n}\n"
 
 /***/ },
 
-/***/ 730:
+/***/ 697:
 /***/ function(module, exports) {
 
 module.exports = "#status {\n  opacity: 0.95;\n  position: relative;\n  width: 100%;\n  height: 60px;\n  color: #fff;\n  background-image: -webkit-linear-gradient(left, #861388 0%, #B3001B 100%);\n  background-image: linear-gradient(to right, #861388 0%, #B3001B 100%);\n}\n#status input {\n  width: 100%;\n  background: inherit;\n  border: none;\n}\n#status form {\n  max-width: 60%;\n}\n#status input:focus {\n  border-bottom: 1px #EEC643 solid;\n  outline: none;\n}\n#status #player-black input {\n  text-align: right;\n}\n#show-msg {\n  z-index: 2;\n  position: fixed;\n  font-size: 28px;\n  right: 5px;\n  bottom: 5px;\n  width: auto;\n}\n#player-white,\n#player-black {\n  position: absolute;\n  overflow: hidden;\n  height: 100%;\n  top: 0;\n  width: 50%;\n  -webkit-transition: width 2s;\n  transition: width 2s;\n  z-index: 1;\n}\n.current {\n  border-bottom: solid 2px #EEC643;\n  color: #EEC643;\n}\n#player-white {\n  left: 0;\n  background-color: #861388;\n}\n#player-white .state {\n  float: right;\n  max-width: 35%;\n  overflow: hidden;\n}\n#player-white form {\n  float: left;\n}\n#player-black {\n  right: 0;\n  text-align: right;\n  background-color: #B3001B;\n}\n#player-black form {\n  float: right;\n}\n#player-black .state {\n  float: left;\n  max-width: 35%;\n  overflow: hidden;\n}\n#overlay-message {\n  width: 100%;\n  opacity: 0;\n  background-color: rgba(0, 0, 0, 0.4);\n  z-index: 4;\n  font-size: 41px;\n  color: white;\n  position: absolute;\n  text-align: center;\n}\n#msg {\n  display: none;\n  z-index: 1;\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  padding: 20px 20px 60px 20px;\n  color: #fff;\n  background-color: rgba(0, 0, 0, 0.8);\n  max-height: 20%;\n  overflow-y: scroll;\n}\n"
 
 /***/ },
 
-/***/ 731:
+/***/ 698:
 /***/ function(module, exports) {
 
 module.exports = "<div class=\"container-fluid\">\n    <div class=\"row\">\n\n        <div class=\"col-lg-12 window\">\n\n            <div class=\"container col-lg-6 col-lg-offset-3\">\n\n                <h1><img title=\"Nine Men's Morris\" id=\"logo\" alt=\"Nine Men's Morris\" src=\"/assets/images/nmmLogo.png\"></h1>\n\n                <h2>Deceptively Easy. Surprisingly deep.</h2>\n\n            </div>\n\n        </div>\n\n        <div class=\"col-lg-12\">\n\n            <div class=\"container col-lg-8 col-lg-offset-2\">\n                <div id=\"about\" class=\"content\">\n\n                    <h3>Start Quickly—play indefinitely</h3>\n\n                    <div class=\"panel panel-info\">\n                        <blockquote>\n                            The players determine who plays first, then take turns placing their men one per play on empty points.\n                            If a player is able to place three of his pieces on contiguous points in a straight line, vertically or horizontally,\n                            he has formed a mill and may remove one of his opponent's pieces from the board and the game.\n                        </blockquote>\n                        <div class=\"panel-footer\"><cite><a href=\"\">From Wikipedia, the free encyclopedia</a></cite></div>\n\n                    </div>\n\n                    <h3>Indepth</h3>\n                    <h4>Phase 1: SET</h4>\n\n                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\n                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\n\n                    <h4>Phase 2: MOVE</h4>\n\n                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\n                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\n\n                    <h4>Phase 3: HOP</h4>\n\n                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.\n                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\n\n                    <h3>Nine Men's Morris has a long and rich history</h3>\n\n                    <div class=\"panel panel-info\">\n                        <blockquote>\n                            According to R. C. Bell, the earliest known board for the game includes diagonal lines and was \"cut into the roofing slabs of the temple at Kurna in Egypt\" c. 1400 BCE.\n                            However, Friedrich Berger writes that some of the diagrams at Kurna include Coptic crosses, making it \"doubtful\" that the diagrams date to 1400 BCE.\n                            Berger concludes, \"certainly they cannot be dated.\"\n                        </blockquote>\n\n                        <div class=\"panel-footer\"><cite><a href=\"\">From Wikipedia, the free encyclopedia</a></cite></div>\n                    </div>\n\n                </div>\n            </div>\n\n        </div>\n    </div>\n\n</div>"
 
 /***/ },
 
-/***/ 732:
+/***/ 699:
 /***/ function(module, exports) {
 
 module.exports = "<!-- <app-header></app-header> -->\n<app-play></app-play>\n<!-- <router-outlet></router-outlet> -->\n\n"
 
 /***/ },
 
-/***/ 733:
+/***/ 700:
 /***/ function(module, exports) {
 
 module.exports = "<nav class=\"navbar navbar-inverse\">\n\n    <div class=\"container\">\n\n            <ul class=\"nav navbar-nav navbar-left\">\n\n                <li class>\n                  <a routerLink=\"/play\">Play</a>\n                </li>\n\n                <li class>\n                  <a routerLink=\"/about\">About</a>\n                </li>\n\n            </ul>\n\n            <ul class=\"nav navbar-nav navbar-right\">\n                <li>\n                    <a class=\"navbar-brandt\" href=\"/\">NMM</a>\n                </li>\n            </ul>\n\n    </div>\n\n</nav>"
 
 /***/ },
 
-/***/ 734:
+/***/ 701:
 /***/ function(module, exports) {
 
-module.exports = "<div id=\"instructions\" class=\"container-fluid\">\n\n  <div class=\"row\">\n    <div class=\"col-lg-6 col-lg-offset-3\">\n      <div id=\"message\" [class]=\"currentPlayer?.toLowerCase()\">\n        <span>{{message}}</span>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"row\">\n\n    <div class=\"col-lg-8 col-lg-offset-2\">\n\n      <div class=\"col-lg-4\">\n        <h4>Phase 1: SET</h4>\n        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\n      </div>\n\n      <div class=\"col-lg-4\">\n        <h4>Phase 2: MOVE</h4>\n        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\n      </div>\n\n      <div class=\"col-lg-4\">\n        <h4>Having a Mil</h4>\n        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\n      </div>\n\n    </div>\n  </div>\n</div>"
+module.exports = "<div id=\"instructions\" class=\"container-fluid\">\n\n  <div class=\"row\">\n    <div class=\"col-lg-6 col-lg-offset-3\">\n      <div id=\"message\" [class]=\"currentPlayer?.toLowerCase()\">\n        <span>{{message}}</span>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"row\">\n\n    <div class=\"col-lg-8 col-lg-offset-2\">\n\n      <div class=\"col-lg-4\">\n        <h4>Phase 1: SET</h4>\n        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\n      </div>\n\n      <div class=\"col-lg-4\">\n        <h4>Phase 2: MOVE</h4>\n        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\n      </div>\n\n      <div class=\"col-lg-4\">\n        <h4>Having a Mill: PICK</h4>\n        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\n      </div>\n\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-lg-offset-3\">\n      <div style=\"text-align: center; margin-top: 20px;\">\n        <span><a href=\"/play/reset \" type=\"button\" class=\"btn btn-primary btn-lg\" aria-label=\"Left Align\">\n          New Game.\n      </a></span>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ },
 
-/***/ 735:
+/***/ 702:
 /***/ function(module, exports) {
 
 module.exports = "<app-puck #p\n  [x]=\"x\"\n  [y]=\"y\"\n  [id]=\"'puck-' + id\"\n  [board]=\"board\"\n  [player]=\"state?.man?.toLowerCase()\"\n  [isSelected]=\"isSelected\"\n  (window:resize)=\"p.onResize()\">\n</app-puck>"
 
 /***/ },
 
-/***/ 736:
+/***/ 703:
 /***/ function(module, exports) {
 
 module.exports = "<app-status [(black)]=\"state.black\" [(white)]=\"state.white\"\n  [(currentPlayer)]=\"state.currentPlayer.man\">\n</app-status>\n\n<div id=\"scene\">\n  <div id=\"board\">\n    \n    <app-junction #j *ngFor=\"let junction of boardDefinition['MODEL_JUNCTION']\"\n      [x]=\"junction.translation.x\"\n      [y]=\"junction.translation.y\"\n      [id]=\"junction.id\"\n      [board]=\"BOARD_ID\"\n      [(state)]=\"boardState[junction.id]\"\n      (window:resize)=\"j.onResize()\"\n      (click)=\"j.onClick(state.currentPlayer.man, state.currentPlayer.currentState)\">\n    </app-junction>\n\n    <app-connector #c *ngFor=\"let connector of boardDefinition['MODEL_CONNECTOR']; let i = index\"\n      [x]=\"connector.translation.x\"\n      [y]=\"connector.translation.y\"\n      [id]=\"'connector-' + i\"\n      [length]=\"connector.length\"\n      [rotation]=\"connector.rotation\"\n      [board]=\"BOARD_ID\"\n      (window:resize)=\"c.onResize()\">\n    </app-connector>\n\n  </div>\n\n  <app-instructions [message]=\"state?.status?.message\"\n  [currentPlayer]=\"state.currentPlayer.man\"></app-instructions>\n</div>\n"
 
 /***/ },
 
-/***/ 737:
+/***/ 704:
 /***/ function(module, exports) {
 
 module.exports = "<div id=\"status\">\n \n  <div id=\"player-white\" [class.current]=\"currentPlayer === 'WHITE'\" [style.width.%]=\"whiteProgress\">\n    <div class=\"wrapper\">\n      \n      <form (ngSubmit)=\"onSubmit($event, playerWhiteForm, 'white')\"\n      [formGroup]=\"playerWhiteForm\">\n        <input type=\"text\" id=\"name\" title=\"Click to edit\" value=\"{{white.name}}\"\n        [(ngModel)]=\"whiteName\"\n        [formControl]=\"playerWhiteForm.controls['name']\">\n      </form>\n\n      <span class=\"state\">{{white.currentState}}</span>\n\n    </div>\n  </div>\n\n  <div id=\"player-black\" [class.current]=\"currentPlayer === 'BLACK'\" [style.width.%]=\"blackProgress\">\n    <div class=\"wrapper\">\n\n      <form (ngSubmit)=\"onSubmit($event, playerBlackForm, 'black')\"\n      [formGroup]=\"playerBlackForm\">\n        <input type=\"text\" id=\"name\" title=\"Click to edit\" value=\"{{black.name}}\"\n        [(ngModel)]=\"blackName\"\n        [formControl]=\"playerBlackForm.controls['name']\">\n      </form>\n\n      <span class=\"state\">{{black.currentState}}</span>\n\n    </div>\n  </div>\n</div>\n\n<button type=\"button\" class=\"btn btn-link\" id=\"show-msg\">\n  <span class=\"glyphicon glyphicon-option-vertical\" aria-hidden=\"true\"></span>\n</button>\n\n<div id=\"msg\"></div>\n"
 
+/***/ },
+
+/***/ 975:
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(412);
+
+
 /***/ }
 
-},[1000]);
+},[975]);
 //# sourceMappingURL=main.bundle.map

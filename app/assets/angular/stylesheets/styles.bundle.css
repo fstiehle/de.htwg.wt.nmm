@@ -6553,5 +6553,17 @@ h5 {
 .navbar-inverse .navbar-nav > .active > a:focus {
   background: none;
 }
+#loading {
+  min-height: 100vh;
+  background-color: #273043;
+  color: #fff;
+  text-align: center;
+}
+#loading img {
+  margin-top: 20px;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  width: 250px;
+}
 
 /*# sourceMappingURL=styles.bundle.map*/
