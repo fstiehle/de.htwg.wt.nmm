@@ -90,7 +90,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var SOCKET_URL = "ws://localhost:9000/socket";
+var SOCKET_URL = "ws:";
+var loc = window.location;
+if (loc.protocol === "https:") {
+    SOCKET_URL = "wss:";
+}
+SOCKET_URL += "//" + loc.host + "/socket";
+/**
+ * DEV WebSocket URL for Angular2 DEV only
+ */
+//SOCKET_URL = "ws://localhost:9000/socket";
 var PlayService = (function () {
     /**
      * First to call for service will initialize the Websocket

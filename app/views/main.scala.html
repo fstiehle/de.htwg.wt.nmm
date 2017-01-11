@@ -51,20 +51,22 @@
 
         @content
 
-        @* Global Scripts *@
+        @* Handled By Angular2 now *@
+        @* Global Scripts
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="//cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
-
-        @* Dynamic Scripts *@
+        *@
+        @* Dynamic Scripts
         @scripts
-
-        @* only shown on '/play' route *@
-        @if(request.path == routes.GameController.index().toString()) {
+        *@
+        @* only shown on '/play' route
+        @if(request.path == controllers.ApplicationController.index().toString()) {
             <script src="@routes.Assets.versioned("scripts/Board.js")"></script>
             <script src="@routes.Assets.versioned("scripts/Junction.js")"></script>
             <script src="@routes.Assets.versioned("scripts/Puck.js")"></script>
             <script src="@routes.Assets.versioned("scripts/Connector.js")"></script>
             @board.boardScripts()
         }
+        *@
     </body>
 </html>

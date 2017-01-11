@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
@@ -30,17 +29,7 @@ import { InstructionsComponent } from './play/instructions/instructions.componen
     BrowserModule,
     FormsModule,
     HttpModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot([
-      {
-        path: 'play',
-        component: PlayComponent
-      },
-      {
-        path: 'about',
-        component: AboutComponent
-      }
-    ])
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

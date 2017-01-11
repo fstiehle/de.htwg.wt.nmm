@@ -41,12 +41,6 @@ GET         /lang/de                         controllers.LocalizationController.
 
 
 ###
-# Angular
-###
-GET         /angular                         controllers.AngularController.index
-
-
-###
 # Sites
 ###
 GET         /about                           controllers.AboutController.index

@@ -4,6 +4,7 @@ import javax.inject.Inject
 
 import com.mohiva.play.silhouette.api.{ LogoutEvent, Silhouette }
 import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
+import de.htwg.se.nmm.Game
 import play.api.i18n.{ I18nSupport, MessagesApi }
 import play.api.mvc.{ Action, Controller }
 import utils.auth.DefaultEnv
@@ -25,13 +26,22 @@ class ApplicationController @Inject() (
   implicit val webJarAssets: WebJarAssets)
   extends Controller with I18nSupport {
 
+  val gameController = Game.getInstance.getController
+
   /**
    * Handles the index action.
    *
    * @return The result to display.
    */
   def index = silhouette.SecuredAction { implicit request =>
-    Redirect(routes.AngularController.index())
+    val player = gameController.getPlayerWithoutUserID(request.identity.userID)
+    if (player != null) {
+      player.setName(request.identity.fullName.getOrElse(player.getMan.toString()))
+      player.setUserID(request.identity.userID)
+      gameController.update()
+    }
+
+    Ok(views.html.angular())
   }
 
   /**

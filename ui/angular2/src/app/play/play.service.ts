@@ -1,7 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable, Observer } from 'rxjs';
 
-const SOCKET_URL = "wss://de-htwg-wt-nmm.herokuapp.com/socket";
+let SOCKET_URL = "ws:";
+
+let loc = window.location;
+if (loc.protocol === "https:") {
+    SOCKET_URL = "wss:";
+}
+SOCKET_URL += "//" + loc.host + "/socket";
+
+/**
+ * DEV WebSocket URL for Angular2 DEV only
+ */
+//SOCKET_URL = "ws://localhost:9000/socket";
 
 @Injectable()
 export class PlayService {
