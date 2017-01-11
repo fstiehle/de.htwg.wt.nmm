@@ -1,0 +1,13 @@
+@* Arguments *@
+@(title: String, user: Option[models.User] = None, styles: Html = Html(""), scripts: Html = Html(""))(content: Html)(implicit request: RequestHeader, messages: Messages)
+
+@wrapperStyles = {
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    @styles
+}
+
+@wrapperScripts = {
+    @scripts
+}
+
+@main(title, user, wrapperStyles, wrapperScripts){@content}

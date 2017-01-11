@@ -41,7 +41,7 @@ class ApplicationController @Inject() (
       gameController.update()
     }
 
-    Ok(views.html.angular())
+    Ok(views.html.angular(request.identity))
   }
 
   /**

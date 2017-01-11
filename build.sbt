@@ -34,6 +34,8 @@ routesGenerator := InjectedRoutesGenerator
 
 routesImport += "utils.route.Binders._"
 
+includeFilter in (Assets, LessKeys.less) := "main.less" | "flags.less"
+
 scalacOptions ++= Seq(
   "-deprecation", // Emit warning and location for usages of deprecated APIs.
   "-feature", // Emit warning and location for usages of features that should be imported explicitly.
