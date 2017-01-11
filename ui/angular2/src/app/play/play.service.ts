@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable, Observer } from 'rxjs';
 
-const SOCKET_URL = "ws://localhost:9000/socket";
+const SOCKET_URL = "wss://de-htwg-wt-nmm.herokuapp.com/socket";
 
 @Injectable()
 export class PlayService {
