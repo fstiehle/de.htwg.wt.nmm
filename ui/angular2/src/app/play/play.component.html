@@ -1,5 +1,5 @@
-<app-status [(black)]="state.black" [(white)]="state.white"
-  [(currentPlayer)]="state.currentPlayer.man">
+<app-status [black]="state.black" [white]="state.white"
+  [currentPlayer]="state.currentPlayer.man">
 </app-status>
 
 <div id="scene">
@@ -10,7 +10,7 @@
       [y]="junction.translation.y"
       [id]="junction.id"
       [board]="BOARD_ID"
-      [(state)]="boardState[junction.id]"
+      [state]="boardState[junction.id]"
       (window:resize)="j.onResize()"
       (click)="j.onClick(state.currentPlayer.man, state.currentPlayer.currentState)">
     </app-junction>

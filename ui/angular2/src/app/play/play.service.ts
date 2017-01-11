@@ -12,7 +12,7 @@ SOCKET_URL += "//" + loc.host + "/socket";
 /**
  * DEV WebSocket URL for Angular2 DEV only
  */
-//SOCKET_URL = "ws://localhost:9000/socket";
+SOCKET_URL = "ws://localhost:9000/socket";
 
 @Injectable()
 export class PlayService {
