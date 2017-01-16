@@ -36,7 +36,6 @@ class JsonController @Inject() (
   }
 
   def process = Action.async { implicit request =>
-    println("processAction " + request)
     silhouette.SecuredRequestHandler { securedRequest =>
       Future.successful(HandlerResult(Ok, Some(securedRequest.identity)))
     }.map {
