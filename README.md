@@ -4,11 +4,19 @@
 - [Play Setup](#play-setup) TODO
 - [Heroku Deployment](#heroku-deployment)
 
-## Heroku Deployment
-
-### Prezi Presentation
+## Prezi Presentation
 
 <http://prezi.com/ogvpmmhs2juu/?utm_campaign=share&utm_medium=copy>
+
+## Angular 
+
+<https://github.com/fstiehle/de.htwg.wt.nmm/blob/master/ui/angular2/README.md>
+
+## Polymer
+
+https://github.com/fstiehle/de.htwg.wt.nmm/tree/master/ui/polymer
+
+## Heroku Deployment
 
 ### Heroku App
 
