@@ -52,7 +52,9 @@ GET         /technologies                    controllers.AboutController.technol
 # Game
 ###
 #GET         /play                            controllers.GameController.index
-GET         /play/reset                      controllers.GameController.reset
+GET          /play/reset                      controllers.GameController.reset
+GET          /play/load                       controllers.GameController.load
+GET          /play/save                       controllers.GameController.save
 
 
 ###

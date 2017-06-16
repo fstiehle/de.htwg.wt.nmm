@@ -37,4 +37,16 @@ class GameController @Inject() (
     gameController.update()
     Redirect(routes.ApplicationController.index())
   }
+
+  def load = silhouette.SecuredAction { implicit request =>
+    //gameController.initNewGame()
+    //gameController.update()
+    Redirect(routes.ApplicationController.index())
+  }
+
+  def save = silhouette.SecuredAction { implicit request =>
+    //gameController.initNewGame()
+    //gameController.update()
+    Redirect(routes.ApplicationController.index())
+  }
 }
