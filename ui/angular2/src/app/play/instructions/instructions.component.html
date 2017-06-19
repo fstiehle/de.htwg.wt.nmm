@@ -37,14 +37,20 @@
           New Game.
       </a></span>
 
-      <span><a href="/play/load" type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
-          Load Game.
-      </a></span>
+      <form (focusout)="onSubmit($event, saveGameForm)"
+      [formGroup]="saveGameForm">
+        <input type="text" id="name" title="Click to edit" value="{{sessionName}}"
+        [(ngModel)]="sessionName"
+        [formControl]="saveGameForm.controls['name']">
+        <button class="btn btn-primary btn-lg" type="submit">Save Game</button>
+      </form>
 
-      <span><a href="/play/save" type="button" class="btn btn-primary btn-lg" aria-label="Left Align">
-          Save Game.
-      </a></span>
-
+      <h4>Load a previous Session</h4>
+      <span *ngIf=!load>No session found.</span>
+      <ul>
+        <app-load #l *ngFor="let session of load"
+        [load]="session"></app-load>
+      </ul>   
       </div>
     </div>
   </div>
