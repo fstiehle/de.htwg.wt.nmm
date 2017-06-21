@@ -12,12 +12,13 @@ SOCKET_URL += "//" + loc.host + "/socket";
 /**
  * DEV WebSocket URL for Angular2 DEV only
  */
-//SOCKET_URL = "ws://localhost:9000/socket";
+SOCKET_URL = "ws://localhost:9000/socket";
 
 @Injectable()
 export class PlayService {
 
   static BOARD_ID = "board";
+  load: boolean;
   
   /**
    * Subject with MessageEvent data
@@ -32,10 +33,11 @@ export class PlayService {
    * First to call for service will initialize the Websocket
    */
   constructor() {
+    this.load = false;
     this.socket = new WebSocket(SOCKET_URL);
     this.subject = Observable.create((observer: Observer<MessageEvent>) => {
       // bind socket events to observer events
-      this.socket.onmessage = observer.next.bind(observer);
+      this.socket.onmessage = (ev) => { observer.next(ev); this.load = false; }
       this.socket.onerror = observer.error.bind(observer);
       this.socket.onclose = observer.complete.bind(observer);
       this.socket.onopen = () => {
@@ -75,6 +77,7 @@ export class PlayService {
     }
     var data = {type: type, command: command, query: query};
     this.socket.send(JSON.stringify(data));
+    this.load = true;
     console.log('Socket Status: data sent');
   }
 }

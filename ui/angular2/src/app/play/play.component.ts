@@ -16,6 +16,7 @@ import { Observable }     from 'rxjs/Observable';
  */
 export class PlayComponent implements OnInit {
 
+  playService: PlayService;
   /**
    * Global State
    */
@@ -28,8 +29,8 @@ export class PlayComponent implements OnInit {
   boardDefinition = require("../../assets/boardDefinition.json");
   BOARD_ID = PlayService.BOARD_ID;
 
-  constructor(private playService: PlayService) {   
-
+  constructor(playService: PlayService) {   
+    this.playService = playService;
     /**
      * Default values until state arrives from server
      */

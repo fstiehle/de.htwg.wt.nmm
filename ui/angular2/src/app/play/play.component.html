@@ -26,7 +26,9 @@
     </app-connector>
 
   </div>
-
+  <div id="load-icon" *ngIf=playService.load>
+    <img src="assets/images/loading.gif">
+  </div>
   <app-instructions [message]="state?.status?.message"
   [currentPlayer]="state.currentPlayer.man" [load]="state?.load"></app-instructions>
 </div>
