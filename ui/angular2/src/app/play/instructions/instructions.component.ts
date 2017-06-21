@@ -17,6 +17,7 @@ export class InstructionsComponent implements OnInit {
   @Input() currentPlayer: string;
   @Input() load: any;
   constructor(fb: FormBuilder, play: PlayService) { 
+    this.play = play;
     this.saveGameForm = fb.group({
       'name' : [null, Validators.compose([Validators.required, Validators.minLength(2)])]
     });
@@ -34,7 +35,7 @@ export class InstructionsComponent implements OnInit {
       return;
     }
     console.log("attempt to save game...");
-    this.play.send("saveGame", "", [form.value.name]);
+    this.play.send("saveGame", "name", [form.value.name]);
   }
 
   ngOnInit() { }

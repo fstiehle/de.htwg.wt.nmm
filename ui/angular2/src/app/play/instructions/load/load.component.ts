@@ -12,7 +12,9 @@ export class LoadComponent implements OnInit {
 
   playService: PlayService;
 
-  constructor(playerService: PlayService) { }
+  constructor(playerService: PlayService) { 
+    this.playService = playerService;
+  }
 
   ngOnInit() { }
 
@@ -21,7 +23,7 @@ export class LoadComponent implements OnInit {
     if (this.load == null || this.load.id == null) {
       return
     }
-    this.playService.send("loadGame", "" , [this.load.id])
+    this.playService.send("loadGame", "id", [this.load.id])
   }
 
 }

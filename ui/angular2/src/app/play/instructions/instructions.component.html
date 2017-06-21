@@ -37,7 +37,7 @@
           New Game.
       </a></span>
 
-      <form (focusout)="onSubmit($event, saveGameForm)"
+      <form (ngSubmit)="onSubmit($event, saveGameForm)"
       [formGroup]="saveGameForm">
         <input type="text" id="name" title="Click to edit" value="{{sessionName}}"
         [(ngModel)]="sessionName"

@@ -56,7 +56,7 @@ export class PlayService {
    *   "refreshGame": Refresh and get current state
    *   "resetGame": Resets game,
    *   "loadGame": loads Game
-   *   "save game": saves game
+   *   "saveGame": saves game
    * @param command
    *   when "processCommand": "set" | "pick" | "move"
    *   when "setPlayerName": "WHITE" | "BLACK"
@@ -66,7 +66,7 @@ export class PlayService {
    *   when "processCommand": Array of PuckIDs ["a1"]
    *   when "setPlayerName": "theNewPlayerName"
    *   when "loadGame": "sessionID"
-   *   when "saveGame": "session name"
+   *   when "saveGame": "sessionName"
    */
   send(type, command = " ", query: Array<string> = []) {
     if (this.socket.readyState !== WebSocket.OPEN) {
