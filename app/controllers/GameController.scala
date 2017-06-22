@@ -11,8 +11,8 @@ import utils.auth.DefaultEnv
 /**
  * The `Main Game Controller` controller.
  *
- * @param messagesApi            The Play messages API.
- * @param silhouette             The Silhouette stack.
+ * @param messagesApi The Play messages API.
+ * @param silhouette The Silhouette stack.
  */
 class GameController @Inject() (
   val messagesApi: MessagesApi,

@@ -63,8 +63,6 @@ GET          /play/save                       controllers.GameController.save
 
 # Json
 GET         /json                            controllers.JsonController.get
-POST        /json                            controllers.JsonController.process
-POST        /json/setplayername              controllers.JsonController.changePlayerName
 
 # WebSocket
 GET         /socket                          controllers.WebSocketController.socket

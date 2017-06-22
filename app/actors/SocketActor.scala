@@ -6,7 +6,7 @@ import akka.actor.{ Actor, ActorRef, Props }
 import de.htwg.se.nmm.Game
 import models.{ GameObserver, User }
 import play.api.libs.json.Json
-import services.JsonWorker
+import services.{ HTTPWorker, JsonWorker }
 
 /**
  * Created by funkemarkus on 16.12.16.
@@ -16,14 +16,13 @@ object SocketActor {
 }
 
 class SocketActor(out: ActorRef) extends Actor {
-  var gameController = Game.getInstance().getController
-  new GameObserver(gameController, this)
+  val httpWorker: HTTPWorker = new HTTPWorker(this);
 
   def receive = {
     case msg: String =>
       //out ! ("Hi, I received your message: " + msg)
       try {
-        new JsonWorker().processJson(msg)
+        new JsonWorker().processJson(httpWorker, msg);
       } catch {
         case ex: Exception => {
           val message = Json.obj("code" -> "400", "message" -> "Bad Request (see logs for more details)")

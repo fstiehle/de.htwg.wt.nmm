@@ -35,27 +35,4 @@ class JsonController @Inject() (
     }
   }
 
-  def process = Action.async { implicit request =>
-    println("processAction " + request)
-    silhouette.SecuredRequestHandler { securedRequest =>
-      Future.successful(HandlerResult(Ok, Some(securedRequest.identity)))
-    }.map {
-      case HandlerResult(r, Some(user)) =>
-        new JsonWorker().processJson(request.body.toString())
-        Ok(gameController.getJson()) as "application/json"
-      case HandlerResult(r, None) => Unauthorized
-    }
-  }
-
-  def changePlayerName = Action.async { implicit request =>
-    silhouette.SecuredRequestHandler { securedRequest =>
-      Future.successful(HandlerResult(Ok, Some(securedRequest.identity)))
-    }.map {
-      case HandlerResult(r, Some(user)) =>
-        new JsonWorker().processJson(request.body.toString())
-        Ok(gameController.getJson()) as "application/json"
-      case HandlerResult(r, None) => Unauthorized
-    }
-  }
-
 }

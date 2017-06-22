@@ -24,7 +24,8 @@ libraryDependencies ++= Seq(
   "com.mohiva" %% "play-silhouette-testkit" % "4.0.0" % "test",
   specs2 % Test,
   cache,
-  filters
+  filters,
+  javaWs
 )
 libraryDependencies += "org.webjars" % "bootstrap" % "3.3.4"
 
