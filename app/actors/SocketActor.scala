@@ -1,12 +1,8 @@
 package actors
 
-import java.lang.IllegalArgumentException
-
 import akka.actor.{ Actor, ActorRef, Props }
-import de.htwg.se.nmm.Game
-import models.{ GameObserver, User }
 import play.api.libs.json.Json
-import services.{ HTTPWorker, JsonWorker }
+import services.{ HttpWorker, JsonWorker }
 
 /**
  * Created by funkemarkus on 16.12.16.
@@ -16,7 +12,7 @@ object SocketActor {
 }
 
 class SocketActor(out: ActorRef) extends Actor {
-  val httpWorker: HTTPWorker = new HTTPWorker(this);
+  val httpWorker: HttpWorker = new HttpWorker(this);
 
   def receive = {
     case msg: String =>

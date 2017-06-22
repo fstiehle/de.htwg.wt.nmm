@@ -38,6 +38,10 @@ export class InstructionsComponent implements OnInit {
     this.play.send("saveGame", "name", [form.value.name]);
   }
 
+  resetGame() {
+    this.play.send("resetGame");
+  }
+
   ngOnInit() { }
 
 }

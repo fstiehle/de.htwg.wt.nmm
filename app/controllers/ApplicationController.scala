@@ -7,9 +7,8 @@ import com.mohiva.play.silhouette.impl.providers.SocialProviderRegistry
 import de.htwg.se.nmm.Game
 import play.api.i18n.{ I18nSupport, MessagesApi }
 import play.api.mvc.{ Action, Controller }
+import services.JsonWorker
 import utils.auth.DefaultEnv
-
-import scala.concurrent.Future
 
 /**
  * The basic application controller.
@@ -34,13 +33,9 @@ class ApplicationController @Inject() (
    * @return The result to display.
    */
   def index = silhouette.SecuredAction { implicit request =>
-    val player = gameController.getPlayerWithoutUserID(request.identity.userID)
-    if (player != null) {
-      player.setName(request.identity.fullName.getOrElse(player.getMan.toString()))
-      player.setUserID(request.identity.userID)
-      gameController.update()
-    }
-
+    new JsonWorker().setPlayerUID(
+      request.identity.userID.toString,
+      request.identity.fullName.getOrElse("Mysterious Player"))
     Ok(views.html.angular(request.identity))
   }
 

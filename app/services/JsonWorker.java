@@ -1,13 +1,6 @@
 package services;
 
-import java.util.*;
-import de.htwg.se.nmm.Game;
-import de.htwg.se.nmm.controller.IGameController;
-import de.htwg.se.nmm.model.IPuck;
-import de.htwg.se.nmm.model.IPlayer;
-
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import play.libs.Json;
 
 public class JsonWorker {
@@ -18,9 +11,7 @@ public class JsonWorker {
      * @param jsonStr
      * @throws IllegalArgumentException
      */
-    public void processJson(HTTPWorker httpWorker, String jsonStr) throws IllegalArgumentException {
-
-        System.out.println("Process");
+    public void processJson(HttpWorker httpWorker, String jsonStr) throws IllegalArgumentException {
 
         JsonNode json = Json.parse(jsonStr);
         String type = json.findPath("type").textValue();
@@ -30,7 +21,13 @@ public class JsonWorker {
 
         switch (type) {
             case "setPlayerName":
-                httpWorker.changePlayerName(json);
+                httpWorker.setPlayerName(json);
+                break;
+            case "loadGame":
+                httpWorker.loadGame(json);
+                break;
+            case "saveGame":
+                httpWorker.saveGame(json);
                 break;
             case "resetGame":
                 httpWorker.resetGame();
@@ -46,4 +43,7 @@ public class JsonWorker {
         }
     }
 
+    public void setPlayerUID(String uid, String fullName) {
+        HttpWorker.setPlayerUID(Json.toJson(new String[] {uid, fullName}));
+    }
 }
