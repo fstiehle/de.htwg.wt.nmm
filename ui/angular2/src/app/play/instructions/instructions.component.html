@@ -46,7 +46,7 @@
       </form>
 
       <h4>Load a previous Session</h4>
-      <span *ngIf=!load>No session found.</span>
+      <span *ngIf="!load?.length">No session found.</span>
       <ul>
         <app-load #l *ngFor="let session of load"
         [load]="session"></app-load>

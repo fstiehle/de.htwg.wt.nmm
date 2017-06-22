@@ -42,9 +42,13 @@ public class HttpWorker extends Controller {
     }
 
     public void loadGame(JsonNode json) {
+        this.ws.url(url + "loadGame").post(json).thenApply(WSResponse::asJson).whenComplete(
+            (msg, error) -> this.actor.sendMessage(msg.toString()));
     }
 
     public void saveGame(JsonNode json) {
+        this.ws.url(url + "saveGame").post(json).thenApply(WSResponse::asJson).whenComplete(
+            (msg, error) -> this.actor.sendMessage(msg.toString()));
     }
 
     public static void setPlayerUID(JsonNode json) {
@@ -53,7 +57,6 @@ public class HttpWorker extends Controller {
             .url(url + "getPlayerWithoutUID").post(json).thenApply(WSResponse::asJson).whenComplete(
             (msg, error) -> {
                 System.out.println(msg.toString());
-
             });
     }
 }

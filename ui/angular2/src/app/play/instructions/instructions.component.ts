@@ -27,15 +27,11 @@ export class InstructionsComponent implements OnInit {
    * On form submit
    * sends saveGame request
    */
-  onSubmit(e, form) {
-    e.preventDefault();
-    if (!form.valid) {
-      // TODO: Handle illegal input
-      console.log("not vaild");
-      return;
-    }
-    console.log("attempt to save game...");
-    this.play.send("saveGame", "name", [form.value.name]);
+  onSubmit(e, form) { 
+      e.preventDefault();
+      console.log(this.load)
+    
+    
   }
 
   resetGame() {
