@@ -29,7 +29,7 @@ export class InstructionsComponent implements OnInit {
    */
   onSubmit(e, form) { 
       e.preventDefault();
-      this.play.send("saveGame", "name", form.name);
+      this.play.send("saveGame", "name", [form.value.name]);
   }
 
   resetGame() {
