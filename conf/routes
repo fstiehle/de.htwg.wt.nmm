@@ -48,11 +48,6 @@ GET         /help                            controllers.AboutController.help
 GET         /technologies                    controllers.AboutController.technologies
 
 
-###
-# Game
-###
-#GET         /play                            controllers.GameController.index
-
 
 ###
 # API
@@ -60,6 +55,10 @@ GET         /technologies                    controllers.AboutController.technol
 
 # Json
 GET         /json                            controllers.JsonController.get
+
+# Refresh game, receive board data from game service
+# and forward it to the frontend via web socket
+POST        /updateGame                      controllers.WebSocketController.forward
 
 # WebSocket
 GET         /socket                          controllers.WebSocketController.socket

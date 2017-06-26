@@ -32,6 +32,7 @@ public class HttpWorker extends Controller {
     }
 
     public void processCommand(JsonNode json) {
+        System.out.println("Wt process comand request");
         this.ws.url(url + "processCommand").post(json).thenApply(WSResponse::asJson).whenComplete(
             (msg, error) -> this.actor.sendMessage(msg.toString()));
     }
